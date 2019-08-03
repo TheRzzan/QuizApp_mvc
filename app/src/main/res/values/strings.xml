@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">QuizAppMVC</string>
+
+    <string name="answers">Ответы</string>
+    <string name="select_subsection">Выберите подраздел</string>
+    <string name="subsection">Подраздел:</string>
+    <string name="choose_a_topic">Выберите тему</string>
+    <string name="topic">Тема:</string>
+    <string name="question_number">Вопрос %s</string>
+    <string name="next">далее</string>
+</resources>

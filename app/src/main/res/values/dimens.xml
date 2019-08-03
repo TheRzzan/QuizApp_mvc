@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Headline -->
+    <dimen name="headline_margin">24dp</dimen>
+    <dimen name="headline_font_size">18sp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_font_size">18sp</dimen>
+
+    <!-- Simple text -->
+    <dimen name="simple_text_font_size">16sp</dimen>
+
+    <!-- Signatures -->
+    <dimen name="signatures_font_size">14sp</dimen>
+
+</resources>

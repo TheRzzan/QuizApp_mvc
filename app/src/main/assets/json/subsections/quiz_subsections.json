@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "question_subsection": "1",
+      "subsection_name": "Подраздел 1",
+      "question_section": "1"
+    },
+    {
+      "question_subsection": "2",
+      "subsection_name": "Подраздел 2",
+      "question_section": "1"
+    },
+    {
+      "question_subsection": "3",
+      "subsection_name": "Подраздел 3",
+      "question_section": "2"
+    },
+    {
+      "question_subsection": "4",
+      "subsection_name": "Подраздел 4",
+      "question_section": "2"
+    },
+    {
+      "question_subsection": "5",
+      "subsection_name": "Подраздел 5",
+      "question_section": "3"
+    },
+    {
+      "question_subsection": "6",
+      "subsection_name": "Подраздел 6",
+      "question_section": "3"
+    }
+  ]
+}
