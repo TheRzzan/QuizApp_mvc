@@ -1,19 +1,15 @@
 package com.morozov.quiz.controller.app.topic;
 
 import android.arch.lifecycle.Observer;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.section.SectionActivity;
-import com.morozov.quiz.controller.app.subsection.SubsectionActivity;
 import com.morozov.quiz.controller.models.TopicModel;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
@@ -64,7 +60,10 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         viewModel.selectedTopic().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
-                Toast.makeText(getApplicationContext(), getViewModel().topics().getValue().get(integer).getTopicName(), Toast.LENGTH_SHORT).show();
+                ActivityUtility.invokeQuizActivity(TopicActivity.this, true,
+                        getViewModel().topics().getValue().get(integer).getTopicId(),
+                        getViewModel().subsectionId().getValue(),
+                        getViewModel().sectionId().getValue());
             }
         });
     }

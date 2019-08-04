@@ -19,6 +19,7 @@
         <activity android:name=".controller.app.section.SectionActivity" />
         <activity android:name=".controller.app.subsection.SubsectionActivity" />
         <activity android:name=".controller.app.topic.TopicActivity" />
+        <activity android:name=".controller.app.quiz.QuizActivity" />
     </application>
 
 </manifest>
