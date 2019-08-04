@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.app.section.SectionActivity" />
+        <activity android:name=".controller.app.subsection.SubsectionActivity" />
+        <activity android:name=".controller.app.topic.TopicActivity" />
     </application>
 
 </manifest>

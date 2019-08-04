@@ -9,12 +9,18 @@ import java.util.List;
 
 public class SectionViewModel extends UiViewModel {
     private MutableLiveData<List<SectionModel>> sections;
+    private MutableLiveData<Integer> selectedSection;
 
     public SectionViewModel() {
         sections = new MutableLiveData<>();
+        selectedSection = new MutableLiveData<>();
     }
 
     MutableLiveData<List<SectionModel>> sections() {
         return sections;
+    }
+
+    MutableLiveData<Integer> selectedSection() {
+        return selectedSection;
     }
 }

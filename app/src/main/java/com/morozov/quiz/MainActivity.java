@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.utility.ActivityUtility;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(MainActivity.this, SectionActivity.class);
-        startActivity(intent);
+        ActivityUtility.invokeNewActivity(MainActivity.this, SectionActivity.class, true);
     }
 }

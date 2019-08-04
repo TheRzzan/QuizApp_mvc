@@ -48,8 +48,12 @@ public abstract class ControllerActivity<V extends ViewModel, C extends Controll
 
     protected abstract Class<V> viewModel();
 
-    protected C controller() {
+    protected C getController() {
         return controller;
+    }
+
+    protected V getViewModel() {
+        return viewModel;
     }
 
     @NonNull
