@@ -55,6 +55,9 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
         if (row_index == i) {
             holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
             holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
+        } else {
+            holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+            holder.tvAnswer.setTextColor(Color.parseColor("#000000"));
         }
     }
 
