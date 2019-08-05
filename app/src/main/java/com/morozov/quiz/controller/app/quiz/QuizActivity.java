@@ -9,12 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.controller.models.QuestionModel;
+import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -64,11 +63,13 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
                 if (integer < viewModel.questions().getValue().size()) {
                     showQuestion(integer);
                 } else {
-                    Toast.makeText(QuizActivity.this,
-                            "Correct: " + getViewModel().correctAnswers().getValue() +
-                            "Wrong: " + getViewModel().wrongAnswers().getValue(),
-                            Toast.LENGTH_SHORT).show();
-                    ActivityUtility.invokeNewActivity(QuizActivity.this, SectionActivity.class, true);
+                    ActivityUtility.invokeScoreActivity(QuizActivity.this, true,
+                            getViewModel().topicId().getValue(),
+                            getViewModel().subsectionId().getValue(),
+                            getViewModel().sectionId().getValue(),
+                            new ScoreModel(getViewModel().correctAnswers().getValue(),
+                                    getViewModel().wrongAnswers().getValue(),
+                                    getViewModel().skippedAnswers().getValue()));
                 }
             }
         });

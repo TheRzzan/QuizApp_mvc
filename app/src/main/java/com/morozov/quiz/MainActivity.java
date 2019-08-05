@@ -1,8 +1,7 @@
 package com.morozov.quiz;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.utility.ActivityUtility;

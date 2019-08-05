@@ -8,4 +8,9 @@
     <string name="topic">Тема:</string>
     <string name="question_number">Вопрос %s</string>
     <string name="next">далее</string>
+    <string name="correct">Правильно</string>
+    <string name="wrong">Неправильно</string>
+    <string name="skipped">Пропущено</string>
+    <string name="to_main_menu">В главное меню</string>
+    <string name="start_again">Пройти заново</string>
 </resources>
