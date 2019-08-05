@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
-import com.morozov.quiz.controller.interaction.AnswerClickListener;
+import com.morozov.quiz.controller.interaction.HighlightClickListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,12 +24,12 @@ public class QuizViewHolder extends RecyclerView.ViewHolder {
         tvAnswer.setText(answer);
     }
 
-    void setOnClick(final AnswerClickListener listener, final int tag) {
+    void setOnClick(final HighlightClickListener listener, final int tag) {
         tvAnswer.setTag(tag);
         tvAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onAnswerClicked((Integer) tvAnswer.getTag(), tvAnswer.getText().toString());
+                listener.onItemClicked((Integer) tvAnswer.getTag(), tvAnswer.getText().toString());
             }
         });
     }

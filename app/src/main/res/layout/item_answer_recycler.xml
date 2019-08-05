@@ -19,8 +19,8 @@
 
     <View
         android:id="@+id/view_2"
-        android:layout_width="280dp"
-        android:layout_height="0.7dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_below="@id/tvRecycler"
         android:background="@color/dark_blue" />

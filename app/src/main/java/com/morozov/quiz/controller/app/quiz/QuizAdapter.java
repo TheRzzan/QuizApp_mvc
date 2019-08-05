@@ -1,20 +1,25 @@
 package com.morozov.quiz.controller.app.quiz;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.interaction.AnswerClickListener;
-import com.morozov.quiz.controller.models.QuestionModel;
+import com.morozov.quiz.controller.interaction.HighlightClickListener;
 import com.morozov.quiz.controller.ui.ListAdapter;
 
-public class QuizAdapter extends ListAdapter<String, QuizViewHolder> {
+import java.util.List;
+
+public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements HighlightClickListener {
     private final LayoutInflater inflater;
     private final AnswerClickListener listener;
 
-    public QuizAdapter(Context context, AnswerClickListener listener) {
+    private int row_index = -1;
+
+    QuizAdapter(Context context, AnswerClickListener listener) {
         inflater = LayoutInflater.from(context);
         this.listener = listener;
     }
@@ -28,6 +33,27 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull QuizViewHolder holder, int i) {
         holder.populate(data().get(i));
-        holder.setOnClick(listener, i);
+        holder.setOnClick(this, i);
+
+        if (row_index == i) {
+            holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
+            holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
+        } else {
+            holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+            holder.tvAnswer.setTextColor(Color.parseColor("#000000"));
+        }
+    }
+
+    @Override
+    public void onItemClicked(int position, String answer) {
+        row_index = position;
+        notifyDataSetChanged();
+        listener.onAnswerClicked(position, answer);
+    }
+
+    @Override
+    public void setData(List<String> data) {
+        super.setData(data);
+        row_index = -1;
     }
 }
