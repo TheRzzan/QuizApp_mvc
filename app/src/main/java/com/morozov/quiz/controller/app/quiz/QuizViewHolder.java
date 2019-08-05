@@ -29,7 +29,8 @@ public class QuizViewHolder extends RecyclerView.ViewHolder {
         tvAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemClicked((Integer) tvAnswer.getTag(), tvAnswer.getText().toString());
+                if (listener != null)
+                    listener.onItemClicked((Integer) tvAnswer.getTag(), tvAnswer.getText().toString());
             }
         });
     }

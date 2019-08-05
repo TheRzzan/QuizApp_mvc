@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
@@ -33,6 +34,9 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
     @BindView(R.id.tvQuestionText)
     TextView questionText;
+
+    @BindView(R.id.btn_next)
+    Button btnNext;
 
     private QuizAdapter adapter;
 
@@ -60,16 +64,27 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
         viewModel.currentQuestion().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
-                if (integer < viewModel.questions().getValue().size()) {
-                    showQuestion(integer);
-                } else {
-                    ActivityUtility.invokeScoreActivity(QuizActivity.this, true,
-                            getViewModel().topicId().getValue(),
-                            getViewModel().subsectionId().getValue(),
-                            getViewModel().sectionId().getValue(),
-                            new ScoreModel(getViewModel().correctAnswers().getValue(),
-                                    getViewModel().wrongAnswers().getValue(),
-                                    getViewModel().skippedAnswers().getValue()));
+                btnNext.setVisibility(View.VISIBLE);
+            }
+        });
+
+        viewModel.showNext().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                if (aBoolean) {
+                    Integer integer = viewModel.currentQuestion().getValue();
+
+                    if (integer < viewModel.questions().getValue().size()) {
+                        showQuestion(integer);
+                    } else {
+                        ActivityUtility.invokeScoreActivity(QuizActivity.this, true,
+                                getViewModel().topicId().getValue(),
+                                getViewModel().subsectionId().getValue(),
+                                getViewModel().sectionId().getValue(),
+                                new ScoreModel(getViewModel().correctAnswers().getValue(),
+                                        getViewModel().wrongAnswers().getValue(),
+                                        getViewModel().skippedAnswers().getValue()));
+                    }
                 }
             }
         });
@@ -79,11 +94,13 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
     protected void observeClicks(QuizController controller) {
         super.observeClicks(controller);
 
-
+        btnNext.setOnClickListener(controller);
     }
 
     @SuppressLint("StringFormatMatches")
     private void showQuestion(Integer position) {
+        btnNext.setVisibility(View.GONE);
+
         QuestionModel questionModel = getViewModel().questions().getValue().get(position);
 
         adapter.setData(questionModel.getAnswers());

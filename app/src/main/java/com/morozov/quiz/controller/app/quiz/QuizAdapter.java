@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.interaction.AnswerClickListener;
 import com.morozov.quiz.controller.interaction.HighlightClickListener;
+import com.morozov.quiz.controller.models.MessageFromControllerModel;
 import com.morozov.quiz.controller.ui.ListAdapter;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     private final LayoutInflater inflater;
     private final AnswerClickListener listener;
 
+    private MessageFromControllerModel message = null;
     private int row_index = -1;
 
     QuizAdapter(Context context, AnswerClickListener listener) {
@@ -32,11 +34,42 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
 
     @Override
     public void onBindViewHolder(@NonNull QuizViewHolder holder, int i) {
+        if (row_index == -1 && message == null) {
+            showWithoutClick(holder, i);
+        } else if (row_index >= 0 && message == null) {
+            showFirstClick(holder, i);
+        } else if (row_index >= 0 && message != null) {
+            showSecondClick(holder, i);
+        }
+    }
+
+    private void showWithoutClick(QuizViewHolder holder, int i) {
         holder.populate(data().get(i));
         holder.setOnClick(this, i);
 
+        holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        holder.tvAnswer.setTextColor(Color.parseColor("#000000"));
+    }
+
+    private void showFirstClick(QuizViewHolder holder, int i) {
         if (row_index == i) {
             holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
+            holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
+        }
+    }
+
+    private void showSecondClick(QuizViewHolder holder, int i) {
+        holder.setOnClick(null, i);
+
+        if (row_index == i) {
+            if (message.isCorrectAnswer())
+                holder.itemView.setBackgroundColor(Color.parseColor("#4CD964"));
+            else
+                holder.itemView.setBackgroundColor(Color.parseColor("#E4092A"));
+
+            holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
+        } else if (message.getCorrectAnswer().equals(holder.tvAnswer.getText().toString())) {
+            holder.itemView.setBackgroundColor(Color.parseColor("#4CD964"));
             holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
@@ -47,13 +80,17 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     @Override
     public void onItemClicked(int position, String answer) {
         row_index = position;
+        message = listener.onAnswerClicked(position, answer);
         notifyDataSetChanged();
-        listener.onAnswerClicked(position, answer);
     }
 
     @Override
     public void setData(List<String> data) {
         super.setData(data);
+
         row_index = -1;
+        message = null;
+
+        notifyDataSetChanged();
     }
 }

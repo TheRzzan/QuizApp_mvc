@@ -11,6 +11,7 @@ import java.util.List;
 public class QuizViewModel extends UiViewModel {
     private DoubleClickLiveData<List<QuestionModel>> questions;
 
+    private MutableLiveData<Boolean> showNext;
     private MutableLiveData<Integer> currentQuestion;
 
     private MutableLiveData<Integer> correctAnswers;
@@ -24,6 +25,7 @@ public class QuizViewModel extends UiViewModel {
     public QuizViewModel() {
         questions = new DoubleClickLiveData<>();
 
+        showNext = new MutableLiveData<>();
         currentQuestion = new MutableLiveData<>();
 
         correctAnswers = new MutableLiveData<>();
@@ -42,6 +44,9 @@ public class QuizViewModel extends UiViewModel {
         return questions;
     }
 
+    MutableLiveData<Boolean> showNext() {
+        return showNext;
+    }
     MutableLiveData<Integer> currentQuestion() {
         return currentQuestion;
     }
