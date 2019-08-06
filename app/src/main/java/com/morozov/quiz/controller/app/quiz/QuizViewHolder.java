@@ -11,11 +11,11 @@ import com.morozov.quiz.controller.interaction.HighlightClickListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class QuizViewHolder extends RecyclerView.ViewHolder {
+class QuizViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tvAnswerRecycler)
     TextView tvAnswer;
 
-    public QuizViewHolder(@NonNull View itemView) {
+    QuizViewHolder(@NonNull View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
@@ -30,7 +30,7 @@ public class QuizViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 if (listener != null)
-                    listener.onItemClicked((Integer) tvAnswer.getTag(), tvAnswer.getText().toString());
+                    listener.onItemClicked((Integer) tvAnswer.getTag());
             }
         });
     }

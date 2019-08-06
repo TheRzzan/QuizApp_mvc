@@ -15,6 +15,12 @@ import com.morozov.quiz.controller.ui.ListAdapter;
 import java.util.List;
 
 public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements HighlightClickListener {
+
+    private static String CORRECT_COL = "#AAFFAA";
+    private static String WRONG_COL = "#FEAAA8";
+    private static String SELECTED_COL = "#E6E6E6";
+    private static String UNSELECTED_COL = "#FFFFFF";
+
     private final LayoutInflater inflater;
     private final AnswerClickListener listener;
 
@@ -47,17 +53,14 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
         holder.populate(data().get(i));
         holder.setOnClick(this, i);
 
-        holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        holder.tvAnswer.setTextColor(Color.parseColor("#000000"));
+        holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
     }
 
     private void showFirstClick(QuizViewHolder holder, int i) {
         if (row_index == i) {
-            holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
-            holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
+            holder.itemView.setBackgroundColor(Color.parseColor(SELECTED_COL));
         } else {
-            holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            holder.tvAnswer.setTextColor(Color.parseColor("#000000"));
+            holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }
     }
 
@@ -66,24 +69,20 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
 
         if (row_index == i) {
             if (message.isCorrectAnswer())
-                holder.itemView.setBackgroundColor(Color.parseColor("#4CD964"));
+                holder.itemView.setBackgroundColor(Color.parseColor(CORRECT_COL));
             else
-                holder.itemView.setBackgroundColor(Color.parseColor("#E4092A"));
-
-            holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
-        } else if (message.getCorrectAnswer().equals(holder.tvAnswer.getText().toString())) {
-            holder.itemView.setBackgroundColor(Color.parseColor("#4CD964"));
-            holder.tvAnswer.setTextColor(Color.parseColor("#FFFFFF"));
+                holder.itemView.setBackgroundColor(Color.parseColor(WRONG_COL));
+        } else if (message.getCorrectAnswer().equals(data().get(i))) {
+            holder.itemView.setBackgroundColor(Color.parseColor(CORRECT_COL));
         } else {
-            holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            holder.tvAnswer.setTextColor(Color.parseColor("#000000"));
+            holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }
     }
 
     @Override
-    public void onItemClicked(int position, String answer) {
+    public void onItemClicked(int position) {
         row_index = position;
-        message = listener.onAnswerClicked(position, answer);
+        message = listener.onAnswerClicked(position, data().get(position));
         notifyDataSetChanged();
     }
 

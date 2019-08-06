@@ -46,7 +46,7 @@ public class QuizController extends Controller<QuizViewModel> implements View.On
     @Override
     public MessageFromControllerModel onAnswerClicked(int position, String answer) {
         if (viewModel().questions().click(position)) {
-            QuestionModel questionModel = viewModel().questions().getValue().get(position);
+            QuestionModel questionModel = viewModel().questions().getValue().get(viewModel().currentQuestion().getValue());
 
             viewModel().currentQuestion().setValue(viewModel().currentQuestion().getValue() + 1);
 

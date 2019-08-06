@@ -115,7 +115,6 @@ public class DataLoader {
                 }
                 if (mTopicId.equals(topicId)) {
                     questionList.add(new QuestionModel(question, contents, contents.get(correctAnswerInt)));
-                    Collections.shuffle(contents);
                 }
             }
 
