@@ -16,7 +16,9 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.ScoreModel;
+import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreController> {
+public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreController> implements DialogClickListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -84,10 +86,10 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
             @Override
             public void onChanged(@Nullable Boolean aBoolean) {
                 if (aBoolean) {
-                    ActivityUtility.invokeQuizActivity(ScoreActivity.this, true,
-                            getViewModel().topicId().getValue(),
-                            getViewModel().subsectionId().getValue(),
-                            getViewModel().sectionId().getValue());
+                    CustomDialog customDialog = new CustomDialog();
+                    customDialog.setHeadline("Начать тест заново?");
+                    customDialog.setListener(ScoreActivity.this);
+                    customDialog.show(getSupportFragmentManager(), "CustomDialog");
                 }
             }
         });
@@ -160,6 +162,19 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
     @Override
     public void onBackPressed() {
         ActivityUtility.invokeTopicActivity(ScoreActivity.this, true,
+                getViewModel().subsectionId().getValue(),
+                getViewModel().sectionId().getValue());
+    }
+
+    @Override
+    public void onCancelClicked() {
+
+    }
+
+    @Override
+    public void onOkClicked() {
+        ActivityUtility.invokeQuizActivity(ScoreActivity.this, true,
+                getViewModel().topicId().getValue(),
                 getViewModel().subsectionId().getValue(),
                 getViewModel().sectionId().getValue());
     }

@@ -10,7 +10,9 @@ import android.view.View;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.TopicModel;
+import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -19,7 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TopicActivity extends ControllerActivity<TopicViewModel, TopicController> {
+public class TopicActivity extends ControllerActivity<TopicViewModel, TopicController> implements DialogClickListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -60,10 +62,12 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         viewModel.selectedTopic().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
-                ActivityUtility.invokeQuizActivity(TopicActivity.this, true,
-                        getViewModel().topics().getValue().get(integer).getTopicId(),
-                        getViewModel().subsectionId().getValue(),
-                        getViewModel().sectionId().getValue());
+                CustomDialog customDialog = new CustomDialog();
+                customDialog.setHeadline("Выбрана тема \"" +
+                        getViewModel().topics().getValue().get(integer).getTopicName() +
+                        "\". Готовы начать?");
+                customDialog.setListener(TopicActivity.this);
+                customDialog.show(getSupportFragmentManager(), "CustomDialog");
             }
         });
     }
@@ -90,6 +94,19 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
     @Override
     public void onBackPressed() {
         ActivityUtility.invokeSubsectionActivity(TopicActivity.this, true,
+                getViewModel().sectionId().getValue());
+    }
+
+    @Override
+    public void onCancelClicked() {
+
+    }
+
+    @Override
+    public void onOkClicked() {
+        ActivityUtility.invokeQuizActivity(TopicActivity.this, true,
+                getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicId(),
+                getViewModel().subsectionId().getValue(),
                 getViewModel().sectionId().getValue());
     }
 }

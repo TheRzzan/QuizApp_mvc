@@ -13,15 +13,17 @@ import android.widget.TextView;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.ScoreModel;
+import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class QuizActivity extends ControllerActivity<QuizViewModel, QuizController> {
+public class QuizActivity extends ControllerActivity<QuizViewModel, QuizController> implements DialogClickListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -124,6 +126,20 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
     @Override
     public void onBackPressed() {
+        CustomDialog customDialog = new CustomDialog();
+        customDialog.setHeadline("Покинуть тестирование?");
+        customDialog.setListener(QuizActivity.this);
+        customDialog.setOkText("покинуть");
+        customDialog.show(getSupportFragmentManager(), "CustomDialog");
+    }
+
+    @Override
+    public void onCancelClicked() {
+
+    }
+
+    @Override
+    public void onOkClicked() {
         ActivityUtility.invokeTopicActivity(QuizActivity.this, true,
                 getViewModel().subsectionId().getValue(),
                 getViewModel().sectionId().getValue());
