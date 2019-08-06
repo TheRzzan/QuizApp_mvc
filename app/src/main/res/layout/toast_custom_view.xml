@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_black_sharp"
+    android:orientation="horizontal"
+    android:padding="6dp">
+
+    <TextView
+        android:id="@+id/customToastText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:text="@string/double_click_to_answer"
+        android:textSize="12sp"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

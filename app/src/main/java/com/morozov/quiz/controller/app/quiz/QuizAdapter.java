@@ -58,7 +58,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
 
     private void showFirstClick(QuizViewHolder holder, int i) {
         if (row_index == i) {
-            holder.itemView.setBackgroundColor(Color.parseColor(SELECTED_COL));
+            holder.itemView.setBackgroundResource(R.drawable.rectangle_grey_sharp);
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }
@@ -69,11 +69,11 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
 
         if (row_index == i) {
             if (message.isCorrectAnswer())
-                holder.itemView.setBackgroundColor(Color.parseColor(CORRECT_COL));
+                holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
             else
-                holder.itemView.setBackgroundColor(Color.parseColor(WRONG_COL));
+                holder.itemView.setBackgroundResource(R.drawable.rectangle_red_sharp);
         } else if (message.getCorrectAnswer().equals(data().get(i))) {
-            holder.itemView.setBackgroundColor(Color.parseColor(CORRECT_COL));
+            holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }

@@ -1,7 +1,10 @@
 package com.morozov.quiz.controller.app.quiz;
 
 import android.content.Context;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.Controller;
@@ -60,6 +63,16 @@ public class QuizController extends Controller<QuizViewModel> implements View.On
                 return new MessageFromControllerModel(false, questionModel.getCorrectAnswer());
             }
         } else {
+            if (viewModel().currentQuestion().getValue().equals(0)) {
+                View toastView = LayoutInflater.from(context).inflate(R.layout.toast_custom_view, null);
+
+                Toast toast = new Toast(context);
+                toast.setView(toastView);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.BOTTOM,0,75);
+                toast.show();
+            }
+
             return null;
         }
     }
