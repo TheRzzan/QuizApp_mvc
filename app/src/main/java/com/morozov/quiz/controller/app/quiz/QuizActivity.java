@@ -66,6 +66,9 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
         viewModel.currentQuestion().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                if (integer.equals(viewModel.questions().getValue().size()))
+                    btnNext.setText("Завершить");
+
                 btnNext.setVisibility(View.VISIBLE);
             }
         });

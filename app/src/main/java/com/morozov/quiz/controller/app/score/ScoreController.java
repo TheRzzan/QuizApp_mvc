@@ -34,9 +34,9 @@ public class ScoreController extends Controller<ScoreViewModel> implements View.
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_main_menu:
-                startMainMenu();
-                break;
+//            case R.id.btn_main_menu:
+//                startMainMenu();
+//                break;
             case R.id.btn_play_again:
                 startTestAgain();
                 break;
