@@ -22,7 +22,7 @@ class SectionAdapter extends ListAdapter<SectionModel, SectionViewHolder> {
     @NonNull
     @Override
     public SectionViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new SectionViewHolder(inflater.inflate(R.layout.item_section_recycler, null));
+        return new SectionViewHolder(inflater.inflate(R.layout.item_section, null));
     }
 
     @Override

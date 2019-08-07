@@ -20,4 +20,6 @@
     <string name="search_hint">Поиск</string>
     <string name="choose_a_section">Выберите раздел</string>
     <string name="section">Раздел:</string>
+    <string name="correct_answer">Правильный ответ</string>
+    <string name="explanation">Пояснение</string>
 </resources>

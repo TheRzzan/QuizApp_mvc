@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
@@ -112,7 +111,10 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
                     customDialog.setListener(TopicActivity.this);
                     customDialog.show(getSupportFragmentManager(), "CustomDialog");
                 } else {
-                    Toast.makeText(TopicActivity.this, "Open answers", Toast.LENGTH_SHORT).show();
+                    ActivityUtility.invokeAnswersActivity(TopicActivity.this, true,
+                            getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicId(),
+                            getViewModel().subsectionId().getValue(),
+                            getViewModel().sectionId().getValue());
                 }
             }
         });

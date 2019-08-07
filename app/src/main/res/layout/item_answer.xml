@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_question_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/headline_margin"
+        android:gravity="center"
+        android:text="@string/question_number"
+        android:textSize="@dimen/headline_font_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_question_num"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:text="Каждый охотник женает знать где сидит фазан?"
+        android:textSize="@dimen/signatures_font_size"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_correct_ans_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_question"
+        android:layout_marginTop="@dimen/headline_margin"
+        android:gravity="center"
+        android:text="@string/correct_answer"
+        android:textSize="@dimen/headline_font_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_correct_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_correct_ans_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:text="Каждый охотник женает знать где сидит фазан!"
+        android:textSize="@dimen/signatures_font_size"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_explanation_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_correct_answer"
+        android:layout_marginTop="@dimen/headline_margin"
+        android:gravity="center"
+        android:text="@string/explanation"
+        android:textSize="@dimen/headline_font_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_explanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_explanation_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:text="Здесь будет пояснения к ответу. К сожалению сейчас в ресурсах оно не задано."
+        android:textSize="@dimen/signatures_font_size"
+        android:textColor="@color/black"/>
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/tv_explanation"
+        android:background="@color/dark_blue" />
+</RelativeLayout>

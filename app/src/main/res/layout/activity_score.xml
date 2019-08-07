@@ -125,7 +125,7 @@
                 android:layout_weight="0.5"
                 android:background="@drawable/rectangle_orange"
                 android:text="@string/start_again"
-                android:textColor="@color/black" />
+                android:textColor="@color/grey" />
 
         </RelativeLayout>
     </ScrollView>

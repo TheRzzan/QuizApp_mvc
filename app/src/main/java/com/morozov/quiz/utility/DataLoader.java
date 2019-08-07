@@ -118,8 +118,6 @@ public class DataLoader {
                     Collections.shuffle(contents);
                 }
             }
-
-            Collections.shuffle(questionList);
         } catch (JSONException e) {
             e.printStackTrace();
         }

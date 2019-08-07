@@ -13,6 +13,9 @@ import com.morozov.quiz.controller.models.MessageFromControllerModel;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.utility.DataLoader;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class QuizController extends Controller<QuizViewModel> implements View.OnClickListener, AnswerClickListener {
 
     private Context context;
@@ -31,8 +34,9 @@ public class QuizController extends Controller<QuizViewModel> implements View.On
     }
 
     private void initialSections() {
-        viewModel().questions()
-                .setValue(DataLoader.getQuestions(context.getAssets(), viewModel().topicId().getValue()));
+        ArrayList<QuestionModel> questions = DataLoader.getQuestions(context.getAssets(), viewModel().topicId().getValue());
+        Collections.shuffle(questions);
+        viewModel().questions().setValue(questions);
         viewModel().currentQuestion().setValue(0);
         viewModel().showNext().setValue(true);
     }
