@@ -31,6 +31,7 @@ public class AppConstants {
     public static final String BUNDLE_KEY_CORRECT_ANS = "correct_ans";
     public static final String BUNDLE_KEY_WRONG_ANS = "wrong_ans";
     public static final String BUNDLE_KEY_SKIPPED_ANS = "skipped_ans";
+    public static final String BUNDLE_KEY_IS_TO_TEST = "is_to_test";
     public static final int BUNDLE_KEY_ZERO_INDEX = 0;
     public static final int BUNDLE_KEY_FIRST_INDEX = 1;
     public static final int BUNDLE_KEY_SECOND_INDEX = 2;

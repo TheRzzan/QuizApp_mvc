@@ -11,6 +11,7 @@ public class SubsectionViewModel extends UiViewModel {
     private MutableLiveData<List<SubsectionModel>> subsections;
     private MutableLiveData<Integer> selectedSubsection;
     private MutableLiveData<String> sectionId;
+    private Boolean isToTest;
 
     public SubsectionViewModel() {
         subsections = new MutableLiveData<>();
@@ -28,5 +29,13 @@ public class SubsectionViewModel extends UiViewModel {
 
     MutableLiveData<String> sectionId() {
         return sectionId;
+    }
+
+    Boolean isToTest() {
+        return isToTest;
+    }
+
+    void setIsToTest(Boolean toTest) {
+        isToTest = toTest;
     }
 }

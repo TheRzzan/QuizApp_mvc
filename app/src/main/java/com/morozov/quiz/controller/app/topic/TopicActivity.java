@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
@@ -47,6 +48,7 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
 
         setSupportActionBar(toolbar);
 
+        getViewModel().setIsToTest(getIntent().getBooleanExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, true));
         getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
         getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
 
@@ -102,12 +104,16 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         viewModel.selectedTopic().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
-                CustomDialog customDialog = new CustomDialog();
-                customDialog.setHeadline("Выбрана тема \"" +
-                        getViewModel().topics().getValue().get(integer).getTopicName() +
-                        "\". Готовы начать?");
-                customDialog.setListener(TopicActivity.this);
-                customDialog.show(getSupportFragmentManager(), "CustomDialog");
+                if (viewModel.isToTest()) {
+                    CustomDialog customDialog = new CustomDialog();
+                    customDialog.setHeadline("Выбрана тема \"" +
+                            getViewModel().topics().getValue().get(integer).getTopicName() +
+                            "\". Готовы начать?");
+                    customDialog.setListener(TopicActivity.this);
+                    customDialog.show(getSupportFragmentManager(), "CustomDialog");
+                } else {
+                    Toast.makeText(TopicActivity.this, "Open answers", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -147,7 +153,8 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         }
 
         ActivityUtility.invokeSubsectionActivity(TopicActivity.this, true,
-                getViewModel().sectionId().getValue());
+                getViewModel().sectionId().getValue(),
+                getViewModel().isToTest());
     }
 
     @Override

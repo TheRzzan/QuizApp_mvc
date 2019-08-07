@@ -58,7 +58,8 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
             @Override
             public void onChanged(@Nullable Integer integer) {
                 ActivityUtility.invokeSubsectionActivity(SectionActivity.this, true,
-                        getViewModel().sections().getValue().get(integer).getSectionId());
+                        getViewModel().sections().getValue().get(integer).getSectionId(),
+                        true);
             }
         });
     }

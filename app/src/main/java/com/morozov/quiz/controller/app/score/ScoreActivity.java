@@ -139,7 +139,8 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
     public void onBackPressed() {
         ActivityUtility.invokeTopicActivity(ScoreActivity.this, true,
                 getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue());
+                getViewModel().sectionId().getValue(),
+                true);
     }
 
     @Override

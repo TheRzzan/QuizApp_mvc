@@ -46,6 +46,7 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
 
         setSupportActionBar(toolbar);
 
+        getViewModel().setIsToTest(getIntent().getBooleanExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, true));
         getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
 
         adapter = new SubsectionAdapter(getApplicationContext(), getController());
@@ -102,7 +103,8 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
             public void onChanged(@Nullable Integer integer) {
                 ActivityUtility.invokeTopicActivity(SubsectionActivity.this, true,
                         getViewModel().subsections().getValue().get(integer).getSubsectionId(),
-                        getViewModel().sectionId().getValue());
+                        getViewModel().sectionId().getValue(),
+                        getViewModel().isToTest());
             }
         });
     }

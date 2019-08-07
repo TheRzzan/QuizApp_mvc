@@ -145,6 +145,7 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
     public void onOkClicked() {
         ActivityUtility.invokeTopicActivity(QuizActivity.this, true,
                 getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue());
+                getViewModel().sectionId().getValue(),
+                true);
     }
 }

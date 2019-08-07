@@ -18,18 +18,22 @@ public class ActivityUtility {
         }
     }
 
-    public static void invokeSubsectionActivity(Activity activity, boolean shouldFinish, String sectionId) {
+    public static void invokeSubsectionActivity(Activity activity, boolean shouldFinish, String sectionId, boolean isToTest) {
         Intent intent = new Intent(activity, SubsectionActivity.class);
+
+        intent.putExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, isToTest);
         intent.putExtra(AppConstants.JSON_KEY_SECTION_ID, sectionId);
+
         activity.startActivity(intent);
         if (shouldFinish) {
             activity.finish();
         }
     }
 
-    public static void invokeTopicActivity(Activity activity, boolean shouldFinish, String subsectionId, String sectionId) {
+    public static void invokeTopicActivity(Activity activity, boolean shouldFinish, String subsectionId, String sectionId, boolean isToTest) {
         Intent intent = new Intent(activity, TopicActivity.class);
 
+        intent.putExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, isToTest);
         intent.putExtra(AppConstants.JSON_KEY_SUBSECTION_ID, subsectionId);
         intent.putExtra(AppConstants.JSON_KEY_SECTION_ID, sectionId);
 

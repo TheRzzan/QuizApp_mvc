@@ -12,6 +12,7 @@ public class TopicViewModel extends UiViewModel {
     private MutableLiveData<Integer> selectedTopic;
     private MutableLiveData<String> subsectionId;
     private MutableLiveData<String> sectionId;
+    private Boolean isToTest;
 
     public TopicViewModel() {
         topics = new MutableLiveData<>();
@@ -34,5 +35,13 @@ public class TopicViewModel extends UiViewModel {
 
     MutableLiveData<String> sectionId() {
         return sectionId;
+    }
+
+    Boolean isToTest() {
+        return isToTest;
+    }
+
+    void setIsToTest(Boolean toTest) {
+        isToTest = toTest;
     }
 }
