@@ -16,11 +16,11 @@ public class SectionViewModel extends UiViewModel {
         selectedSection = new MutableLiveData<>();
     }
 
-    MutableLiveData<List<SectionModel>> sections() {
+    public MutableLiveData<List<SectionModel>> sections() {
         return sections;
     }
 
-    MutableLiveData<Integer> selectedSection() {
+    public MutableLiveData<Integer> selectedSection() {
         return selectedSection;
     }
 }

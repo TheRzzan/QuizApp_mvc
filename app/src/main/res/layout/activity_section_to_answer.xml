@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar_container"
+        layout="@layout/toolbar_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/tv_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="@string/choose_a_section"
+                android:textSize="@dimen/signatures_font_size" />
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@id/tv_text1"
+                android:background="@color/dark_blue" />
+
+            <TextView
+                android:id="@+id/tv_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_1"
+                android:layout_marginTop="@dimen/headline_margin"
+                android:layout_marginBottom="@dimen/headline_margin"
+                android:gravity="center"
+                android:text="@string/section"
+                android:textSize="@dimen/headline_font_size"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@id/tv_text2"
+                android:background="@color/dark_blue" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvSections"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/view_2"
+                android:foregroundGravity="center"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

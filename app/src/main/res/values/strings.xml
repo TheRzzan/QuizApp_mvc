@@ -18,4 +18,6 @@
     <string name="cancel">отмена</string>
     <string name="total_questions">Всего вопросов</string>
     <string name="search_hint">Поиск</string>
+    <string name="choose_a_section">Выберите раздел</string>
+    <string name="section">Раздел:</string>
 </resources>

@@ -1,16 +1,17 @@
-package com.morozov.quiz.controller.app.section;
+package com.morozov.quiz.controller.app.section_to_answer;
 
 import android.content.Context;
 import android.view.View;
 
 import com.morozov.quiz.controller.Controller;
+import com.morozov.quiz.controller.app.section.SectionViewModel;
 import com.morozov.quiz.utility.DataLoader;
 
 public class SectionController extends Controller<SectionViewModel> implements View.OnClickListener {
 
     private Context context;
 
-    SectionController(SectionViewModel viewModel) {
+    public SectionController(SectionViewModel viewModel) {
         super(viewModel);
     }
 
@@ -26,10 +27,6 @@ public class SectionController extends Controller<SectionViewModel> implements V
     private void initialSections() {
         viewModel().sections().setValue(DataLoader.getSections(context.getAssets()));
     }
-
-//    private void openAnswers() {
-//        Toast.makeText(context, "Answers", Toast.LENGTH_SHORT).show();
-//    }
 
     private void openSubsection(Integer position) {
         viewModel().selectedSection().setValue(position);

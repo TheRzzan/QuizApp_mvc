@@ -1,17 +1,21 @@
-package com.morozov.quiz.controller.app.section;
+package com.morozov.quiz.controller.app.section_to_answer;
 
 import android.arch.lifecycle.Observer;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
+import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.section.SectionViewModel;
 import com.morozov.quiz.controller.models.SectionModel;
 import com.morozov.quiz.utility.ActivityUtility;
 
@@ -21,25 +25,61 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SectionActivity extends ControllerActivity<SectionViewModel, SectionController> {
-    @BindView(R.id.btn_answers)
-    Button btnAnswers;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.searchView)
+    SimpleSearchView searchView;
 
     @BindView(R.id.rvSections)
     RecyclerView rvSections;
 
     private SectionAdapter adapter;
 
-    private Boolean exit = false;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section);
+        setContentView(R.layout.activity_section_to_answer);
         ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
 
         adapter = new SectionAdapter(getApplicationContext(), getController());
         rvSections.setAdapter(adapter);
         rvSections.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);
+
+        searchView.enableVoiceSearch(true);
+        searchView.setOnQueryTextListener(new SimpleSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextCleared() {
+
+                return false;
+            }
+        });
+
+        return true;
     }
 
     @Override
@@ -67,12 +107,8 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
     protected void observeClicks(SectionController controller) {
         super.observeClicks(controller);
 
-        btnAnswers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ActivityUtility.invokeNewActivity(SectionActivity.this, com.morozov.quiz.controller.app.section_to_answer.SectionActivity.class, true);
-            }
-        });
+
+
     }
 
     @Override
@@ -88,18 +124,20 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
     }
 
     @Override
-    public void onBackPressed() {
-        if (exit) {
-            finish();
-        } else {
-            Toast.makeText(this, "Press back again to exit.", Toast.LENGTH_SHORT).show();
-            exit = true;
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    exit = false;
-                }
-            }, 3 * 1000);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (searchView.onActivityResult(requestCode, resultCode, data)) {
+            return;
         }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (searchView.onBackPressed()) {
+            return;
+        }
+
+        ActivityUtility.invokeNewActivity(SectionActivity.this, com.morozov.quiz.controller.app.section.SectionActivity.class, true);
     }
 }
