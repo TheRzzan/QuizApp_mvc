@@ -21,8 +21,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.app.section.SectionActivity" />
-        <activity android:name=".controller.app.subsection.SubsectionActivity" />
-        <activity android:name=".controller.app.topic.TopicActivity" />
+
+        <activity android:name=".controller.app.subsection.SubsectionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        <activity android:name=".controller.app.topic.TopicActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
         <activity android:name=".controller.app.quiz.QuizActivity" />
         <activity android:name=".controller.app.score.ScoreActivity" />
     </application>

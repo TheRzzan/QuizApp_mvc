@@ -17,4 +17,5 @@
     <string name="start">начать</string>
     <string name="cancel">отмена</string>
     <string name="total_questions">Всего вопросов</string>
+    <string name="search_hint">Поиск</string>
 </resources>

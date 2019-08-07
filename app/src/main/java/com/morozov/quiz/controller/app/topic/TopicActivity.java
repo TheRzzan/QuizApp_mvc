@@ -1,17 +1,18 @@
 package com.morozov.quiz.controller.app.topic;
 
 import android.arch.lifecycle.Observer;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 
+import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
@@ -29,6 +30,9 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    @BindView(R.id.searchView)
+    SimpleSearchView searchView;
 
     @BindView(R.id.rvTopics)
     RecyclerView rvTopics;
@@ -53,22 +57,29 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search_menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
+        MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);
 
-        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.enableVoiceSearch(true);
+        searchView.setOnQueryTextListener(new SimpleSearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String s) {
+            public boolean onQueryTextSubmit(String query) {
+
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String s) {
-                adapter.getFilter().filter(s);
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextCleared() {
+
                 return false;
             }
         });
@@ -121,7 +132,20 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (searchView.onActivityResult(requestCode, resultCode, data)) {
+            return;
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     public void onBackPressed() {
+        if (searchView.onBackPressed()) {
+            return;
+        }
+
         ActivityUtility.invokeSubsectionActivity(TopicActivity.this, true,
                 getViewModel().sectionId().getValue());
     }
