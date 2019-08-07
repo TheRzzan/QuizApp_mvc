@@ -1,20 +1,20 @@
 package com.morozov.quiz.controller.app.subsection;
 
 import android.arch.lifecycle.Observer;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.view.inputmethod.EditorInfo;
 
-import com.morozov.quiz.MainActivity;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.section.SectionActivity;
-import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.models.SubsectionModel;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
@@ -47,6 +47,31 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         adapter = new SubsectionAdapter(getApplicationContext(), getController());
         rvSubsections.setAdapter(adapter);
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
+        return true;
     }
 
     @Override
