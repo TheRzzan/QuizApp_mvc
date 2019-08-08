@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/tv_question_num"
@@ -28,11 +29,20 @@
         android:textSize="@dimen/signatures_font_size"
         android:textColor="@color/black"/>
 
+    <ImageView
+        android:id="@+id/ivQuestion"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/tv_question"
+        android:layout_marginTop="11dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@color/green" />
+
     <TextView
         android:id="@+id/tv_correct_ans_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_question"
+        android:layout_below="@+id/ivQuestion"
         android:layout_marginTop="@dimen/headline_margin"
         android:gravity="center"
         android:text="@string/correct_answer"
@@ -53,11 +63,20 @@
         android:textSize="@dimen/signatures_font_size"
         android:textColor="@color/black"/>
 
+    <ImageView
+        android:id="@+id/ivAnswer"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/tv_correct_answer"
+        android:layout_marginTop="11dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@color/green" />
+
     <TextView
         android:id="@+id/tv_explanation_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_correct_answer"
+        android:layout_below="@+id/ivAnswer"
         android:layout_marginTop="@dimen/headline_margin"
         android:gravity="center"
         android:text="@string/explanation"
