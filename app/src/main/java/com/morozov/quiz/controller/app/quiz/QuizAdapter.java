@@ -16,9 +16,6 @@ import java.util.List;
 
 public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements HighlightClickListener {
 
-    private static String CORRECT_COL = "#AAFFAA";
-    private static String WRONG_COL = "#FEAAA8";
-    private static String SELECTED_COL = "#E6E6E6";
     private static String UNSELECTED_COL = "#FFFFFF";
 
     private final LayoutInflater inflater;
@@ -26,6 +23,8 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
 
     private MessageFromControllerModel message = null;
     private int row_index = -1;
+
+    private boolean isImageAnswer = false;
 
     QuizAdapter(Context context, AnswerClickListener listener) {
         inflater = LayoutInflater.from(context);
@@ -50,7 +49,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     }
 
     private void showWithoutClick(QuizViewHolder holder, int i) {
-        holder.populate(data().get(i));
+        holder.populate(data().get(i), isImageAnswer);
         holder.setOnClick(this, i);
 
         holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
@@ -98,5 +97,9 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
         message = null;
 
         notifyDataSetChanged();
+    }
+
+    void setImageAnswer(boolean imageAnswer) {
+        isImageAnswer = imageAnswer;
     }
 }

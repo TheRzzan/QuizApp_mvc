@@ -1,6 +1,13 @@
 package com.morozov.quiz.utility;
 
 public class AppConstants {
+    //image files
+    public static final String IMAGE_DIR = "images/";
+    public static final String JSON_KEY_IS_IMAGE_QUESTION = "is_image_question";
+    public static final String JSON_KEY_IS_ANSWER_IMAGES = "is_image_answers";
+    public static final String JSON_KEY_QUESTION_IMAGE = "question_image";
+    public static final String JSON_KEY_ANSWER_IMAGES = "answer_images";
+
     // section file
     public static final String SECTION_FILE = "json/sections/quiz_sections.json";
     public static final String JSON_KEY_ITEMS = "items";

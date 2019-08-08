@@ -3,6 +3,8 @@
 {
   "questionnaires": [
     {
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Платформа Андроид основывается на операционной системе:",
       "answers": [
         "Linux",
@@ -13,6 +15,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Архитектура платформы Андроид состоит из:",
       "answers": [
         "Приложений, фреймворка приложений, библиотек, среды выполнения Андроид, ядра Linux.",
@@ -23,6 +27,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Базовая единица графического интерфейса приложения Андроид это:",
       "answers": [
         "Ничего из ниже перечисленного.",
@@ -33,6 +39,8 @@
       "correct_answer": 3,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как называется виртуальная машина Java платформы Андроид?",
       "answers": [
         "NET Framework",
@@ -43,6 +51,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет собой формат .apk?",
       "answers": [
         "Android pocket kit.",
@@ -53,6 +63,8 @@
       "correct_answer": 2,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Файлы разметки экрана должны размещаться в папке:",
       "answers": [
         "/res/",
@@ -63,6 +75,8 @@
       "correct_answer": 3,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каталоге assets данные размещаются в формате:",
       "answers": [
         "ASCII",
@@ -73,6 +87,8 @@
       "correct_answer": 3,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Пустой процесс не должен иметь:",
       "answers": [
         "Активных компонентов приложения.",
@@ -83,6 +99,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Инструмент bmgr используется для:",
       "answers": [
         "Получения резервной копии приложения.",
@@ -93,6 +111,8 @@
       "correct_answer": 3,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие утверждения верны относительно сервисов и потоков?",
       "answers": [
         "Сервис запускается в отдельном потоке.",
@@ -103,6 +123,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В чем разница между сервисом и асинхронной задачей?",
       "answers": [
         "AsyncTask зависит от контекста Activity, из которой был запущен, а сервис нет.",
@@ -113,6 +135,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В чем разница между потоком и асинхронной задачей?",
       "answers": [
         "AsyncTask имеет доступ к UI потоку, а поток нет. Для доступа потока к UI потоку может использоваться класс Handler.",
@@ -123,6 +147,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Foreground Service:",
       "answers": [
         "Запускается при вызове foreground ().",
@@ -133,6 +159,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "A1, A2, A3 и A4 являются активностями, которые были вызваны, используя интенты. При том Backstack A1-A4-A2 – A3. Активность A4 вызывает A2 с помощью флага интента FLAG_ACTIVITY_NO_HISTORY. Когда будет вызван метод finish () активности A3, какая активность останется работающей?",
       "answers": [
         "A1",
@@ -143,6 +171,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "A1, A2, A3 и A4 являются активностями, которые были вызваны, используя интенты. При том Backstack A1-A2-A3-A4. Активность A3 вызывает A4 без флага интента. Когда будет вызван метод finish () активности A4, какая активность останется работающей?",
       "answers": [
         "A2",
@@ -153,6 +183,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Плюс (+) в выражении android: id=@+id/my_id означает:",
       "answers": [
         "Определить в качестве идентификатора ресурса",
@@ -163,6 +195,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Если вы хотите, чтобы система запускала сервис на неопределенный срок, перезапуская его при уничтожении, тогда используйте:",
       "answers": [
         "START_NOT_STICKY",
@@ -173,6 +207,8 @@
       "correct_answer": 2,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android система использует интенты, чтобы:",
       "answers": [
         "Отправлять системные интенты.",
@@ -183,6 +219,8 @@
       "correct_answer": 3,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Уведомление «Экран гаснет» это пример:",
       "answers": [
         "Normal broadcast",
@@ -193,6 +231,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Если вы попытаетесь получить доступ к столбцу таблицы, который не существует, тогда будет исключение:",
       "answers": [
         "NullPointerException",
@@ -203,6 +243,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Максимальное количество адресов, возвращаемых методом getFromLocationName () может быть:",
       "answers": [
         "2",
@@ -213,6 +255,8 @@
       "correct_answer": 3,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Методы startForeground () и stopForeground () были введены в API level:",
       "answers": [
         "2.0",
@@ -223,6 +267,8 @@
       "correct_answer": 0,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Проверка наличия аудио эффектов осуществляется с помощью метода:",
       "answers": [
         "isCheckable ()",
@@ -233,6 +279,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Приложения, требующие фильтрации по размеру экрана, могут использовать атрибуты:",
       "answers": [
         "supportmultiple-screens",
@@ -243,6 +291,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое утверждение ложно относительно метода onBind ():",
       "answers": [
         "Вызывается, когда другой компонент хочет связываться со службой.",
@@ -253,6 +303,8 @@
       "correct_answer": 1,
       "question_topic": "1"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Платформа Android лицензирована:",
       "answers": [
         "Gnu’s GPL",
@@ -263,6 +315,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Кто владеет платформой Android?",
       "answers": [
         "Oracle Technology",
@@ -273,6 +327,8 @@
       "correct_answer": 2,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой была основная бизнес мотивация Google для поддержки Android?",
       "answers": [
         "Чтобы выровнять игровое поле для мобильных устройств.",
@@ -283,6 +339,8 @@
       "correct_answer": 3,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой первый телефон был выпущен на Android OS?",
       "answers": [
         "Google gPhone",
@@ -293,6 +351,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "С точки зрения производителя мобильных устройств, какие преимущества у Android?",
       "answers": [
         "Помимо некоторых специфических драйверов, Android обеспечивает все, чтобы устройство работало.",
@@ -303,6 +363,8 @@
       "correct_answer": 0,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой факт является забавным о запуске Android?",
       "answers": [
         "Платформу хотели назвать НЛО.",
@@ -313,6 +375,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Когда была создана Open Handset Alliance?",
       "answers": [
         "2005",
@@ -323,6 +387,8 @@
       "correct_answer": 2,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Устройство с установленной операционной системой Android необходимо для разработки приложений для Android.",
       "answers": [
         "True",
@@ -331,6 +397,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android старается _____ низкоуровневые компоненты, такие как программный стек, с интерфейсами, так чтобы кодом конкретного производителя можно было легко управлять.",
       "answers": [
         "Соединять",
@@ -341,6 +409,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Google лицензирует некоторые проприетарные приложения.",
       "answers": [
         "True",
@@ -349,6 +419,8 @@
       "correct_answer": 0,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая часть платформы Android с открытым исходным кодом?",
       "answers": [
         "Низкоуровневые модули Linux.",
@@ -359,6 +431,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Когда Google купил Android?",
       "answers": [
         "2007",
@@ -369,6 +443,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Релизам Android начиная с 1.5 давались названия происходящие из:",
       "answers": [
         "Названий животных.",
@@ -379,6 +455,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что не является названием версии Andriod?",
       "answers": [
         "Cupcake",
@@ -389,6 +467,8 @@
       "correct_answer": 3,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android не делает какие-либо предположения о размере экрана, разрешении или микросхемах устройства.",
       "answers": [
         "True",
@@ -397,6 +477,8 @@
       "correct_answer": 0,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая версия Android имела самую большую долю рынка в ноябре 2017?",
       "answers": [
         "4.4",
@@ -407,6 +489,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая часть кода, используемая Android не является открытой?",
       "answers": [
         "Драйвер клавиатуры",
@@ -417,6 +501,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Платформа Android собрана на основе Java Micro Edition (J2ME).",
       "answers": [
         "True",
@@ -425,6 +511,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая из перечисленных не является нативной библиотекой Android?",
       "answers": [
         "Webkit",
@@ -435,6 +523,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android базируется на Linux из следующих соображений:",
       "answers": [
         "Безопасности.",
@@ -445,6 +535,8 @@
       "correct_answer": 3,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая операционная система используется как основа Android стека?",
       "answers": [
         "Linux.",
@@ -455,6 +547,8 @@
       "correct_answer": 0,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каком году стартовала разработка на виртуальной машине Dalvik?",
       "answers": [
         "2003",
@@ -465,6 +559,8 @@
       "correct_answer": 1,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая разница между распространением приложений для Android устройств и приложений для других устройств?",
       "answers": [
         "Приложения распространяются множеством поставщиков с различными политиками приложений.",
@@ -474,6 +570,8 @@
       "correct_answer": 0,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "При разработке для Android OS, Java byte код компилируется в:",
       "answers": [
         "Java код",
@@ -488,6 +586,8 @@
 
 
     {
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для чего предназначено файловое расширение. apk?",
       "answers": [
         "Application Package",
@@ -498,6 +598,8 @@
       "correct_answer": 0,
       "question_topic": "2"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Когда вы распространяете коммерческое приложение, вы должны подписать его своим собственным ключом.",
       "answers": [
         "True",
@@ -506,6 +608,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как Google проверяет приложения на вирусы в Google Play?",
       "answers": [
         "предварительно проверяет все приложения, которые загружаются в Google Play",
@@ -516,6 +620,8 @@
       "correct_answer": 3,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие утверждения не верны относительно IntentService?",
       "answers": [
         "IntentService не может обрабатывать несколько запросов одновременно, он обрабатывает их последовательно, в порядке очереди.",
@@ -526,6 +632,8 @@
       "correct_answer": 3,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что не является одним из трех основных компонентов APK?",
       "answers": [
         "Исполняемый код Dalvik.",
@@ -536,6 +644,8 @@
       "correct_answer": 3,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как называется программа, конвертирующая Java byte код в Dalvik byte код?",
       "answers": [
         "Android Interpretive Compiler (AIC)",
@@ -546,6 +656,8 @@
       "correct_answer": 2,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android приложения должны быть подписаны:",
       "answers": [
         "После того как они загружены в Google Play",
@@ -556,6 +668,8 @@
       "correct_answer": 1,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Библиотеки AWT и Swing были исключены из набора библиотек Android.",
       "answers": [
         "True",
@@ -564,6 +678,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "R. java файл предназначен для редактирования ресурсов проекта.",
       "answers": [
         "True",
@@ -572,6 +688,8 @@
       "correct_answer": 1,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из перечисленного содержится в файле AndroidManifest.xml?",
       "answers": [
         "Разрешения, которые требует приложение.",
@@ -582,6 +700,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что содержит файл layout.xml?",
       "answers": [
         "Разметку экрана.",
@@ -592,6 +712,8 @@
       "correct_answer": 3,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Эмулятор Android устройства:",
       "answers": [
         "Выполняет тот же код, как и физическое устройство, вплоть до машинного уровня.",
@@ -602,6 +724,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Исходный код Java напрямую выполняется в Android устройстве.",
       "answers": [
         "True",
@@ -610,6 +734,8 @@
       "correct_answer": 1,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android эмулятор идентичен работающему реальному Android устройству, за исключением эмуляции:",
       "answers": [
         "Телефона",
@@ -620,6 +746,8 @@
       "correct_answer": 2,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Чем симулятор отличается от эмулятора?",
       "answers": [
         "Эмуляторы используются чтобы играть в старые игры, симуляторы используются для разработки программного обеспечения",
@@ -630,6 +758,8 @@
       "correct_answer": 3,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "R файл генерируется:",
       "answers": [
         "Автоматически",
@@ -640,6 +770,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Активность соответствует:",
       "answers": [
         "Проекту",
@@ -650,6 +782,8 @@
       "correct_answer": 1,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для создания эмулятора вам необходим инструмент AVD. Как он расшифровывается?",
       "answers": [
         "Android Virtual Display",
@@ -660,6 +794,8 @@
       "correct_answer": 1,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android SDK поставляется с эмулятором.",
       "answers": [
         "True",
@@ -668,6 +804,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой файл определяет компоновку экрана?",
       "answers": [
         "activity_main.xml ",
@@ -678,6 +816,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Манифест описывает компоненты, из которых приложение состоит.",
       "answers": [
         "True",
@@ -686,6 +826,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android Software Development Kit (SDK) необходим для разработки Android приложений.",
       "answers": [
         "True",
@@ -694,6 +836,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что является основой в Android приложениях и что в конечном счете преобразуется в исполняемый Dalvik код?",
       "answers": [
         "Исходный код.",
@@ -704,6 +848,8 @@
       "correct_answer": 0,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "При разработке Android приложений, их можно протестировать на:",
       "answers": [
         "Эмуляторе, включенном в Android SDK.",
@@ -714,6 +860,8 @@
       "correct_answer": 3,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как можно проверить, работает ли уже активность, перед ее запуском?",
       "answers": [
         "NEW_TASK_LAUNCH в вызове метода startActivity ().",
@@ -724,6 +872,8 @@
       "correct_answer": 1,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая команда не может быть выполнена функцией Android эмуляции скорости сети?",
       "answers": [
         "network speed gsm",
@@ -734,6 +884,8 @@
       "correct_answer": 2,
       "question_topic": "3"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений является неправильным для объяснения Android SDK Manager и AVD Manager?",
       "answers": [
         "Они предоставляются с версии 1.6 SDK. До версии 1.5 был AVD менеджер, но ему не хватало функций управления SDK.",
@@ -744,6 +896,8 @@
       "correct_answer": 3,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений является верным для методов android. content. Context. sendBroadcast и android. content. Context. startActivity?",
       "answers": [
         "Оба метода переопределяются.",
@@ -754,6 +908,8 @@
       "correct_answer": 3,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений не верно о ProgressDialog?",
       "answers": [
         "ProgressDialog наследует от класса AlertDialog.",
@@ -764,6 +920,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно для Traceview?",
       "answers": [
         "Отображает графический журнал выполнения задачи.",
@@ -774,6 +932,8 @@
       "correct_answer": 0,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой конфигурационный файл содержит разрешение на использование GPS?",
       "answers": [
         "build.gradle",
@@ -784,6 +944,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих способов является правильным для добавления разрешения в приложение?",
       "answers": [
         "Добавление тэга uses-permission в тэг manifest файла AndroidManifest.xml.",
@@ -794,6 +956,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно о бд SQLite?",
       "answers": [
         "Это объектная база данных.",
@@ -804,6 +968,8 @@
       "correct_answer": 3,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Где лучше всего разместить в приложении текстовый файл, используемый для чтения в качестве ресурса?",
       "answers": [
         "res/anim",
@@ -814,6 +980,8 @@
       "correct_answer": 3,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений не верно о DDMS?",
       "answers": [
         "Вы можете просмотреть список запущенных потоков, и выбрать один, чтобы проверить его трассировку стека.",
@@ -824,6 +992,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что выполняет следующий код: Intent intent = new Intent (FirstActivity. this, SecondActivity. class); startActivityForResult (intent);",
       "answers": [
         "Запускает активность браузера.",
@@ -834,6 +1004,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "При использовании неявного интента, какой процесс система использует, чтобы узнать что делать.",
       "answers": [
         "Intent resolution",
@@ -844,6 +1016,8 @@
       "correct_answer": 0,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений не верно об интерфейсе MenuItem?",
       "answers": [
         "Экземпляр MenuItem возвращается методом add (…) класса Menu.",
@@ -854,6 +1028,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего является неправильным объяснением внешнего хранения с использованием SD-карты?",
       "answers": [
         "SD-карты поддерживают файловую систему FAT.",
@@ -864,6 +1040,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Библиотеки DalvikVM core являются составной частью:",
       "answers": [
         "Java ME",
@@ -874,6 +1052,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Из этих сервис-определенных событий, какое событие имеет возможность быть вызвано несколько раз?",
       "answers": [
         "onBind",
@@ -884,6 +1064,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно о ListView?",
       "answers": [
         "Необходимо использовать ListView в комплекте с ListActivity.",
@@ -894,6 +1076,8 @@
       "correct_answer": 3,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений не верно о классе Toast?",
       "answers": [
         "Вы не можете установить пользовательский макет для тост-сообщения.",
@@ -904,6 +1088,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не является ContentProvider, поставляемым с платформой Android?",
       "answers": [
         "Список контактов",
@@ -914,6 +1100,8 @@
       "correct_answer": 3,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой метод нужно переопределить для использования системы меню Android?",
       "answers": [
         "onCreateOptionsMenu ()",
@@ -924,6 +1112,8 @@
       "correct_answer": 0,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой метод активности используется для получения ссылки на Android представление с помощью id атрибута XML ресурса?",
       "answers": [
         "findViewByReference (int id);",
@@ -934,6 +1124,8 @@
       "correct_answer": 1,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не является Android компонентом?",
       "answers": [
         "Service",
@@ -944,6 +1136,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В течение жизненного цикла Activity, какой первый метод обратного вызова вызывается системой?",
       "answers": [
         "onStop ()",
@@ -954,6 +1148,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно о BroadcastReceiver?",
       "answers": [
         "Процесс, который BroadcastReceiver активизирует, будет защищен, так что он не может быть принудительно завершен.",
@@ -964,6 +1160,8 @@
       "correct_answer": 0,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой конфигурационный файл содержит разрешение на использование Интернета?",
       "answers": [
         "activity_main.xml ",
@@ -980,6 +1178,8 @@
 
 
     {
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что выполняет следующий код: Intent intent = new Intent (FirstActivity. this, SecondActivity. class);",
       "answers": [
         "Создает скрытый Интент.",
@@ -990,6 +1190,8 @@
       "correct_answer": 2,
       "question_topic": "4"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не верно для Intents?",
       "answers": [
         "Активирует Activity.",
@@ -1000,6 +1202,8 @@
       "correct_answer": 3,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое имя не подходит для ресурсного файла Android?",
       "answers": [
         "mylayout. xml",
@@ -1010,6 +1214,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не может быть указано как состояние процесса?",
       "answers": [
         "Non-visible",
@@ -1020,6 +1226,8 @@
       "correct_answer": 0,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое правильное описание воспроизведения видео с помощью класса VideoView?",
       "answers": [
         "Экземпляр MediaController требуется.",
@@ -1030,6 +1238,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как называется папка, содержащая файл R. java?",
       "answers": [
         "src",
@@ -1040,6 +1250,8 @@
       "correct_answer": 3,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно о AndroidManifest. xml?",
       "answers": [
         "AndroidManifest. xml является необязательным и будет поставляться по умолчанию, если ваше приложение не содержит его.",
@@ -1050,6 +1262,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно о Android SDK Emulator?",
       "answers": [
         "Эмулятор не запускает реально Android платформу, но запускает программный компонент, который точно интерпретирует и выполняет весь Android API.",
@@ -1060,6 +1274,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из следующих утверждений верно о процессе подписания приложения?",
       "answers": [
         "Все приложения должны быть подписаны, чтобы быть развернутыми.",
@@ -1070,6 +1286,8 @@
       "correct_answer": 0,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каком году впервые был представлен язык Kotlin?",
       "answers": [
         "2010",
@@ -1080,6 +1298,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Следующий код относится к макету диалога, определенного в XML. Какой код нужно поместить в класс активности? (Предположим, что макет диалога правильно определен в res/layout/custom_dialog. xml, и нет других проблем в остальной части приложения.)",
       "answers": [
         "dialog. getinflate (). inflate (R. layout. custom_dialog);",
@@ -1090,6 +1310,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Платформа Android основывается на языке:",
       "answers": [
         "С++",
@@ -1100,6 +1322,8 @@
       "correct_answer": 3,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каком году началась разработка языка Kotlin?",
       "answers": [
         "2010",
@@ -1110,6 +1334,8 @@
       "correct_answer": 0,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android поддерживает следующие опции:",
       "answers": [
         "Многозадачность",
@@ -1120,6 +1346,8 @@
       "correct_answer": 3,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая компания разработала Android?",
       "answers": [
         "Apple",
@@ -1130,6 +1358,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой компилятор используется для компиляции Android кода?",
       "answers": [
         "Mobile Interpretive Compiler",
@@ -1140,6 +1370,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Если фрагмент и активность работают, а затем активность уничтожается, что будет с фрагментом?",
       "answers": [
         "Фрагмент будет уничтожен.",
@@ -1150,6 +1382,8 @@
       "correct_answer": 0,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Папка values содержит _______, который определяет значения констант.",
       "answers": [
         "XML файл",
@@ -1160,6 +1394,8 @@
       "correct_answer": 0,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой Android пакет используется для работы с датой/временем?",
       "answers": [
         "view",
@@ -1170,6 +1406,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что означает ANR?",
       "answers": [
         "Application not Recognized.",
@@ -1180,6 +1418,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для Android меню может быть включен режим alphabetic shortcuts с помощью метода:",
       "answers": [
         "setup ()",
@@ -1190,6 +1430,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Атрибут _______ автоматически переводит в верхний регистр первую букву вводимого текста.",
       "answers": [
         "android: autoText",
@@ -1200,6 +1442,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из нижеперечисленного не является источником обновления Android Studio?",
       "answers": [
         "Beta Channel",
@@ -1210,6 +1454,8 @@
       "correct_answer": 3,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая папка содержит исходный код приложения?",
       "answers": [
         "res/",
@@ -1220,6 +1466,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как расшифровывается. dex?",
       "answers": [
         "Dalvik expansion",
@@ -1230,6 +1478,8 @@
       "correct_answer": 2,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для обновления контента ContentProvider нужно вызвать метод:",
       "answers": [
         "Cursor.commitUpdates ()",
@@ -1240,6 +1490,8 @@
       "correct_answer": 1,
       "question_topic": "5"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android обеспечивает несколько стандартных тем, указанных в:",
       "answers": [
         "R.style",
@@ -1250,6 +1502,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Почему JVM была заменена на DVM при разработке платформы Android?",
       "answers": [
         "JVM медленная",
@@ -1260,6 +1514,8 @@
       "correct_answer": 2,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android использует для идентификации контента на устройстве:",
       "answers": [
         "Uri, MIME",
@@ -1270,6 +1526,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не имеет UI компонентов и работает как фоновый процесс?",
       "answers": [
         "Services",
@@ -1280,6 +1538,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Использование данных и сервисов других приложений требует добавление элемента user-permission в файл:",
       "answers": [
         "Manifest.xml",
@@ -1290,6 +1550,8 @@
       "correct_answer": 2,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Поддерживает ли Android библиотеки AWT и Swing?",
       "answers": [
         "Да",
@@ -1298,6 +1560,8 @@
       "correct_answer": 1,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В состоянии паузы:",
       "answers": [
         "Активность не в фокусе, но видна на экране.",
@@ -1308,6 +1572,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Атрибут _____ автоматически обеспечивает проверку орфографии.",
       "answers": [
         "android: autoText",
@@ -1318,6 +1584,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для сборки Android приложения можно использовать систему сборки проектов:",
       "answers": [
         "Ant",
@@ -1328,6 +1596,8 @@
       "correct_answer": 3,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Dex компилятор компилирует и конвертирует исходный код в байт код, называемый:",
       "answers": [
         "Dalvik байт код",
@@ -1338,6 +1608,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой файл содержит текст для использования приложением?",
       "answers": [
         "web.xml",
@@ -1348,6 +1620,8 @@
       "correct_answer": 2,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Средство взаимодействия с активностями или другими Android компонентами.",
       "answers": [
         "IPB",
@@ -1358,6 +1632,8 @@
       "correct_answer": 1,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Папка res содержит:",
       "answers": [
         "Ресурсы",
@@ -1368,6 +1644,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих виджетов помогают встроить изображения в активность?",
       "answers": [
         "ImageView",
@@ -1378,6 +1656,8 @@
       "correct_answer": 2,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Если вы хотите увеличить отступ между виджетами, вы можете использовать свойство:",
       "answers": [
         "android:padding",
@@ -1388,6 +1668,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Официальная среда разработки для создания приложений Android:",
       "answers": [
         "Eclipse",
@@ -1398,6 +1680,8 @@
       "correct_answer": 2,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что означает AAPT?",
       "answers": [
         "Android Asset Packaging Tool",
@@ -1408,6 +1692,8 @@
       "correct_answer": 0,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой метод используется для получения корневого родительского компонента разметки экрана?",
       "answers": [
         "findViewById()",
@@ -1418,6 +1704,8 @@
       "correct_answer": 1,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что не является состоянием жизненного цикла сервиса?",
       "answers": [
         "Starting",
@@ -1428,6 +1716,8 @@
       "correct_answer": 3,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие исключения поддерживаются Android?",
       "answers": [
         "InflateException",
@@ -1438,6 +1728,8 @@
       "correct_answer": 3,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Делает ли Android допущения о размере экрана, разрешении или чипсете?",
       "answers": [
         "Да",
@@ -1446,6 +1738,8 @@
       "correct_answer": 1,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие сервисы обеспечиваются операционной системой Android?",
       "answers": [
         "Локализация",
@@ -1456,6 +1750,8 @@
       "correct_answer": 3,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих инструментов используются разработчиком для тестирования Android приложений:",
       "answers": [
         "Физическое Android устройство",
@@ -1466,6 +1762,8 @@
       "correct_answer": 3,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Этот компонент предоставляет список данных приложения для других приложений:",
       "answers": [
         "Service Provider",
@@ -1481,6 +1779,8 @@
 
 
     {
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих диалоговых окон поддерживаются Android?",
       "answers": [
         "AlertDialog",
@@ -1492,6 +1792,8 @@
       "correct_answer": 4,
       "question_topic": "6"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих типов данных не поддерживаются AIDL?",
       "answers": [
         "String",
@@ -1502,6 +1804,8 @@
       "correct_answer": 3,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "NotificationManager это:",
       "answers": [
         "Системный сервис",
@@ -1512,6 +1816,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как расшифровывается AIDL?",
       "answers": [
         "Android Interface Data Language",
@@ -1522,6 +1828,8 @@
       "correct_answer": 1,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих файлов описывает, из чего состоит приложение?",
       "answers": [
         "activity_main.xml ",
@@ -1532,6 +1840,8 @@
       "correct_answer": 1,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для вставки данных в ContentProvider нужно использовать метод:",
       "answers": [
         "insert ()",
@@ -1542,6 +1852,8 @@
       "correct_answer": 3,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Возможно ли использовать С/C++ для создания Android приложений?",
       "answers": [
         "Да",
@@ -1550,6 +1862,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "База данных автоматически предоставляется Android:",
       "answers": [
         "Apache",
@@ -1560,6 +1874,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой исходный код используется Android приложением и конвертируется в Dalvik executable?",
       "answers": [
         "SDK",
@@ -1570,6 +1886,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для использования С/C++ требуется:",
       "answers": [
         "SDK",
@@ -1580,6 +1898,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Bluetooth Serial Port Profile (SPP) поддерживается Android?",
       "answers": [
         "Да",
@@ -1588,6 +1908,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для получения экземпляра меню нужно использовать метод:",
       "answers": [
         "setup ()",
@@ -1598,6 +1920,8 @@
       "correct_answer": 3,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой класс является базовым для всех классов Android?",
       "answers": [
         "Object",
@@ -1608,6 +1932,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Используя ContentProvider, какие операции возможно выполнять?",
       "answers": [
         "Create",
@@ -1619,6 +1945,8 @@
       "correct_answer": 4,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Свойство android: layout_alignParentTop принимает значение:",
       "answers": [
         "Integer",
@@ -1629,6 +1957,8 @@
       "correct_answer": 3,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что означает локализация?",
       "answers": [
         "Представление продукта на различных языках",
@@ -1639,6 +1969,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В Android нельзя обеспечить уведомления с помощью:",
       "answers": [
         "Notification",
@@ -1649,6 +1981,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какая папка содержит откомпилированный код приложения?",
       "answers": [
         "res/",
@@ -1659,6 +1993,8 @@
       "correct_answer": 3,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой пакет используется для создания тестов для Android приложения?",
       "answers": [
         "text",
@@ -1669,6 +2005,8 @@
       "correct_answer": 1,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "ExpandableListView используется для:",
       "answers": [
         "Простого представления дерева",
@@ -1679,6 +2017,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как расшифровывается SIP?",
       "answers": [
         "Session Initiation Protocol",
@@ -1689,6 +2029,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего используется Android и не имеет открытого исходного кода:",
       "answers": [
         "Device driver",
@@ -1699,6 +2041,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое исключение возникает, если пакет, приложение или имя компонента не могут быть найдены:",
       "answers": [
         "PackageManager.NameNotFoundException",
@@ -1709,6 +2053,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что не содержит APK файл:",
       "answers": [
         "Ресурсы",
@@ -1719,6 +2065,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Один экран, который пользователь видит единовременно на устройстве, представлен:",
       "answers": [
         "Service",
@@ -1729,6 +2077,8 @@
       "correct_answer": 2,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Экземпляр TabSpec получается из объекта TabHost методом:",
       "answers": [
         "newTabSpec ()",
@@ -1739,6 +2089,8 @@
       "correct_answer": 0,
       "question_topic": "7"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android SDK необходим для разработки приложений для Android.",
       "answers": [
         "Да",
@@ -1747,6 +2099,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как расшифровывается ADB?",
       "answers": [
         "Android Debug Bridge",
@@ -1757,6 +2111,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как расшифровывается BLOB?",
       "answers": [
         "Bytes Less Object",
@@ -1767,6 +2123,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Язык Kotlin стал официальным языком разработки андроид-приложений в:",
       "answers": [
         "2010",
@@ -1777,6 +2135,8 @@
       "correct_answer": 3,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего представляет различные способы хранения данных, доступные в Android?",
       "answers": [
         "Shared Preferences",
@@ -1789,6 +2149,8 @@
       "correct_answer": 5,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие типы уведомлений не обеспечивает Android?",
       "answers": [
         "Toast",
@@ -1799,6 +2161,8 @@
       "correct_answer": 3,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой класс содержит константы для MTP и PTP спецификаций:",
       "answers": [
         "MtpConstants",
@@ -1809,6 +2173,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "При вызове сети, интерфейс пользователя тормозит или получает сбой из-за:",
       "answers": [
         "Аппаратных проблем",
@@ -1819,6 +2185,8 @@
       "correct_answer": 2,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не является названием версии Android?",
       "answers": [
         "Cupcake",
@@ -1829,6 +2197,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Возможно ли напрямую запустить Java код на Android?",
       "answers": [
         "Да",
@@ -1837,6 +2207,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android 3D API базируется на:",
       "answers": [
         "OpenGL",
@@ -1847,6 +2219,8 @@
       "correct_answer": 2,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каком году впервые была представлена среда разработки Android Studio?",
       "answers": [
         "2008",
@@ -1857,6 +2231,8 @@
       "correct_answer": 2,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "ADB расшифровывается как:",
       "answers": [
         "Application Development Bus",
@@ -1867,6 +2243,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android эмулятор использует как базис:",
       "answers": [
         "GDD",
@@ -1877,6 +2255,8 @@
       "correct_answer": 2,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Структура данных интента состоит из:",
       "answers": [
         "Данных ресурса",
@@ -1887,6 +2267,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что фильтр интентов делает?",
       "answers": [
         "Описывает Intent задачи",
@@ -1897,6 +2279,8 @@
       "correct_answer": 2,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Компонент Service:",
       "answers": [
         "Продолжает работать без интерфейса пользователя.",
@@ -1907,6 +2291,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое Приемник событий ?",
       "answers": [
         "Отслеживает взаимодействие с пользовательским интерфейсом",
@@ -1917,6 +2303,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "ViewGroup является:",
       "answers": [
         "Объектом класса android. view. Viewgroup",
@@ -1927,6 +2315,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как создать хэндл для элемента экрана?",
       "answers": [
         "Вызвать метод Activity.findViewById",
@@ -1937,6 +2327,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое AVD?",
       "answers": [
         "Среда разработки",
@@ -1947,6 +2339,8 @@
       "correct_answer": 2,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Вызовы, основанные на Intent, как правило, связываются во время:",
       "answers": [
         "Выполнения",
@@ -1957,6 +2351,8 @@
       "correct_answer": 0,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Этот метод вызывается каждый раз, когда App Widget удаляется из хоста App Widget:",
       "answers": [
         "onDisabled (Context)",
@@ -1967,6 +2363,8 @@
       "correct_answer": 1,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Чем является R. java?",
       "answers": [
         "Авто-сгенерированный файл индексации всех ViewGroups вашего проекта",
@@ -1977,6 +2375,8 @@
       "correct_answer": 3,
       "question_topic": "8"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для чего Context используется?",
       "answers": [
         "Чтобы загрузить пользовательский интерфейс",
@@ -1989,6 +2389,8 @@
     }
 
   ,{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Стили, строки и массивы размещаются в: ",
       "answers": [
         "/res/layout ",
@@ -1999,6 +2401,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Dalvik VM является частью: ",
       "answers": [
         "Core Libraries ",
@@ -2009,6 +2413,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Content Provider являются частью: ",
       "answers": [
         "Application ",
@@ -2019,6 +2425,8 @@
       "correct_answer": 0,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Чем является R. java? ",
       "answers": [
         "Авто-сгенерированный файл индексации всех ViewGroups вашего проекта ",
@@ -2029,6 +2437,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Объект RemoteView не может поддерживать следующие классы макета: ",
       "answers": [
         "Viewlayout ",
@@ -2039,6 +2449,8 @@
       "correct_answer": 0,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет собой класс Compound Button? ",
       "answers": [
         "Определяет кнопку для переключения мобильного ON/OFF ",
@@ -2049,6 +2461,8 @@
       "correct_answer": 1,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Компоновка View помещается в окно активности методом: ",
       "answers": [
         "onCreate() ",
@@ -2059,6 +2473,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего является базовым классом для классов Activity и Service? ",
       "answers": [
         "ApplicationContext ",
@@ -2069,6 +2485,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой пакет вы должны включить в проект для использования класса SimpleAdapter? ",
       "answers": [
         "import android.widget; ",
@@ -2079,6 +2497,8 @@
       "correct_answer": 0,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего вы должны включить в проект, чтобы использовать интерфейсы и классы, которые требуются для доступа к камере на мобильном устройстве? ",
       "answers": [
         "import android.drivers; ",
@@ -2089,6 +2509,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего вы можете использовать, чтобы отобразить индикатор в Android приложении? ",
       "answers": [
         "ProgressItem ",
@@ -2099,6 +2521,8 @@
       "correct_answer": 2,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для чего используется Context? ",
       "answers": [
         "Чтобы загрузить пользовательский интерфейс ",
@@ -2109,6 +2533,8 @@
       "correct_answer": 1,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что делает метод getApplicationContext()? ",
       "answers": [
         "Возвращает путь к каталогу с файлами кэша приложения текущего процесса ",
@@ -2119,6 +2545,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "setLevel определяет уровень: ",
       "answers": [
         "Drawable.callback ",
@@ -2129,6 +2557,8 @@
       "correct_answer": 1,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет собой InputMethod? ",
       "answers": [
         "Интерфейс, который определяет метод для ввода данных. ",
@@ -2139,6 +2569,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каком методе нужно освободить ресурсы, используемые в Android приложении? ",
       "answers": [
         "Activity.onDestroy() ",
@@ -2149,6 +2581,8 @@
       "correct_answer": 0,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В каком из следующих методов можно сохранить данные Android приложения? ",
       "answers": [
         "Activity.onFinish() ",
@@ -2159,6 +2593,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что делает следующий код: menu.add(0, MENU_QUIT, 0, «Quit»).setIcon(R. drawable. menu_quit_icon);",
       "answers": [
         "Добавляет значок в Icon пункты меню ",
@@ -2169,6 +2605,8 @@
       "correct_answer": 0,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Dialog это: ",
       "answers": [
         "Небольшой TextBox ",
@@ -2179,6 +2617,8 @@
       "correct_answer":2,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие методы API напрямую связаны с режимом touch? ",
       "answers": [
         "View.TouchMode ",
@@ -2189,6 +2629,8 @@
       "correct_answer": 2,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как может быть остановлен сервис? ",
       "answers": [
         "Вызовом метода finish() ",
@@ -2199,6 +2641,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что делает класс NotesDbAdapter? ",
       "answers": [
         "Адаптирует заметки для базы данных ",
@@ -2209,6 +2653,8 @@
       "correct_answer": 3,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как сервис может быть остановлен извне? ",
       "answers": [
         "Вызовом Service.stopSelf() ",
@@ -2219,6 +2665,8 @@
       "correct_answer": 1,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Когда мы хотим, чтобы результат мог быть возвращен дочерней активностью, какой метод используется? ",
       "answers": [
         "startActivity.Return() ",
@@ -2229,6 +2677,8 @@
       "correct_answer": 1,
       "question_topic": "9"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что делает следующий код:  Intent callNumber = new Intent ();  callNumber. setAction (android. content. Intent. ACTION_CALL);  callNumber. setData (Uri. parse («tel:9873719580″));  startActivity (callNumber);  ",
       "answers": [
         "Сохраняет номер 9873719580 ",
@@ -2242,6 +2692,8 @@
 
 
   ,{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "TimePickerDialog позволяет пользователю: ",
       "answers": [
         "Выбрать время ",
@@ -2252,6 +2704,8 @@
       "correct_answer": 0,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой метод используется для обработки команды из меню в приложении? ",
       "answers": [
         "onMenuItem ",
@@ -2262,6 +2716,8 @@
       "correct_answer": 3,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Если приложение опубликовано, что из следующего не может быть изменено? ",
       "answers": [
         "Приватный ключ подписи ",
@@ -2272,6 +2728,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Сколько Expansion файлов может иметь APK? ",
       "answers": [
         "Один ",
@@ -2282,6 +2740,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Максимальный размер Expansion файлов APK? ",
       "answers": [
         "100 Mb ",
@@ -2292,6 +2752,8 @@
       "correct_answer": 3,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие два метода могут быть использованы для запуска сервиса? ",
       "answers": [
         "bindService и startService ",
@@ -2302,6 +2764,8 @@
       "correct_answer": 0,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Предположим, MyView это класс, производный от View и mView является переменной типа MyView. Что из перечисленного должно быть использовано для отображения mView при запуске Android-приложения? ",
       "answers": [
         "Вызов setCurrentView (mView) в startApp () главного класса приложения. ",
@@ -2312,6 +2776,8 @@
       "correct_answer": 3,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Пусть Screen1 является главным экраном Android приложения MyApp. Если другой экран Screen2 должен быть открыт из Screen1, тогда что из следующего верно? ",
       "answers": [
         "Screen2 должен быть частью MyApp. ",
@@ -2322,6 +2788,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Он обеспечивает методы доступа к данным контент провайдера query(), insert(), update(), delete() и вызывает методы с такими же именами экземпляра конкретного контент провайдера. ",
       "answers": [
         "CursorLoader ",
@@ -2332,6 +2800,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое activityCreator? ",
       "answers": [
         "Инструмент командной строки для создания файлов проекта Android. ",
@@ -2342,6 +2812,8 @@
       "correct_answer": 0,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое dx? ",
       "answers": [
         "Фреймворк для создания unit тестов для Android проектов. ",
@@ -2352,6 +2824,8 @@
       "correct_answer": 2,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое Android? ",
       "answers": [
         "Язык программирования, который может быть использован для разработки приложений для мобильных устройств. ",
@@ -2362,6 +2836,8 @@
       "correct_answer": 2,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего верно относительно сервиса FCM – Firebase Cloud Messaging? ",
       "answers": [
         "Он обеспечивает коммуникацию сервера с устройством ",
@@ -2372,6 +2848,8 @@
       "correct_answer": 2,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "В чем преимущество использования AsyncTaskLoader вместо AsyncTask? ",
       "answers": [
         "С ним немного легче работать ",
@@ -2382,6 +2860,8 @@
       "correct_answer": 2,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой правильный способ будет исправить ошибку, если проверка статуса GPS_PROVIDER бросает исключение SecurityException? ",
       "answers": [
         "Запросить разрешение ACCESS_COARSE_LOCATION ",
@@ -2392,6 +2872,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих будет правильным способом ограничить видимость приложения в Google Play для устройств, которые имеют камеру? ",
       "answers": [
         "<uses-feature android: name=«android. hardware. camera»/> ",
@@ -2402,6 +2884,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для чего класс ListActivity используется? ",
       "answers": [
         "Создать представление, чтобы отобразить список элементов из источника данных. ",
@@ -2412,6 +2896,8 @@
       "correct_answer": 0,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой максимальный поддерживаемый размер файла для одного файла APK (исключая пакеты расширения) в Google Play? ",
       "answers": [
         "50 MB ",
@@ -2422,6 +2908,8 @@
       "correct_answer": 3,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой максимальный поддерживаемый размер одного файла расширения в Google Play Store? ",
       "answers": [
         "50 MB ",
@@ -2432,6 +2920,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое предназначение класса ContentProvider? ",
       "answers": [
         "Для обмена данными между приложениями Android. ",
@@ -2442,6 +2932,8 @@
       "correct_answer": 0,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих 4-х классов не относится к другим? ApplicationInfo, SyncInfo, ActivityInfo, PackageInfo",
       "answers": [
         "ApplicationInfo ",
@@ -2452,6 +2944,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих не является режимом Android сборки? ",
       "answers": [
         "Debug mode ",
@@ -2462,6 +2956,8 @@
       "correct_answer": 2,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих классов могут быть использованы для обработки функциональности Bluetooth на устройстве? ",
       "answers": [
         "Adapter ",
@@ -2472,6 +2968,8 @@
       "correct_answer": 3,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего верно о включении/отключении пунктов меню из класса Activity? ",
       "answers": [
         "onCreateOptionsMenu может быть использован для включения/отключения некоторых пунктов меню в Android приложении. ",
@@ -2482,6 +2980,8 @@
       "correct_answer": 1,
       "question_topic": "10"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего верно о Intent. ACTION_CALL и Intent. ACTION_DIAL? ",
       "answers": [
         "Оба из них используются для набора телефонного номера на устройстве. ",
@@ -2494,6 +2994,8 @@
     }
 
   ,{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего верно о PhoneStateListener. onCallStateChanged? ",
       "answers": [
         "PhoneStateListener. onCallStateChanged вызывается при изменении индикатора переадресации вызовов. ",
@@ -2504,6 +3006,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое утверждение верно? ",
       "answers": [
         "startActivity и startActivityForResults запускают активность синхронно. ",
@@ -2514,6 +3018,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое утверждение верно? ",
       "answers": [
         "startActivity и startActivityForResult могут быть использованы, чтобы начать новую активность из вашего класса активности. ",
@@ -2524,6 +3030,8 @@
       "correct_answer": 0,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих элементов пользовательского интерфейса, которые можно использовать в окне в Android приложения? ",
       "answers": [
         "TextBox ",
@@ -2534,6 +3042,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какую из следующих функций вы можете запросить с помощью requestWindowFeature? ",
       "answers": [
         "FEATURE_NO_TITLE ",
@@ -2544,6 +3054,8 @@
       "correct_answer": 0,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих способов действителен для развертывания Android приложения на устройстве? ",
       "answers": [
         "Использование команды командной строки «adb install /path/to/apk», когда режим отладки USB включен на устройстве. ",
@@ -2554,6 +3066,8 @@
       "correct_answer": 3,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих атрибутов в файле сборки проекта определяет информацию о версии приложения для Google Play (в отличие от определения информации о версии для отображения пользователям)? ",
       "answers": [
         "versionName ",
@@ -2564,6 +3078,8 @@
       "correct_answer": 3,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего может быть достигнуто с помощью класса PhoneNumberUtils? ",
       "answers": [
         "Сохранить номер телефона в контактах в устройстве.",
@@ -2574,6 +3090,8 @@
       "correct_answer": 2,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего может быть использовано для привязки данных из базы данных SQL к ListView в Android приложении? ",
       "answers": [
         "SimpleCursor ",
@@ -2584,6 +3102,8 @@
       "correct_answer": 2,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего можно использовать для навигации между экранами разных Android приложений? ",
       "answers": [
         "Binder ",
@@ -2594,6 +3114,8 @@
       "correct_answer": 3,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего вы можете использовать, чтобы добавить элементы в меню экрана? ",
       "answers": [
         "Activity.onCreate ",
@@ -2604,6 +3126,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего вы можете использовать для отображения веб-страницы HTML в Android приложении? ",
       "answers": [
         "WebBrowser ",
@@ -2614,6 +3138,8 @@
       "correct_answer": 2,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих классов не используется в работе с базой данных? ",
       "answers": [
         "SQLiteOpenHelper ",
@@ -2624,6 +3150,8 @@
       "correct_answer": 3,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих полей класса Message должны быть использованы для хранения пользовательских кодов сообщений о Message? ",
       "answers": [
         "tag ",
@@ -2634,6 +3162,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего можно использовать для передачи данных между устройством и сервером? ",
       "answers": [
         "AsyncTask ",
@@ -2644,6 +3174,8 @@
       "correct_answer": 2,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из перечисленного не является методом жизненного цикла активности? ",
       "answers": [
         "onCreate ",
@@ -2654,6 +3186,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не является Content Provider? ",
       "answers": [
         "Contacts ",
@@ -2664,6 +3198,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какое из перечисленных разрешений для приложений не относится к опасным? ",
       "answers": [
         "CAMERA ",
@@ -2675,6 +3211,8 @@
       "correct_answer": 3,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих является родительским классом для основного класса Android приложения, имеющего интерфейс пользователя? ",
       "answers": [
         "MIDLet ",
@@ -2685,6 +3223,8 @@
       "correct_answer": 2,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой метод из следующих является подходящим для сохранения состояния Android приложения? ",
       "answers": [
         "Activity.onFreeze() ",
@@ -2695,6 +3235,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой из следующих пакетов классов обеспечивает необходимую для управления функциональность Bluetooth на Android устройстве? ",
       "answers": [
         "android.hardware ",
@@ -2705,6 +3247,8 @@
       "correct_answer": 1,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих разрешений и конфигураций должны быть добавлены в файл манифеста для реализации FCM клиента? ",
       "answers": [
         "com.google.android.c2dm.permission.RECEIVE",
@@ -2716,6 +3260,8 @@
       "correct_answer": 4,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих разрешений необходимы для выполнения сетевых операций через Интернет? ",
       "answers": [
         "INTERNET ",
@@ -2726,6 +3272,8 @@
       "correct_answer": 0,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как узнать имя пакета файла APK? ",
       "answers": [
         "Посмотреть значение атрибута package элемента manifest в файле манифеста. ",
@@ -2737,6 +3285,8 @@
       "correct_answer": 4,
       "question_topic": "11"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих датчиков являются только аппаратными? ",
       "answers": [
         "Линейный датчик ускорения ",
@@ -2750,6 +3300,8 @@
 
 
   ,{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего верно в отношении StrictMode? ",
       "answers": [
         "StrictMode обнаруживает неправильные макеты ",
@@ -2760,6 +3312,8 @@
       "correct_answer": 3,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих утверждений верны по отношению к вызову GoogleAuthUtil.getToken()? ",
       "answers": [
         "getToken() нужно вызывать в потоке пользовательского интерфейса ",
@@ -2770,6 +3324,8 @@
       "correct_answer": 1,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих утверждений верны по отношению к контент-провайдерам? ",
       "answers": [
         "Контент-провайдер позволяет приложениям доступ к данным. ",
@@ -2780,6 +3336,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих утверждений верны по отношению к публикации обновления приложения в Google Play? ",
       "answers": [
         "Атрибут android:versionCode в файле сборки должен увеличиваться и файл APK должен быть подписан с тем же ключом. ",
@@ -2790,6 +3348,8 @@
       "correct_answer": 0,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих утверждений верны по отношению к запуску SyncAdapter? ",
       "answers": [
         "Запускать SyncAdapter в ответ на запрос пользователя. ",
@@ -2800,6 +3360,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих утверждений верны по отношению к подписанию Android приложения? ",
       "answers": [
         "Все приложения должны быть подписаны. ",
@@ -2810,6 +3372,8 @@
       "correct_answer": 0,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какие из следующих инструментов можно использовать, чтобы уменьшить размер пакета APK? ",
       "answers": [
         "ProGuard ",
@@ -2820,6 +3384,8 @@
       "correct_answer": 0,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего верно о контент провайдерах? ",
       "answers": [
         "Предоставляют данные контента ",
@@ -2830,6 +3396,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Android это: ",
       "answers": [
         "Статическая среда ",
@@ -2840,6 +3408,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое Drawable? ",
       "answers": [
         "Общая абстракция для всего, что может быть нарисовано",
@@ -2850,6 +3420,8 @@
       "correct_answer": 0,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "FreeType это часть: ",
       "answers": [
         "Application Framework ",
@@ -2860,6 +3432,8 @@
       "correct_answer": 3,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "FreeType предназначена для визуализации: ",
       "answers": [
         "Файлов JPEG ",
@@ -2870,6 +3444,8 @@
       "correct_answer": 1,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "TableLayout организует содержимое в: ",
       "answers": [
         "Записи и наборы записей ",
@@ -2880,6 +3456,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "ViewGroup использует draw() для: ",
       "answers": [
         "Компоновки своих наследников ",
@@ -2890,6 +3468,8 @@
       "correct_answer": 1,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Какой синтаксис для ссылки на источник? ",
       "answers": [
         "android.R.resource ",
@@ -2900,6 +3480,8 @@
       "correct_answer": 1,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое виджеты приложений? ",
       "answers": [
         "Приложения, которые работают в фоновом режиме ",
@@ -2910,6 +3492,8 @@
       "correct_answer": 1,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Широковещательные приемники представлены классом: ",
       "answers": [
         "ApplicationBroadcast",
@@ -2920,6 +3504,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Для чего используется класс JetPlayer? ",
       "answers": [
         "Позволяет воспроизводить интерактивный аудио контент. ",
@@ -2930,6 +3516,8 @@
       "correct_answer": 0,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего не является Dalvik Opcode? ",
       "answers": [
         "OP_ADD_LONG ",
@@ -2940,6 +3528,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как приложение узнаёт, что пакет добавлен или удален? ",
       "answers": [
         "Транслируется сообщение с действием PACKAGE_ADDED и PACKAGE_REMOVED. ",
@@ -2950,6 +3540,8 @@
       "correct_answer": 1,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что из следующего может быть использовано для отображения JPG-файла из SD-карты в ImageView? ",
       "answers": [
         "Bitmap.getFile() ",
@@ -2960,6 +3552,8 @@
       "correct_answer": 3,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как можно закрыть активность? ",
       "answers": [
         "Вызвав метод shutdown() ",
@@ -2970,6 +3564,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Как можно остановить сервис? ",
       "answers": [
         "Вызвав метод finishService() ",
@@ -2980,6 +3576,8 @@
       "correct_answer": 3,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что такое app.AlertDialog? ",
       "answers": [
         "Всплывающее окно, извещающее пользователя о входящем вызове ",
@@ -2990,6 +3588,8 @@
       "correct_answer": 2,
       "question_topic": "12"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет класс DateFormat? ",
       "answers": [
         "Интерфейс для настройки строк с отформатированной датой/временем. ",
@@ -3000,6 +3600,8 @@
       "correct_answer": 3,
       "question_topic": "12"
     }, {
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет класс DateFormat? ",
       "answers": [
         "Интерфейс для настройки строк с отформатированной датой/временем. ",
@@ -3010,6 +3612,8 @@
       "correct_answer": 3,
       "question_topic": "13"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет класс DateFormat? ",
       "answers": [
         "Интерфейс для настройки строк с отформатированной датой/временем. ",
@@ -3020,6 +3624,8 @@
       "correct_answer": 3,
       "question_topic": "13"
     },{
+      "is_image_question": 0,
+      "is_image_answers": 0,
       "question": "Что представляет класс DateFormat? ",
       "answers": [
         "Интерфейс для настройки строк с отформатированной датой/временем. ",
@@ -3030,12 +3636,15 @@
       "correct_answer": 3,
       "question_topic": "13"
     },{
+      "is_image_question": 1,
+      "is_image_answers": 1,
       "question": "Что представляет класс DateFormat? ",
-      "answers": [
-        "Интерфейс для настройки строк с отформатированной датой/временем. ",
-        "Класс для определения формата даты/времени. ",
-        "Класс не для генерации строк с отформатированной датой/временем. ",
-        "Класс для генерации строк с отформатированной датой/временем. "
+      "question_image": "image1.png",
+      "answer_images": [
+        "image2.png",
+        "image3.png",
+        "image4.png",
+        "image5.png"
       ],
       "correct_answer": 3,
       "question_topic": "13"

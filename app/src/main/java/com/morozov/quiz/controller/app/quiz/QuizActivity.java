@@ -2,6 +2,7 @@ package com.morozov.quiz.controller.app.quiz;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.Observer;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
@@ -19,6 +21,9 @@ import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +41,9 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
     @BindView(R.id.tvQuestionText)
     TextView questionText;
+
+    @BindView(R.id.ivQuestion)
+    ImageView ivQuestion;
 
     @BindView(R.id.btn_next)
     Button btnNext;
@@ -108,11 +116,44 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
         QuestionModel questionModel = getViewModel().questions().getValue().get(position);
 
-        adapter.setData(questionModel.getAnswers());
+        if (questionModel.isImageAnswer()) {
+            adapter.setImageAnswer(true);
+            adapter.setData(questionModel.getAnswerImages());
+        } else {
+            adapter.setImageAnswer(false);
+            adapter.setData(questionModel.getAnswers());
+        }
+
         rvAnswers.setVisibility(View.VISIBLE);
 
         questionTitle.setText(String.format(getString(R.string.question_number), (getViewModel().currentQuestion().getValue() + 1)));
         questionText.setText(questionModel.getQuestion());
+
+        if (questionModel.isImageQuestion()) {
+            ivQuestion.setVisibility(View.VISIBLE);
+
+            InputStream inputStream = null;
+            try{
+                inputStream = ivQuestion.getContext().getAssets().open(AppConstants.IMAGE_DIR + questionModel.getQuestionImage());
+                Drawable d = Drawable.createFromStream(inputStream, null);
+                ivQuestion.setImageDrawable(d);
+                ivQuestion.setScaleType(ImageView.ScaleType.FIT_XY);
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+            finally {
+                try{
+                    if(inputStream!=null)
+                        inputStream.close();
+                }
+                catch (IOException ex){
+                    ex.printStackTrace();
+                }
+            }
+        } else {
+            ivQuestion.setVisibility(View.GONE);
+        }
     }
 
     @Override

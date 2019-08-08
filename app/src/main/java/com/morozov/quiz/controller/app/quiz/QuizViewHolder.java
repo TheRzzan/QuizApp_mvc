@@ -1,5 +1,6 @@
 package com.morozov.quiz.controller.app.quiz;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.TextView;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.interaction.HighlightClickListener;
+import com.morozov.quiz.utility.AppConstants;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,6 +20,9 @@ import butterknife.ButterKnife;
 class QuizViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.tvRecycler)
     TextView tvAnswer;
+
+    @BindView(R.id.ivAnswer)
+    ImageView ivAnswer;
 
     @BindView(R.id.iv_check)
     ImageView imCheck;
@@ -24,18 +32,47 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    void populate(String answer) {
-        tvAnswer.setText(answer);
+    void populate(String text, boolean isImage) {
+        if (isImage) {
+            tvAnswer.setVisibility(View.GONE);
+            ivAnswer.setVisibility(View.VISIBLE);
+
+            InputStream inputStream = null;
+            try{
+                inputStream = itemView.getContext().getAssets().open(AppConstants.IMAGE_DIR + text);
+                Drawable d = Drawable.createFromStream(inputStream, null);
+                ivAnswer.setImageDrawable(d);
+                ivAnswer.setScaleType(ImageView.ScaleType.FIT_XY);
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+            finally {
+                try{
+                    if(inputStream!=null)
+                        inputStream.close();
+                }
+                catch (IOException ex){
+                    ex.printStackTrace();
+                }
+            }
+        } else {
+            ivAnswer.setVisibility(View.GONE);
+            tvAnswer.setVisibility(View.VISIBLE);
+
+            tvAnswer.setText(text);
+        }
+
         imCheck.setVisibility(View.GONE);
     }
 
     void setOnClick(final HighlightClickListener listener, final int tag) {
-        tvAnswer.setTag(tag);
-        tvAnswer.setOnClickListener(new View.OnClickListener() {
+        itemView.setTag(tag);
+        itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (listener != null)
-                    listener.onItemClicked((Integer) tvAnswer.getTag());
+                    listener.onItemClicked((Integer) itemView.getTag());
             }
         });
     }
