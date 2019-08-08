@@ -22,15 +22,9 @@
 
             <TextView
                 android:id="@+id/tv_text1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
-                android:text="@string/your_score"
-                android:textSize="@dimen/signatures_font_size" />
+                style="@style/PromptText"
+                android:layout_alignParentTop="true"
+                android:text="@string/your_score" />
 
             <View
                 android:id="@+id/view_1"
@@ -41,17 +35,9 @@
 
             <TextView
                 android:id="@+id/tv_text2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MainText"
                 android:layout_below="@id/view_1"
-                android:text="@string/total_questions"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
-                android:textSize="@dimen/headline_font_size"
-                android:textStyle="bold"/>
+                android:text="@string/total_questions" />
 
             <TextView
                 android:id="@+id/tvTotalQuestions"
@@ -63,21 +49,15 @@
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
                 android:text="20"
+                android:textColor="@color/black"
                 android:textSize="36sp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MainText"
                 android:text="@string/correct"
-                android:layout_below="@id/tvTotalQuestions"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:layout_below="@id/tvTotalQuestions" />
 
             <com.morozov.quiz.utility.PieChart
                 android:id="@+id/piechartCorrect"
@@ -92,16 +72,9 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MainText"
                 android:text="@string/wrong"
-                android:layout_below="@id/piechartCorrect"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:layout_below="@id/piechartCorrect" />
 
             <com.morozov.quiz.utility.PieChart
                 android:id="@+id/piechartWrong"
@@ -125,7 +98,7 @@
                 android:layout_weight="0.5"
                 android:background="@drawable/rectangle_orange"
                 android:text="@string/start_again"
-                android:textColor="@color/grey" />
+                android:textColor="@color/black" />
 
         </RelativeLayout>
     </ScrollView>

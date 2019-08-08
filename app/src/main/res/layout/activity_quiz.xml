@@ -72,6 +72,6 @@
         android:background="@drawable/rectangle_orange"
         android:text="@string/next"
         android:textSize="@dimen/simple_text_font_size"
-        android:textColor="@color/grey" />
+        android:textColor="@color/black" />
 
 </RelativeLayout>

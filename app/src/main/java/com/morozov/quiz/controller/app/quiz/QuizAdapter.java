@@ -69,14 +69,14 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
         if (row_index == i) {
             if (message.isCorrectAnswer()) {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
-                holder.setCheck(true);
+                holder.setCheck(true, isImageAnswer);
             } else {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_red_sharp);
-                holder.setCheck(false);
+                holder.setCheck(false, isImageAnswer);
             }
         } else if (message.getCorrectAnswer().equals(data().get(i))) {
             holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
-            holder.setCheck(true);
+            holder.setCheck(true, isImageAnswer);
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }

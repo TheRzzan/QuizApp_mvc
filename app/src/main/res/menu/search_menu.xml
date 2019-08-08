@@ -6,6 +6,6 @@
         android:id="@+id/action_search"
         android:icon="@drawable/search"
         android:title="Search"
-        app:iconTint="@android:color/white"
+        app:iconTint="@color/toolbar"
         app:showAsAction="ifRoom"/>
 </menu>

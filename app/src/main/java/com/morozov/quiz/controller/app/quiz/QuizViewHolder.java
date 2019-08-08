@@ -27,6 +27,9 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_check)
     ImageView imCheck;
 
+    @BindView(R.id.viewBack)
+    View viewBack;
+
     QuizViewHolder(@NonNull View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
@@ -63,6 +66,7 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
             tvAnswer.setText(text);
         }
 
+        viewBack.setVisibility(View.GONE);
         imCheck.setVisibility(View.GONE);
     }
 
@@ -77,12 +81,21 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    void setCheck(boolean bool) {
+    void setCheck(boolean bool, boolean isImage) {
         imCheck.setVisibility(View.VISIBLE);
         if (bool) {
             imCheck.setImageResource(R.drawable.check);
         } else {
             imCheck.setImageResource(R.drawable.cancel);
+        }
+
+        if (isImage) {
+            viewBack.setVisibility(View.VISIBLE);
+
+            if (bool)
+                viewBack.setBackgroundResource(R.drawable.rectangle_dark_green_sharp);
+            else
+                viewBack.setBackgroundResource(R.drawable.rectangle_dark_red_sharp);
         }
     }
 }
