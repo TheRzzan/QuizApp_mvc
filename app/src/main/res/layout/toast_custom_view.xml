@@ -14,5 +14,4 @@
         android:text="@string/double_click_to_answer"
         android:textSize="12sp"
         android:textColor="@color/white"/>
-
 </LinearLayout>

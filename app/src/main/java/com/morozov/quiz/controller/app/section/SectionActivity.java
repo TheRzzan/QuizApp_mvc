@@ -93,7 +93,7 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
         if (exit) {
             finish();
         } else {
-            Toast.makeText(this, "Press back again to exit.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.press_back_again), Toast.LENGTH_SHORT).show();
             exit = true;
             new Handler().postDelayed(new Runnable() {
                 @Override

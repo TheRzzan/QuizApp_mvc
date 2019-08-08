@@ -29,7 +29,7 @@ public class TopicAdapter extends ListAdapter<TopicModel, TopicViewHolder> imple
     @NonNull
     @Override
     public TopicViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new TopicViewHolder(inflater.inflate(R.layout.item_text_view_left, null));
+        return new TopicViewHolder(inflater.inflate(R.layout.item_text_view, null));
     }
 
     @Override

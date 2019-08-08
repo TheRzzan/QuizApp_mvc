@@ -35,7 +35,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     @NonNull
     @Override
     public QuizViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new QuizViewHolder(inflater.inflate(R.layout.item_text_view_center, null));
+        return new QuizViewHolder(inflater.inflate(R.layout.item_text_view, null));
     }
 
     @Override

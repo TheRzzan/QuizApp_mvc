@@ -105,11 +105,13 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
             public void onChanged(@Nullable Integer integer) {
                 if (viewModel.isToTest()) {
                     CustomDialog customDialog = new CustomDialog();
-                    customDialog.setHeadline("Выбрана тема \"" +
+                    customDialog.setHeadline(getString(R.string.topic_selected) +
+                            " \"" +
                             getViewModel().topics().getValue().get(integer).getTopicName() +
-                            "\". Готовы начать?");
+                            "\". " +
+                            getString(R.string.ready_to_start));
                     customDialog.setListener(TopicActivity.this);
-                    customDialog.show(getSupportFragmentManager(), "CustomDialog");
+                    customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
                 } else {
                     ActivityUtility.invokeAnswersActivity(TopicActivity.this, true,
                             getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicId(),

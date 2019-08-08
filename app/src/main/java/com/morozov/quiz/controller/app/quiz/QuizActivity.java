@@ -67,7 +67,7 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
             @Override
             public void onChanged(@Nullable Integer integer) {
                 if (integer.equals(viewModel.questions().getValue().size()))
-                    btnNext.setText("Завершить");
+                    btnNext.setText(getString(R.string.finish));
 
                 btnNext.setVisibility(View.VISIBLE);
             }
@@ -130,10 +130,10 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
     @Override
     public void onBackPressed() {
         CustomDialog customDialog = new CustomDialog();
-        customDialog.setHeadline("Покинуть тестирование?");
+        customDialog.setHeadline(getString(R.string.leave_testing));
         customDialog.setListener(QuizActivity.this);
-        customDialog.setOkText("покинуть");
-        customDialog.show(getSupportFragmentManager(), "CustomDialog");
+        customDialog.setOkText(getString(R.string.leave));
+        customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
     }
 
     @Override

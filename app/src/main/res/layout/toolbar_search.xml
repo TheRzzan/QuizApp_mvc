@@ -11,15 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ToolBarStyle"
-        android:weightSum="1"
-        app:elevation="0dp">
-    </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar">
+        </android.support.v7.widget.Toolbar>
 
         <com.ferfalk.simplesearchview.SimpleSearchView
             android:id="@+id/searchView"

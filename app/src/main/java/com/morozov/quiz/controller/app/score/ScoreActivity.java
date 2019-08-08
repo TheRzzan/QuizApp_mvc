@@ -74,9 +74,9 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
             public void onChanged(@Nullable Boolean aBoolean) {
                 if (aBoolean) {
                     CustomDialog customDialog = new CustomDialog();
-                    customDialog.setHeadline("Начать тест заново?");
+                    customDialog.setHeadline(getString(R.string.start_test_again));
                     customDialog.setListener(ScoreActivity.this);
-                    customDialog.show(getSupportFragmentManager(), "CustomDialog");
+                    customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
                 }
             }
         });

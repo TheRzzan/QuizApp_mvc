@@ -29,7 +29,7 @@ class SubsectionAdapter extends ListAdapter<SubsectionModel, SubsectionViewHolde
     @NonNull
     @Override
     public SubsectionViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new SubsectionViewHolder(inflater.inflate(R.layout.item_text_view_left, null));
+        return new SubsectionViewHolder(inflater.inflate(R.layout.item_text_view, null));
     }
 
     @Override

@@ -11,7 +11,7 @@ public class SectionController extends Controller<SectionViewModel> implements V
 
     private Context context;
 
-    public SectionController(SectionViewModel viewModel) {
+    SectionController(SectionViewModel viewModel) {
         super(viewModel);
     }
 

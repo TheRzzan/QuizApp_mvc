@@ -104,7 +104,7 @@ public class DataLoader {
                 int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));
                 String topicId = jsonObj.getString(AppConstants.JSON_KEY_TOPIC_ID);
 
-                Log.d("TAG", topicId.toString());
+                Log.d(DataLoader.class.getSimpleName(), topicId.toString());
 
                 JSONArray jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWERS);
                 ArrayList<String> contents = new ArrayList<>();
