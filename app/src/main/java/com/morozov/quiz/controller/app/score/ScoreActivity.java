@@ -3,7 +3,9 @@ package com.morozov.quiz.controller.app.score;
 import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.PieChart;
@@ -44,6 +47,11 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getTopicName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         getViewModel().score().setValue(
                 new ScoreModel(getIntent().getIntExtra(AppConstants.BUNDLE_KEY_CORRECT_ANS, 0),
@@ -54,6 +62,14 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
         getViewModel().topicId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_TOPIC_ID));
         getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
         getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

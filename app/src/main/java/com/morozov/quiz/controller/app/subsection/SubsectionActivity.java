@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.controller.models.SubsectionModel;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -45,6 +47,11 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSectionName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         getViewModel().setIsToTest(getIntent().getBooleanExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, true));
         getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
@@ -52,6 +59,14 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         adapter = new SubsectionAdapter(getApplicationContext(), getController());
         rvSubsections.setAdapter(adapter);
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -101,6 +116,9 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         viewModel.selectedSubsection().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                ActivityTitles.getInstance(getApplicationContext())
+                        .setSubsectionName(getViewModel().subsections().getValue().get(integer).getSubsectionName());
+
                 ActivityUtility.invokeTopicActivity(SubsectionActivity.this, true,
                         getViewModel().subsections().getValue().get(integer).getSubsectionId(),
                         getViewModel().sectionId().getValue(),

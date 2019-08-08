@@ -3,14 +3,17 @@ package com.morozov.quiz.controller.app.answer;
 import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.models.QuestionModel;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -36,6 +39,11 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getTopicName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         getViewModel().topicId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_TOPIC_ID));
         getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
@@ -44,6 +52,14 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
         adapter = new AnswerAdapter(getApplicationContext());
         rvAnswers.setAdapter(adapter);
         rvAnswers.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

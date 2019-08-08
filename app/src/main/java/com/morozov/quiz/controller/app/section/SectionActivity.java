@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.models.SectionModel;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 
 import java.util.List;
@@ -57,6 +58,9 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
         viewModel.selectedSection().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                ActivityTitles.getInstance(getApplicationContext())
+                        .setSectionName(getViewModel().sections().getValue().get(integer).getSectionName());
+
                 ActivityUtility.invokeSubsectionActivity(SectionActivity.this, true,
                         getViewModel().sections().getValue().get(integer).getSectionId(),
                         true);

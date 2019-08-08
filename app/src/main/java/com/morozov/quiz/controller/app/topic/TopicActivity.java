@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +19,7 @@ import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.TopicModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -46,6 +48,11 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSubsectionName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         getViewModel().setIsToTest(getIntent().getBooleanExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, true));
         getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
@@ -54,6 +61,14 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         adapter = new TopicAdapter(getApplicationContext(), getController());
         rvTopics.setAdapter(adapter);
         rvTopics.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -103,6 +118,9 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         viewModel.selectedTopic().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                ActivityTitles.getInstance(getApplicationContext())
+                        .setTopicName(getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicName());
+
                 if (viewModel.isToTest()) {
                     CustomDialog customDialog = new CustomDialog();
                     customDialog.setHeadline(getString(R.string.topic_selected) +

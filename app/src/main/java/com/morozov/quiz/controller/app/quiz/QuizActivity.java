@@ -5,9 +5,11 @@ import android.arch.lifecycle.Observer;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +21,7 @@ import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 
@@ -57,6 +60,11 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getTopicName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         getViewModel().topicId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_TOPIC_ID));
         getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
@@ -65,6 +73,14 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
         adapter = new QuizAdapter(getApplicationContext(), getController());
         rvAnswers.setAdapter(adapter);
         rvAnswers.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

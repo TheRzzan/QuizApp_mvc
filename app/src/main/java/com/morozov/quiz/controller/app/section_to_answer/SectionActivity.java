@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.section.SectionViewModel;
 import com.morozov.quiz.controller.models.SectionModel;
+import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 
 import java.util.List;
@@ -44,10 +46,24 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            ActivityTitles.getInstance(getApplicationContext()).setSectionName(null);
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSectionName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         adapter = new SectionAdapter(getApplicationContext(), getController());
         rvSections.setAdapter(adapter);
         rvSections.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -97,6 +113,9 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
         viewModel.selectedSection().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                ActivityTitles.getInstance(getApplicationContext())
+                        .setSectionName(getViewModel().sections().getValue().get(integer).getSectionName());
+
                 ActivityUtility.invokeSubsectionActivity(SectionActivity.this, true,
                         getViewModel().sections().getValue().get(integer).getSectionId(),
                         false);
