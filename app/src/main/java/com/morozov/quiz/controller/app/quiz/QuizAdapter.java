@@ -35,7 +35,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     @NonNull
     @Override
     public QuizViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new QuizViewHolder(inflater.inflate(R.layout.item_text_view, null));
+        return new QuizViewHolder(inflater.inflate(R.layout.item_text_view_check, null));
     }
 
     @Override
@@ -68,12 +68,16 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
         holder.setOnClick(null, i);
 
         if (row_index == i) {
-            if (message.isCorrectAnswer())
+            if (message.isCorrectAnswer()) {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
-            else
+                holder.setCheck(true);
+            } else {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_red_sharp);
+                holder.setCheck(false);
+            }
         } else if (message.getCorrectAnswer().equals(data().get(i))) {
             holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
+            holder.setCheck(true);
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }

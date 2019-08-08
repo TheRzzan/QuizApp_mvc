@@ -78,6 +78,10 @@
 
     </style>
 
+    <style name="SelectionText.Answer">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
 
     <!-- Other -->
     <style name="LineSeparator">
