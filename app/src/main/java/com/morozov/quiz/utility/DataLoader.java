@@ -101,118 +101,64 @@ public class DataLoader {
 
                 int isImageQuestion = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_IS_IMAGE_QUESTION));
                 int isImageAnswer = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_IS_ANSWER_IMAGES));
+
                 QuestionModel questionModel;
+                JSONArray jsonArray2;
 
                 if (isImageAnswer == 0 && isImageQuestion == 0) {
-
-
                     questionModel = new QuestionModel(false, false);
 
-                    String question = jsonObj.getString(AppConstants.JSON_KEY_QUESTION);
-                    questionModel.setQuestion(question);
-
-                    JSONArray jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWERS);
-                    ArrayList<String> contents = new ArrayList<>();
-                    for (int j = 0; j < jsonArray2.length(); j++) {
-                        String item_title = jsonArray2.get(j).toString();
-                        contents.add(item_title);
-                    }
-                    questionModel.setAnswers(contents);
-
-                    int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));
-                    questionModel.setCorrectAnswer(contents.get(correctAnswerInt));
-
-                    String topicId = jsonObj.getString(AppConstants.JSON_KEY_TOPIC_ID);
-                    if (mTopicId.equals(topicId)) {
-                        questionList.add(questionModel);
-                        Collections.shuffle(contents);
-                    }
-
+                    jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWERS);
 
                 } else if (isImageAnswer == 1 && isImageQuestion == 1) {
 
-
                     questionModel = new QuestionModel(true, true);
-
-                    String question = jsonObj.getString(AppConstants.JSON_KEY_QUESTION);
-                    questionModel.setQuestion(question);
 
                     String questionImage = jsonObj.getString(AppConstants.JSON_KEY_QUESTION_IMAGE);
                     questionModel.setQuestionImage(questionImage);
 
-                    JSONArray jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWER_IMAGES);
-                    ArrayList<String> contents = new ArrayList<>();
-                    for (int j = 0; j < jsonArray2.length(); j++) {
-                        String item_title = jsonArray2.get(j).toString();
-                        contents.add(item_title);
-                    }
-                    questionModel.setAnswerImages(contents);
-
-                    int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));
-                    questionModel.setCorrectAnswer(contents.get(correctAnswerInt));
-
-                    String topicId = jsonObj.getString(AppConstants.JSON_KEY_TOPIC_ID);
-                    if (mTopicId.equals(topicId)) {
-                        questionList.add(questionModel);
-                        Collections.shuffle(contents);
-                    }
-
+                    jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWER_IMAGES);
 
                 } else if (isImageAnswer == 0 && isImageQuestion == 1) {
 
-
-                    questionModel = new QuestionModel(false, true);
-
-                    String question = jsonObj.getString(AppConstants.JSON_KEY_QUESTION);
-                    questionModel.setQuestion(question);
-
-                    JSONArray jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWER_IMAGES);
-                    ArrayList<String> contents = new ArrayList<>();
-                    for (int j = 0; j < jsonArray2.length(); j++) {
-                        String item_title = jsonArray2.get(j).toString();
-                        contents.add(item_title);
-                    }
-                    questionModel.setAnswerImages(contents);
-
-                    int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));
-                    questionModel.setCorrectAnswer(contents.get(correctAnswerInt));
-
-                    String topicId = jsonObj.getString(AppConstants.JSON_KEY_TOPIC_ID);
-                    if (mTopicId.equals(topicId)) {
-                        questionList.add(questionModel);
-                        Collections.shuffle(contents);
-                    }
-
-
-                } else if (isImageAnswer == 1 && isImageQuestion == 0) {
-
-
                     questionModel = new QuestionModel(true, false);
-
-                    String question = jsonObj.getString(AppConstants.JSON_KEY_QUESTION);
-                    questionModel.setQuestion(question);
 
                     String questionImage = jsonObj.getString(AppConstants.JSON_KEY_QUESTION_IMAGE);
                     questionModel.setQuestionImage(questionImage);
 
-                    JSONArray jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWERS);
-                    ArrayList<String> contents = new ArrayList<>();
-                    for (int j = 0; j < jsonArray2.length(); j++) {
-                        String item_title = jsonArray2.get(j).toString();
-                        contents.add(item_title);
-                    }
+                    jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWERS);
+
+                } else if (isImageAnswer == 1 && isImageQuestion == 0) {
+
+                    questionModel = new QuestionModel(false, true);
+
+                    jsonArray2 = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWER_IMAGES);
+
+                } else {
+                    throw new IllegalArgumentException("Wrong json file.");
+                }
+
+                String question = jsonObj.getString(AppConstants.JSON_KEY_QUESTION);
+                questionModel.setQuestion(question);
+
+                ArrayList<String> contents = new ArrayList<>();
+                for (int j = 0; j < jsonArray2.length(); j++) {
+                    String item_title = jsonArray2.get(j).toString();
+                    contents.add(item_title);
+                }
+
+                if (isImageAnswer == 0)
                     questionModel.setAnswers(contents);
+                else
+                    questionModel.setAnswerImages(contents);
 
-                    int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));
-                    questionModel.setCorrectAnswer(contents.get(correctAnswerInt));
+                int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));
+                questionModel.setCorrectAnswer(contents.get(correctAnswerInt));
 
-                    String topicId = jsonObj.getString(AppConstants.JSON_KEY_TOPIC_ID);
-                    if (mTopicId.equals(topicId)) {
-                        questionList.add(questionModel);
-                        Collections.shuffle(contents);
-                    }
-
-
+                String topicId = jsonObj.getString(AppConstants.JSON_KEY_TOPIC_ID);
+                if (mTopicId.equals(topicId)) {
+                    questionList.add(questionModel);
+                    Collections.shuffle(contents);
                 }
             }
         } catch (JSONException e) {

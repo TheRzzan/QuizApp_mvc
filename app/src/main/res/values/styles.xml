@@ -90,6 +90,10 @@
         <item name="android:background">@color/line</item>
     </style>
 
+    <style name="LineSeparator.Invisible">
+        <item name="android:layout_height">0dp</item>
+    </style>
+
     <style name="ImageCheck">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

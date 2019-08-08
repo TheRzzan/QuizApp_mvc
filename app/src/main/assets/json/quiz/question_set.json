@@ -3624,9 +3624,10 @@
       "correct_answer": 3,
       "question_topic": "13"
     },{
-      "is_image_question": 0,
+      "is_image_question": 1,
       "is_image_answers": 0,
       "question": "Что представляет класс DateFormat? ",
+      "question_image": "image1.png",
       "answers": [
         "Интерфейс для настройки строк с отформатированной датой/временем. ",
         "Класс для определения формата даты/времени. ",
@@ -3640,6 +3641,18 @@
       "is_image_answers": 1,
       "question": "Что представляет класс DateFormat? ",
       "question_image": "image1.png",
+      "answer_images": [
+        "image2.png",
+        "image3.png",
+        "image4.png",
+        "image5.png"
+      ],
+      "correct_answer": 3,
+      "question_topic": "13"
+    },{
+      "is_image_question": 0,
+      "is_image_answers": 1,
+      "question": "Что представляет класс DateFormat? ",
       "answer_images": [
         "image2.png",
         "image3.png",
