@@ -25,7 +25,7 @@ class TopicViewHolder extends RecyclerView.ViewHolder {
     }
 
     void setOnClick(View.OnClickListener listener, int tag) {
-        tvTopic.setTag(tag);
-        tvTopic.setOnClickListener(listener);
+        itemView.setTag(tag);
+        itemView.setOnClickListener(listener);
     }
 }

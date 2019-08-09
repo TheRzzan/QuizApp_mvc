@@ -3,7 +3,6 @@ package com.morozov.quiz.controller.app.subsection;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
@@ -26,7 +25,7 @@ class SubsectionViewHolder extends RecyclerView.ViewHolder {
     }
 
     void setOnClick(View.OnClickListener listener, int tag) {
-        tvSubsection.setTag(tag);
-        tvSubsection.setOnClickListener(listener);
+        itemView.setTag(tag);
+        itemView.setOnClickListener(listener);
     }
 }

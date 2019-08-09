@@ -128,6 +128,8 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
     @SuppressLint("StringFormatMatches")
     private void showQuestion(Integer position) {
+        rvAnswers.scrollToPosition(0);
+
         btnNext.setVisibility(View.GONE);
 
         QuestionModel questionModel = getViewModel().questions().getValue().get(position);
@@ -139,8 +141,6 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
             adapter.setImageAnswer(false);
             adapter.setData(questionModel.getAnswers());
         }
-
-        rvAnswers.setVisibility(View.VISIBLE);
 
         questionTitle.setText(String.format(getString(R.string.question_number), (getViewModel().currentQuestion().getValue() + 1)));
         questionText.setText(questionModel.getQuestion());

@@ -55,9 +55,9 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvAnswers"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="300dp"
                 android:layout_below="@id/view_2"
-                android:layout_margin="16dp"/>
+                android:layout_margin="20dp"/>
         </RelativeLayout>
     </ScrollView>
 
@@ -72,6 +72,8 @@
         android:background="@drawable/rectangle_orange"
         android:text="@string/next"
         android:textSize="@dimen/simple_text_font_size"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:textAllCaps="false"/>
 
 </RelativeLayout>

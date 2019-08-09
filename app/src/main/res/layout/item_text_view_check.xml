@@ -22,10 +22,9 @@
         android:layout_height="160dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rectangle_dark_red_sharp"
-        android:visibility="gone"/>
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_dark_red_sharp" />
 
     <ImageView
         android:id="@+id/ivAnswer"
@@ -33,11 +32,10 @@
         android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="8dp"
-        app:srcCompat="@color/green"
-        android:visibility="gone"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@color/green" />
 
     <View
         android:id="@+id/view_2"

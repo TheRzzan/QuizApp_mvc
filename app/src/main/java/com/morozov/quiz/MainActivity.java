@@ -11,6 +11,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try {
+            Thread.sleep(2 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ActivityUtility.invokeNewActivity(MainActivity.this, SectionActivity.class, true);
     }
 }

@@ -16,7 +16,7 @@
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowBackground">@drawable/splash_screen_scaled</item>
     </style>
 
 
@@ -59,6 +59,8 @@
 
     <style name="TextView.Primary.Header">
         <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginEnd">46dp</item>
+        <item name="android:layout_marginStart">46dp</item>
         <item name="android:layout_marginBottom">25dp</item>
         <item name="android:textAppearance">@style/Text.Primary.Header</item>
     </style>
@@ -81,6 +83,10 @@
     <style name="SelectionText.Answer">
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:layout_marginBottom">17dp</item>
+        <item name="android:layout_marginTop">17dp</item>
     </style>
 
     <!-- Other -->

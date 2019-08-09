@@ -10,48 +10,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
         android:layout_below="@id/toolbar_container">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/tv_text1"
+            style="@style/PromptText"
+            android:layout_alignParentTop="true"
+            android:text="@string/select_a_section" />
+
+        <View
+            android:id="@+id/view_1"
+            style="@style/LineSeparator"
+            android:layout_below="@id/tv_text1" />
+
+        <TextView
+            android:id="@+id/tv_text2"
+            style="@style/MainText"
+            android:layout_below="@+id/view_1"
+            android:text="@string/section" />
+
+        <View
+            android:id="@+id/view_2"
+            style="@style/LineSeparator"
+            android:layout_below="@id/tv_text2"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvSections"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true">
-
-            <TextView
-                android:id="@+id/tv_text1"
-                style="@style/PromptText"
-                android:layout_alignParentTop="true"
-                android:text="@string/select_a_section" />
-
-            <View
-                android:id="@+id/view_1"
-                style="@style/LineSeparator"
-                android:layout_below="@id/tv_text1" />
-
-            <TextView
-                android:id="@+id/tv_text2"
-                style="@style/MainText"
-                android:layout_below="@+id/view_1"
-                android:text="@string/section" />
-
-            <View
-                android:id="@+id/view_2"
-                style="@style/LineSeparator"
-                android:layout_below="@id/tv_text2"/>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvSections"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_below="@id/view_2"
-                android:foregroundGravity="center"
-                android:visibility="gone" />
-        </RelativeLayout>
-    </ScrollView>
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/view_2"
+            android:visibility="gone" />
+    </RelativeLayout>
 
 </RelativeLayout>
