@@ -1,6 +1,8 @@
 package com.morozov.quiz.utility;
 
+import android.content.Context;
 import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
 
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.SectionModel;
@@ -13,6 +15,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -187,5 +190,26 @@ public class DataLoader {
             }
         }
         return sb.toString();
+    }
+
+    public static Drawable loadImage(Context context, String fName) {
+        InputStream inputStream = null;
+        try{
+            inputStream = context.getAssets().open(AppConstants.IMAGE_DIR + fName);
+            return Drawable.createFromStream(inputStream, null);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if(inputStream!=null)
+                    inputStream.close();
+            }
+            catch (IOException ex){
+                ex.printStackTrace();
+            }
+        }
+        return null;
     }
 }

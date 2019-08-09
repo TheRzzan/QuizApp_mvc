@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
@@ -59,6 +60,8 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         adapter = new SubsectionAdapter(getApplicationContext(), getController());
         rvSubsections.setAdapter(adapter);
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     @Override

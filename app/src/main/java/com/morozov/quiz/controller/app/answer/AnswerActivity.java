@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
@@ -52,6 +53,8 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
         adapter = new AnswerAdapter(getApplicationContext());
         rvAnswers.setAdapter(adapter);
         rvAnswers.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     @Override

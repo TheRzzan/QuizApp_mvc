@@ -56,27 +56,28 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     }
 
     private void showFirstClick(QuizViewHolder holder, int i) {
+        showWithoutClick(holder, i);
+
         if (row_index == i) {
             holder.itemView.setBackgroundResource(R.drawable.rectangle_grey_sharp);
-        } else {
-            holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }
     }
 
     private void showSecondClick(QuizViewHolder holder, int i) {
+        holder.populate(data().get(i), isImageAnswer);
         holder.setOnClick(null, i);
 
         if (row_index == i) {
             if (message.isCorrectAnswer()) {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
-                holder.setCheck(true, isImageAnswer);
+                holder.setCheck(true);
             } else {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_red_sharp);
-                holder.setCheck(false, isImageAnswer);
+                holder.setCheck(false);
             }
         } else if (message.getCorrectAnswer().equals(data().get(i))) {
             holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
-            holder.setCheck(true, isImageAnswer);
+            holder.setCheck(true);
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
         }

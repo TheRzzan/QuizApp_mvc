@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
@@ -61,6 +62,8 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         adapter = new TopicAdapter(getApplicationContext(), getController());
         rvTopics.setAdapter(adapter);
         rvTopics.setLayoutManager(new LinearLayoutManager(this));
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     @Override

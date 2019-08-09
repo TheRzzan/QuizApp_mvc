@@ -24,7 +24,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/rectangle_dark_red_sharp"/>
+        android:background="@drawable/rectangle_dark_red_sharp"
+        android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/ivAnswer"
@@ -35,7 +36,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="8dp"
-        app:srcCompat="@color/green" />
+        app:srcCompat="@color/green"
+        android:visibility="gone"/>
 
     <View
         android:id="@+id/view_2"
