@@ -15,6 +15,5 @@
         android:text="раздел"
         android:textSize="@dimen/simple_text_font_size"
         android:textColor="@color/white"
-        android:clickable="true"
-        android:focusable="true" />
+        style="?android:attr/borderlessButtonStyle" />
 </LinearLayout>
