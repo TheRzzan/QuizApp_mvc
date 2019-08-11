@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Quiz</string>
 
+    <!-- Login activity -->
+    <string name="main_url">https://ppls-edu.aeroflot.ru/login/index.php</string>
+    <string name="intercept_url">https://ppls-edu.aeroflot.ru/my/</string>
+    <string name="reload">Перезагрузить</string>
+
     <!-- Section activity -->
     <string name="answers">Ответы</string>
     <string name="select_a_section">Выберите раздел</string>

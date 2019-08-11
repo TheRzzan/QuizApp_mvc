@@ -3,7 +3,7 @@ package com.morozov.quiz;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.controller.app.login.LoginActivity;
 import com.morozov.quiz.utility.ActivityUtility;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         try {
-            Thread.sleep(2 * 1000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        ActivityUtility.invokeNewActivity(MainActivity.this, SectionActivity.class, true);
+        ActivityUtility.invokeNewActivity(MainActivity.this, LoginActivity.class, true);
     }
 }
