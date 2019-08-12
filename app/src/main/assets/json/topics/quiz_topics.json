@@ -2,247 +2,257 @@
   "items": [
     {
       "question_topic": "1",
-      "topic_name": "Тема 1",
+      "topic_name": "DSC-33 Lights",
       "question_subsection": "1"
     },
     {
       "question_topic": "2",
-      "topic_name": "Тема 2",
+      "topic_name": "DSC-35 Oxygen",
       "question_subsection": "1"
     },
     {
       "question_topic": "3",
-      "topic_name": "Тема 3",
-      "question_subsection": "2"
+      "topic_name": "DSC-52 Doors",
+      "question_subsection": "1"
     },
     {
       "question_topic": "4",
-      "topic_name": "Тема 4",
-      "question_subsection": "2"
+      "topic_name": "DSC-21-10 AirConditioning",
+      "question_subsection": "1"
     },
     {
       "question_topic": "5",
-      "topic_name": "Тема 5",
-      "question_subsection": "3"
+      "topic_name": "DSC-21-20 Pressurization",
+      "question_subsection": "1"
     },
     {
       "question_topic": "6",
-      "topic_name": "Тема 6",
-      "question_subsection": "3"
+      "topic_name": "DSC-10-30 Ventilation",
+      "question_subsection": "1"
     },
     {
       "question_topic": "7",
-      "topic_name": "Тема 7",
-      "question_subsection": "4"
+      "topic_name": "DSC-36 Pneumatic",
+      "question_subsection": "1"
     },
     {
       "question_topic": "8",
-      "topic_name": "Тема 8",
-      "question_subsection": "4"
+      "topic_name": "DSC-30-20 Wing Anti-ice",
+      "question_subsection": "1"
     },
     {
       "question_topic": "9",
-      "topic_name": "Тема 9",
-      "question_subsection": "5"
+      "topic_name": "DSC-30-30 Engine Anti-ice",
+      "question_subsection": "1"
     },
     {
       "question_topic": "10",
-      "topic_name": "Тема 10",
-      "question_subsection": "5"
+      "topic_name": "DSC-30-40 Window Heat",
+      "question_subsection": "1"
     },
     {
       "question_topic": "11",
-      "topic_name": "Тема 11",
-      "question_subsection": "6"
+      "topic_name": "DSC-36-20 Controls and Indicators",
+      "question_subsection": "1"
     },
     {
       "question_topic": "12",
-      "topic_name": "Тема 12",
-      "question_subsection": "6"
+      "topic_name": "DSC-22_10 Auto Flight - General",
+      "question_subsection": "1"
     },
     {
       "question_topic": "13",
-      "topic_name": "Для тестирования",
+      "topic_name": "DSC-22_20 Auto Flight - Flight Management",
       "question_subsection": "1"
     },
     {
-      "question_topic": "2",
-      "topic_name": "Тема 2",
+      "question_topic": "14",
+      "topic_name": "DSC-22_30 Auto Flight - Flight Guidance",
       "question_subsection": "1"
     },
     {
-      "question_topic": "3",
-      "topic_name": "Тема 3",
-      "question_subsection": "2"
-    },
-    {
-      "question_topic": "4",
-      "topic_name": "Тема 4",
-      "question_subsection": "2"
-    },
-    {
-      "question_topic": "5",
-      "topic_name": "Тема 5",
-      "question_subsection": "3"
-    },
-    {
-      "question_topic": "6",
-      "topic_name": "Тема 6",
-      "question_subsection": "3"
-    },
-    {
-      "question_topic": "7",
-      "topic_name": "Тема 7",
-      "question_subsection": "4"
-    },
-    {
-      "question_topic": "8",
-      "topic_name": "Тема 8",
-      "question_subsection": "4"
-    },
-    {
-      "question_topic": "9",
-      "topic_name": "Тема 9",
-      "question_subsection": "5"
-    },
-    {
-      "question_topic": "10",
-      "topic_name": "Тема 10",
-      "question_subsection": "5"
-    },
-    {
-      "question_topic": "11",
-      "topic_name": "Тема 11",
-      "question_subsection": "6"
-    },
-    {
-      "question_topic": "12",
-      "topic_name": "Тема 12",
-      "question_subsection": "6"
-    },
-    {
-      "question_topic": "13",
-      "topic_name": "Для тестирования",
+      "question_topic": "15",
+      "topic_name": "DSC-23-10 Radio Communication",
       "question_subsection": "1"
     },
     {
-      "question_topic": "2",
-      "topic_name": "Тема 2",
+      "question_topic": "16",
+      "topic_name": "DSC-23-20 Intercommunication Systems",
       "question_subsection": "1"
     },
     {
-      "question_topic": "3",
-      "topic_name": "Тема 3",
-      "question_subsection": "2"
-    },
-    {
-      "question_topic": "4",
-      "topic_name": "Тема 4",
-      "question_subsection": "2"
-    },
-    {
-      "question_topic": "5",
-      "topic_name": "Тема 5",
-      "question_subsection": "3"
-    },
-    {
-      "question_topic": "6",
-      "topic_name": "Тема 6",
-      "question_subsection": "3"
-    },
-    {
-      "question_topic": "7",
-      "topic_name": "Тема 7",
-      "question_subsection": "4"
-    },
-    {
-      "question_topic": "8",
-      "topic_name": "Тема 8",
-      "question_subsection": "4"
-    },
-    {
-      "question_topic": "9",
-      "topic_name": "Тема 9",
-      "question_subsection": "5"
-    },
-    {
-      "question_topic": "10",
-      "topic_name": "Тема 10",
-      "question_subsection": "5"
-    },
-    {
-      "question_topic": "11",
-      "topic_name": "Тема 11",
-      "question_subsection": "6"
-    },
-    {
-      "question_topic": "12",
-      "topic_name": "Тема 12",
-      "question_subsection": "6"
-    },
-    {
-      "question_topic": "13",
-      "topic_name": "Для тестирования",
+      "question_topic": "17",
+      "topic_name": "DSC-23-30 COCKPIT VOICE RECORDER",
       "question_subsection": "1"
     },
     {
-      "question_topic": "2",
-      "topic_name": "Тема 2",
+      "question_topic": "18",
+      "topic_name": "DSC-34-10 ADIRS",
       "question_subsection": "1"
     },
     {
-      "question_topic": "3",
-      "topic_name": "Тема 3",
-      "question_subsection": "2"
+      "question_topic": "19",
+      "topic_name": "DSC-34-30 Radio NAV",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "4",
-      "topic_name": "Тема 4",
-      "question_subsection": "2"
+      "question_topic": "20",
+      "topic_name": "DSC-34-60 Weather Radar",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "5",
-      "topic_name": "Тема 5",
-      "question_subsection": "3"
+      "question_topic": "21",
+      "topic_name": "DSC-34-70 GPWS",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "6",
-      "topic_name": "Тема 6",
-      "question_subsection": "3"
+      "question_topic": "22",
+      "topic_name": "DSC-34-80 TCAS",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "7",
-      "topic_name": "Тема 7",
-      "question_subsection": "4"
+      "question_topic": "23",
+      "topic_name": "DSC-24-10 Description",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "8",
-      "topic_name": "Тема 8",
-      "question_subsection": "4"
+      "question_topic": "24",
+      "topic_name": "DSC-24-20 Controls and Indicators",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "9",
-      "topic_name": "Тема 9",
-      "question_subsection": "5"
+      "question_topic": "25",
+      "topic_name": "DSC-70 Engine",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "10",
-      "topic_name": "Тема 10",
-      "question_subsection": "5"
+      "question_topic": "26",
+      "topic_name": "DSC-49 APU",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "11",
-      "topic_name": "Тема 11",
-      "question_subsection": "6"
+      "question_topic": "27",
+      "topic_name": "DSC-26-10 GENERAL",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "12",
-      "topic_name": "Тема 12",
-      "question_subsection": "6"
+      "question_topic": "28",
+      "topic_name": "DSC-26-20 Engine and APU",
+      "question_subsection": "1"
     },
     {
-      "question_topic": "13",
-      "topic_name": "Для тестирования",
+      "question_topic": "29",
+      "topic_name": "DSC-26-50 Cargo Compatments",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "30",
+      "topic_name": "DSC-27-10 General",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "31",
+      "topic_name": "DSC-27-20-10 Normal Law",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "32",
+      "topic_name": "DSC-27-20-20 Reonfiguration Control Laws",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "33",
+      "topic_name": "DSC-27-20-10 Controls and Indicators",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "34",
+      "topic_name": "DSC-27-30 Flaps and Slats",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "35",
+      "topic_name": "DSC-31-05 EIS General",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "36",
+      "topic_name": "DSC-31-10 Ecam Description",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "37",
+      "topic_name": "DSC-31-20 Indications on SD",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "38",
+      "topic_name": "DSC-31-30 ECAM Controls",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "39",
+      "topic_name": "DSC-31-40 Indications on PFD",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "40",
+      "topic_name": "DSC-31-45 Indications on ND",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "41",
+      "topic_name": "DSC-31-50 EFIS Controls",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "42",
+      "topic_name": "DSC-31-60 FLT Recorders",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "43",
+      "topic_name": "DSC-28-10 Description",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "44",
+      "topic_name": "DSC-28-20 Controls and Indicator",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "45",
+      "topic_name": "DSC-29-10 Descriptio",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "46",
+      "topic_name": "DSC-10-20 CONTROLS AND INDICATOR",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "47",
+      "topic_name": "DSC-32 Landing Gea",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "48",
+      "topic_name": "DSC-32-10 Gears and Door",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "49",
+      "topic_name": "DSC-32-10 Nose Wheel Streen",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "50",
+      "topic_name": "DSC-32-30 Brakes and Antiski",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "51",
+      "topic_name": "Indications",
       "question_subsection": "1"
     }
   ]

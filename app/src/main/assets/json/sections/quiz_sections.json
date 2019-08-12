@@ -2,55 +2,15 @@
   "items": [
     {
       "question_section": "1",
-      "section_name": "Раздел 1"
+      "section_name": "Дисциплины 1-го полугодия"
     },
     {
       "question_section": "2",
-      "section_name": "Раздел 2"
+      "section_name": "Дисциплины 1-го полугодия"
     },
     {
       "question_section": "3",
-      "section_name": "Раздел 3"
-    },
-    {
-      "question_section": "2",
-      "section_name": "Раздел 2"
-    },
-    {
-      "question_section": "3",
-      "section_name": "Раздел 3"
-    },
-    {
-      "question_section": "2",
-      "section_name": "Раздел 2"
-    },
-    {
-      "question_section": "3",
-      "section_name": "Раздел 3"
-    },
-    {
-      "question_section": "2",
-      "section_name": "Раздел 2"
-    },
-    {
-      "question_section": "3",
-      "section_name": "Раздел 3"
-    },
-    {
-      "question_section": "2",
-      "section_name": "Раздел 2"
-    },
-    {
-      "question_section": "3",
-      "section_name": "Раздел 3"
-    },
-    {
-      "question_section": "2",
-      "section_name": "Раздел 2"
-    },
-    {
-      "question_section": "3",
-      "section_name": "Раздел 3"
+      "section_name": "Другое"
     }
   ]
 }

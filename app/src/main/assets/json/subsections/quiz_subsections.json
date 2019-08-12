@@ -1,133 +1,53 @@
 {
   "items": [
     {
+      "question_section": "1",
       "question_subsection": "1",
-      "subsection_name": "Подраздел 1",
-      "question_section": "1"
+      "subsection_name": "Законы и нормативные документы ГА РФ и ПАО «Аэрофлот»"
     },
     {
+      "question_section": "1",
       "question_subsection": "2",
-      "subsection_name": "Подраздел 2",
-      "question_section": "1"
+      "subsection_name": "Воздушная навигация, документы АНИ и ИКАО"
     },
     {
+      "question_section": "1",
       "question_subsection": "3",
-      "subsection_name": "Подраздел 3",
-      "question_section": "2"
+      "subsection_name": "Метеорология"
     },
     {
       "question_subsection": "4",
-      "subsection_name": "Подраздел 4",
+      "subsection_name": "Практическая аэродинамика и РЛЭ (A320)",
       "question_section": "2"
     },
     {
       "question_subsection": "5",
-      "subsection_name": "Подраздел 5",
-      "question_section": "3"
+      "subsection_name": "РЛЭ – описание систем и летная эксплуатация оборудования (A320)",
+      "question_section": "2"
     },
     {
       "question_subsection": "6",
-      "subsection_name": "Подраздел 6",
-      "question_section": "3"
-    },
-    {
-      "question_subsection": "2",
-      "subsection_name": "Подраздел 2",
-      "question_section": "1"
-    },
-    {
-      "question_subsection": "3",
-      "subsection_name": "Подраздел 3",
+      "subsection_name": "Аварийно-спасательная подготовка (A320)",
       "question_section": "2"
     },
     {
-      "question_subsection": "4",
-      "subsection_name": "Подраздел 4",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "5",
-      "subsection_name": "Подраздел 5",
+      "question_subsection": "7",
+      "subsection_name": "ОЗП",
       "question_section": "3"
     },
     {
-      "question_subsection": "6",
-      "subsection_name": "Подраздел 6",
+      "question_subsection": "8",
+      "subsection_name": "ВЛП",
       "question_section": "3"
     },
     {
-      "question_subsection": "2",
-      "subsection_name": "Подраздел 2",
-      "question_section": "1"
-    },
-    {
-      "question_subsection": "3",
-      "subsection_name": "Подраздел 3",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "4",
-      "subsection_name": "Подраздел 4",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "5",
-      "subsection_name": "Подраздел 5",
+      "question_subsection": "9",
+      "subsection_name": "Обеспечение авиационной безопасности",
       "question_section": "3"
     },
     {
-      "question_subsection": "6",
-      "subsection_name": "Подраздел 6",
-      "question_section": "3"
-    },
-    {
-      "question_subsection": "2",
-      "subsection_name": "Подраздел 2",
-      "question_section": "1"
-    },
-    {
-      "question_subsection": "3",
-      "subsection_name": "Подраздел 3",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "4",
-      "subsection_name": "Подраздел 4",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "5",
-      "subsection_name": "Подраздел 5",
-      "question_section": "3"
-    },
-    {
-      "question_subsection": "6",
-      "subsection_name": "Подраздел 6",
-      "question_section": "3"
-    },
-    {
-      "question_subsection": "2",
-      "subsection_name": "Подраздел 2",
-      "question_section": "1"
-    },
-    {
-      "question_subsection": "3",
-      "subsection_name": "Подраздел 3",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "4",
-      "subsection_name": "Подраздел 4",
-      "question_section": "2"
-    },
-    {
-      "question_subsection": "5",
-      "subsection_name": "Подраздел 5",
-      "question_section": "3"
-    },
-    {
-      "question_subsection": "6",
-      "subsection_name": "Подраздел 6",
+      "question_subsection": "10",
+      "subsection_name": "Правила перевозки опасных грузов",
       "question_section": "3"
     }
   ]
