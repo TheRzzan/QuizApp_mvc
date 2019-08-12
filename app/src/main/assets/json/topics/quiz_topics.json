@@ -394,6 +394,51 @@
       "question_topic": "79",
       "topic_name": "Вес и центровка",
       "question_subsection": "4"
+    },
+    {
+      "question_topic": "80",
+      "topic_name": "Организация поискового и аварийно-спасательного обеспечения полетов ГА",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "81",
+      "topic_name": "Средства для тушения пожара A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "82",
+      "topic_name": "Кислородное и дымозащитное оборудование A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "83",
+      "topic_name": "Средства спасения на воде A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "84",
+      "topic_name": "Выходы, используемые при эвакуации. Их оснащение. A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "85",
+      "topic_name": "Аварийные средства связи и сигнализации A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "86",
+      "topic_name": "Системы аварийного освещения и сигнализации A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "87",
+      "topic_name": "Взаимодействие членов летного и кабинного экипажей при вынужденной посадке и эвакуации пассажиров A320",
+      "question_subsection": "6"
+    },
+    {
+      "question_topic": "88",
+      "topic_name": "Действия после вынужденной посадки. Выживание в условиях автономного существования",
+      "question_subsection": "6"
     }
   ]
 }
