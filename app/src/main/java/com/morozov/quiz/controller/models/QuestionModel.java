@@ -10,6 +10,7 @@ public class QuestionModel {
     private String questionImage;
     private ArrayList<String> answers;
     private ArrayList<String> answerImages;
+    private String answerClarification;
     private String correctAnswer;
     private Integer correctImage;
 
@@ -72,5 +73,13 @@ public class QuestionModel {
 
     public Integer getCorrectImage() {
         return correctImage;
+    }
+
+    public String getAnswerClarification() {
+        return answerClarification;
+    }
+
+    public void setAnswerClarification(String answerClarification) {
+        this.answerClarification = answerClarification;
     }
 }

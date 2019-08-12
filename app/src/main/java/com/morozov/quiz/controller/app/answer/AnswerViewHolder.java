@@ -104,5 +104,6 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
 
         tvQuestionNumber.setText(String.format(itemView.getContext().getString(R.string.question_number), position));
         tvQuestion.setText(question.getQuestion());
+        tvExplanation.setText(question.getAnswerClarification());
     }
 }

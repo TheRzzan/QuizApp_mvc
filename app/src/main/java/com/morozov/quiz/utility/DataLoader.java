@@ -144,6 +144,9 @@ public class DataLoader {
                 String question = jsonObj.getString(AppConstants.JSON_KEY_QUESTION);
                 questionModel.setQuestion(question);
 
+                String clarification = jsonObj.getString(AppConstants.JSON_KEY_ANSWER_CLARIFICATION);
+                questionModel.setAnswerClarification(clarification);
+
                 ArrayList<String> contents = new ArrayList<>();
                 for (int j = 0; j < jsonArray2.length(); j++) {
                     String item_title = jsonArray2.get(j).toString();
