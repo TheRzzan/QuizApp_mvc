@@ -899,6 +899,31 @@
       "question_topic": "180",
       "topic_name": "Особенности выполнения полетов в сложной орнитологической обстановке",
       "question_subsection": "8"
+    },
+    {
+      "question_topic": "181",
+      "topic_name": "Общие принципы и документы, регламентирующие перевозку опасных грузов",
+      "question_subsection": "10"
+    },
+    {
+      "question_topic": "182",
+      "topic_name": "Общие сведения об опасных грузах",
+      "question_subsection": "10"
+    },
+    {
+      "question_topic": "183",
+      "topic_name": "Требования по организации перевозки опасных грузов",
+      "question_subsection": "10"
+    },
+    {
+      "question_topic": "184",
+      "topic_name": "ФАП \"Правила перевозки опасных грузов ВС ГА\"",
+      "question_subsection": "10"
+    },
+    {
+      "question_topic": "185",
+      "topic_name": "Порядок действий экипажа при инцидентах с опасными грузами и в аварийной обстановке",
+      "question_subsection": "10"
     }
   ]
 }
