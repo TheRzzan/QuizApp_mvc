@@ -12,7 +12,9 @@ import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.utility.ActivityUtility;
+import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.DetectConnection;
+import com.morozov.quiz.utility.MySharedPreferences;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,8 +67,10 @@ public class LoginActivity extends ControllerActivity<LoginViewModel, LoginContr
         viewModel.isLogin().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(@Nullable Boolean aBoolean) {
-                if (aBoolean)
+                if (aBoolean) {
+                    MySharedPreferences.setPreference(LoginActivity.this, AppConstants.IS_LOGINED_ONCE, true);
                     ActivityUtility.invokeNewActivity(LoginActivity.this, SectionActivity.class, true);
+                }
             }
         });
     }

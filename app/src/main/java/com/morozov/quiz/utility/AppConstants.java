@@ -50,4 +50,7 @@ public class AppConstants {
 
     // other
     public static final String EMPTY_STRING = "";
+
+    // Shared Preference
+    public static final String IS_LOGINED_ONCE = "is_logined_once";
 }

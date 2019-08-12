@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.morozov.quiz.controller.app.login.LoginActivity;
+import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.utility.ActivityUtility;
+import com.morozov.quiz.utility.AppConstants;
+import com.morozov.quiz.utility.MySharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ActivityUtility.invokeNewActivity(MainActivity.this, LoginActivity.class, true);
+        boolean isLogined = MySharedPreferences.getPreference(MainActivity.this, AppConstants.IS_LOGINED_ONCE);
+
+        if (isLogined)
+            ActivityUtility.invokeNewActivity(MainActivity.this, SectionActivity.class, true);
+        else
+            ActivityUtility.invokeNewActivity(MainActivity.this, LoginActivity.class, true);
     }
 }
