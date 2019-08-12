@@ -584,6 +584,61 @@
       "question_topic": "117",
       "topic_name": "Правила расследования авиационных происшествий и инцидентов",
       "question_subsection": "1"
+    },
+    {
+      "question_topic": "118",
+      "topic_name": "Общая навигация",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "119",
+      "topic_name": "Навигационные расчеты и планы полетов",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "120",
+      "topic_name": "Предоставление аэронавигационной информации",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "121",
+      "topic_name": "Безопасные высоты полета",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "122",
+      "topic_name": "Полеты в воздушном пространстве с RVSM Тест",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "123",
+      "topic_name": "Правила полетов (общие и региональные)",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "124",
+      "topic_name": "Особенности полетов в пространстве NAT HLA (MNPS) (для ВС А330 и В777)",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "125",
+      "topic_name": "Выполнение заходов на близкорасположенные параллельные ВПП (для ВС А330 и В777)",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "126",
+      "topic_name": "Навигация, основанная на характеристиках (PBN)",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "127",
+      "topic_name": "Заход на посадку с использованием GBAS (GLS) (для ВС А320 и В737)",
+      "question_subsection": "2"
+    },
+    {
+      "question_topic": "128",
+      "topic_name": "Документы ИКАО",
+      "question_subsection": "2"
     }
   ]
 }
