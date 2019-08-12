@@ -439,6 +439,151 @@
       "question_topic": "88",
       "topic_name": "Действия после вынужденной посадки. Выживание в условиях автономного существования",
       "question_subsection": "6"
+    },
+    {
+      "question_topic": "89",
+      "topic_name": "Воздушный кодекс РФ",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "90",
+      "topic_name": "ФАП полетов в воздушном пространстве РФ",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "91",
+      "topic_name": "ФАП \"Организация воздушного движения в РФ\" (№293)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "92",
+      "topic_name": "ФАП использования воздушного пространства РФ (ФП ИВП)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "93",
+      "topic_name": "ФАП \"Подготовка и выполнение полетов в ГА РФ\" (№128)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "94",
+      "topic_name": "ФАП \"Порядок осуществления радиосвязи в воздушном пространстве РФ\" (№362)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "95",
+      "topic_name": "Глава 1. Организация и ответственность",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "96",
+      "topic_name": "Глава 2. Контроль и надзор за выполнением полетов",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "97",
+      "topic_name": "Глава 4. Состав экипажа",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "98",
+      "topic_name": "Глава 5. Квалификационные требования",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "99",
+      "topic_name": "Глава 6. Меры по охране здоровья экипажа",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "100",
+      "topic_name": "Глава 7. Полетное, рабочее время и время отдыха членов экипажей ВС",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "101",
+      "topic_name": "Глава 8.1. Подготовка к полетам",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "102",
+      "topic_name": "Глава 8.2. Наземное обслуживание",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "103",
+      "topic_name": "Глава 8.3. Полетные процедуры",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "104",
+      "topic_name": "Глава 8.3.5. - 8.3.6. Общие сведения и порядок действий при срабатывании систем TCAS и EGPWS",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "105",
+      "topic_name": "Глава 8.4. Полеты в особых условиях и особые случаи в полете",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "106",
+      "topic_name": "Глава 8.5. Всепогодные полеты",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "107",
+      "topic_name": "Глава 8.6. Производство полетов с увеличенным временем ухода на запасной аэродром (A320; B737; RRJ-95)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "108",
+      "topic_name": "Глава 8.6. Производство полетов с увеличенным временем ухода на запасной аэродром (A330; B777)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "109",
+      "topic_name": "Глава 8.7. Использование ПМО (MEL, CDL)",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "110",
+      "topic_name": "Глава 8.8. Некоммерческие полеты",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "111",
+      "topic_name": "Глава 8.9. Требования по кислороду",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "112",
+      "topic_name": "Глава 11. Действия при возникновении кризисных и нестандартных ситуаций",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "113",
+      "topic_name": "Глава 12. Правила полетов",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "114",
+      "topic_name": "Глава 13. Отчетная документация о полете",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "115",
+      "topic_name": "Глава 14. Дополнительные операционные процедуры",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "116",
+      "topic_name": "НТЭРАТ и ГСМ",
+      "question_subsection": "1"
+    },
+    {
+      "question_topic": "117",
+      "topic_name": "Правила расследования авиационных происшествий и инцидентов",
+      "question_subsection": "1"
     }
   ]
 }
