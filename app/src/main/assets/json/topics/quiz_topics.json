@@ -639,6 +639,56 @@
       "question_topic": "128",
       "topic_name": "Документы ИКАО",
       "question_subsection": "2"
+    },
+    {
+      "question_topic": "129",
+      "topic_name": "Состав и строение атмосферы",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "130",
+      "topic_name": "Основные метеорологические элементы. Стандартная атмосфера",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "131",
+      "topic_name": "Движение воздуха в атмосфере",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "132",
+      "topic_name": "Вода в атмосфере",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "133",
+      "topic_name": "Воздушные массы",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "134",
+      "topic_name": "Барические системы",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "135",
+      "topic_name": "Атмосферные фронты",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "136",
+      "topic_name": "Опасные явления погоды",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "137",
+      "topic_name": "Метеорологическая документация",
+      "question_subsection": "3"
+    },
+    {
+      "question_topic": "138",
+      "topic_name": "Климатология",
+      "question_subsection": "3"
     }
   ]
 }
