@@ -689,6 +689,101 @@
       "question_topic": "138",
       "topic_name": "Климатология",
       "question_subsection": "3"
+    },
+    {
+      "question_topic": "139",
+      "topic_name": "Особенности полетов (анализ характерных АП)",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "140",
+      "topic_name": "Опасные метеоявления",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "141",
+      "topic_name": "SNOWTAM",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "142",
+      "topic_name": "Условия образования зон повышенной электрической активности атмосферы",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "143",
+      "topic_name": "Особенности эксплуатации двигателей и ВСУ при низких ТНВ",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "144",
+      "topic_name": "Особенности состояния авиационного топлива, контроль качества",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "145",
+      "topic_name": "Меры предотвращения обледенения лопаток компрессора, ПВД",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "146",
+      "topic_name": "Особенности эксплуатации систем ВС и ТО при низких ТНВ",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "147",
+      "topic_name": "Общие процедуры при выполнении полетов в условиях низких температур",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "148",
+      "topic_name": "Влияние низких температур на показания высотомеров",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "149",
+      "topic_name": "Влияние обледенения на летно-технические характеристики ВС",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "150",
+      "topic_name": "Особенности управляемости ВС на ВПП, покрытой осадками (A320)",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "151",
+      "topic_name": "Общие процедуры (РПП)",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "152",
+      "topic_name": "Особенности выполнения полетов при ограниченной видимости на ВС",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "153",
+      "topic_name": "Правила выдерживания безопасных высот и технология установки давления а/д",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "154",
+      "topic_name": "Действия экипажа по сигналам EGPWS",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "155",
+      "topic_name": "Анализ грубых посадок и рекомендации по их предупреждению на ВС",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "156",
+      "topic_name": "Противообледенительная обработка ВС",
+      "question_subsection": "7"
+    },
+    {
+      "question_topic": "157",
+      "topic_name": "Особенности ПОО на типе ВС",
+      "question_subsection": "7"
     }
   ]
 }
