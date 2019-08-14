@@ -13,10 +13,6 @@ public class ScoreViewModel extends UiViewModel {
     private MutableLiveData<Boolean> startTestAgain;
     private MutableLiveData<Boolean> startMainMenu;
 
-    private MutableLiveData<String> topicId;
-    private MutableLiveData<String> subsectionId;
-    private MutableLiveData<String> sectionId;
-
     public ScoreViewModel() {
         score = new MutableLiveData<>();
 
@@ -24,10 +20,6 @@ public class ScoreViewModel extends UiViewModel {
 
         startTestAgain = new MutableLiveData<>();
         startMainMenu = new MutableLiveData<>();
-
-        topicId = new MutableLiveData<>();
-        subsectionId = new MutableLiveData<>();
-        sectionId = new MutableLiveData<>();
     }
 
     MutableLiveData<ScoreModel> score() {
@@ -43,15 +35,5 @@ public class ScoreViewModel extends UiViewModel {
     }
     MutableLiveData<Boolean> startMainMenu() {
         return startMainMenu;
-    }
-
-    MutableLiveData<String> topicId() {
-        return topicId;
-    }
-    MutableLiveData<String> subsectionId() {
-        return subsectionId;
-    }
-    MutableLiveData<String> sectionId() {
-        return sectionId;
     }
 }

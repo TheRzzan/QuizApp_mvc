@@ -13,10 +13,10 @@ import android.view.WindowManager;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
-import com.morozov.quiz.utility.AppConstants;
 
 import java.util.List;
 
@@ -45,10 +45,6 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
             actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getTopicName());
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-        getViewModel().topicId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_TOPIC_ID));
-        getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
-        getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
 
         adapter = new AnswerAdapter(getApplicationContext());
         rvAnswers.setAdapter(adapter);
@@ -99,9 +95,6 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
 
     @Override
     public void onBackPressed() {
-        ActivityUtility.invokeTopicActivity(AnswerActivity.this, true,
-                getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue(),
-                false);
+        ActivityUtility.invokeNewActivity(AnswerActivity.this, TopicActivity.class, true);
     }
 }

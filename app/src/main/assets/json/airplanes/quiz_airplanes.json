@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "airplane": "1",
+      "airplane_name": "A320"
+    },
+    {
+      "airplane": "2",
+      "airplane_name": "B737"
+    },
+    {
+      "airplane": "3",
+      "airplane_name": "SSJ1000"
+    }
+  ]
+}

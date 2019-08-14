@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.quiz.QuizActivity;
 import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
@@ -58,10 +60,6 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
                         getIntent().getIntExtra(AppConstants.BUNDLE_KEY_WRONG_ANS, 0),
                         getIntent().getIntExtra(AppConstants.BUNDLE_KEY_SKIPPED_ANS, 0))
         );
-
-        getViewModel().topicId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_TOPIC_ID));
-        getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
-        getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
     }
 
     @Override
@@ -153,10 +151,7 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
 
     @Override
     public void onBackPressed() {
-        ActivityUtility.invokeTopicActivity(ScoreActivity.this, true,
-                getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue(),
-                true);
+        ActivityUtility.invokeNewActivity(ScoreActivity.this, TopicActivity.class, true);
     }
 
     @Override
@@ -166,9 +161,6 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
 
     @Override
     public void onOkClicked() {
-        ActivityUtility.invokeQuizActivity(ScoreActivity.this, true,
-                getViewModel().topicId().getValue(),
-                getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue());
+        ActivityUtility.invokeNewActivity(ScoreActivity.this, QuizActivity.class, true);
     }
 }

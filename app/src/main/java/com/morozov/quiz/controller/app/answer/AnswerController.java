@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 
 import com.morozov.quiz.controller.Controller;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.DataLoader;
 
 public class AnswerController extends Controller<AnswerViewModel> implements View.OnClickListener {
@@ -25,7 +26,10 @@ public class AnswerController extends Controller<AnswerViewModel> implements Vie
 
     private void initialQuestions() {
         viewModel().questions()
-                .setValue(DataLoader.getQuestions(context.getAssets(), viewModel().topicId().getValue()));
+                .setValue(DataLoader.getQuestions(
+                        context.getAssets(),
+                        ActivityNavigation.getInstance(context).getTopicId()
+                ));
     }
 
     @Override

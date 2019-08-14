@@ -11,6 +11,7 @@ import com.morozov.quiz.controller.Controller;
 import com.morozov.quiz.controller.interaction.AnswerClickListener;
 import com.morozov.quiz.controller.models.MessageFromControllerModel;
 import com.morozov.quiz.controller.models.QuestionModel;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.DataLoader;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class QuizController extends Controller<QuizViewModel> implements View.On
     }
 
     private void initialSections() {
-        ArrayList<QuestionModel> questions = DataLoader.getQuestions(context.getAssets(), viewModel().topicId().getValue());
+        ArrayList<QuestionModel> questions = DataLoader.getQuestions(context.getAssets(), ActivityNavigation.getInstance(context).getTopicId());
         Collections.shuffle(questions);
         viewModel().questions().setValue(questions);
         viewModel().currentQuestion().setValue(0);

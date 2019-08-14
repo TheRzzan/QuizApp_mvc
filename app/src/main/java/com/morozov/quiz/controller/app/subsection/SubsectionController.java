@@ -1,13 +1,10 @@
 package com.morozov.quiz.controller.app.subsection;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.morozov.quiz.controller.Controller;
-import com.morozov.quiz.controller.app.topic.TopicActivity;
-import com.morozov.quiz.utility.AppConstants;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.DataLoader;
 
 public class SubsectionController extends Controller<SubsectionViewModel> implements View.OnClickListener {
@@ -29,7 +26,10 @@ public class SubsectionController extends Controller<SubsectionViewModel> implem
 
     private void initialSections() {
         viewModel().subsections()
-                .setValue(DataLoader.getSubsections(context.getAssets(), viewModel().sectionId().getValue()));
+                .setValue(DataLoader.getSubsections(
+                        context.getAssets(),
+                        ActivityNavigation.getInstance(context).getSectionId()
+                ));
     }
 
     private void openTopic(Integer position) {

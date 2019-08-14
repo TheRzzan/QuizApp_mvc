@@ -17,12 +17,15 @@ import android.view.WindowManager;
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.answer.AnswerActivity;
+import com.morozov.quiz.controller.app.quiz.QuizActivity;
+import com.morozov.quiz.controller.app.subsection.SubsectionActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.TopicModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
-import com.morozov.quiz.utility.AppConstants;
 
 import java.util.List;
 
@@ -54,10 +57,6 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
             actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSubsectionName());
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-        getViewModel().setIsToTest(getIntent().getBooleanExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, true));
-        getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
-        getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
 
         adapter = new TopicAdapter(getApplicationContext(), getController());
         rvTopics.setAdapter(adapter);
@@ -124,7 +123,10 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
                 ActivityTitles.getInstance(getApplicationContext())
                         .setTopicName(getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicName());
 
-                if (viewModel.isToTest()) {
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setTopicId(viewModel.topics().getValue().get(integer).getTopicId());
+
+                if (ActivityNavigation.getInstance(getApplicationContext()).getToTest()) {
                     CustomDialog customDialog = new CustomDialog();
                     customDialog.setHeadline(getString(R.string.topic_selected) +
                             " \"" +
@@ -134,10 +136,7 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
                     customDialog.setListener(TopicActivity.this);
                     customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
                 } else {
-                    ActivityUtility.invokeAnswersActivity(TopicActivity.this, true,
-                            getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicId(),
-                            getViewModel().subsectionId().getValue(),
-                            getViewModel().sectionId().getValue());
+                    ActivityUtility.invokeNewActivity(TopicActivity.this, AnswerActivity.class, true);
                 }
             }
         });
@@ -177,9 +176,7 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
             return;
         }
 
-        ActivityUtility.invokeSubsectionActivity(TopicActivity.this, true,
-                getViewModel().sectionId().getValue(),
-                getViewModel().isToTest());
+        ActivityUtility.invokeNewActivity(TopicActivity.this, SubsectionActivity.class, true);
     }
 
     @Override
@@ -189,9 +186,6 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
 
     @Override
     public void onOkClicked() {
-        ActivityUtility.invokeQuizActivity(TopicActivity.this, true,
-                getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicId(),
-                getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue());
+        ActivityUtility.invokeNewActivity(TopicActivity.this, QuizActivity.class, true);
     }
 }

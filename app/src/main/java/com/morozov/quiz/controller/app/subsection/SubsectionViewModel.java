@@ -10,13 +10,10 @@ import java.util.List;
 public class SubsectionViewModel extends UiViewModel {
     private MutableLiveData<List<SubsectionModel>> subsections;
     private MutableLiveData<Integer> selectedSubsection;
-    private MutableLiveData<String> sectionId;
-    private Boolean isToTest;
 
     public SubsectionViewModel() {
         subsections = new MutableLiveData<>();
         selectedSubsection = new MutableLiveData<>();
-        sectionId = new MutableLiveData<>();
     }
 
     MutableLiveData<List<SubsectionModel>> subsections() {
@@ -25,17 +22,5 @@ public class SubsectionViewModel extends UiViewModel {
 
     MutableLiveData<Integer> selectedSubsection() {
         return selectedSubsection;
-    }
-
-    MutableLiveData<String> sectionId() {
-        return sectionId;
-    }
-
-    Boolean isToTest() {
-        return isToTest;
-    }
-
-    void setIsToTest(Boolean toTest) {
-        isToTest = toTest;
     }
 }

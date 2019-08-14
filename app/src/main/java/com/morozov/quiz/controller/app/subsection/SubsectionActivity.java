@@ -17,11 +17,11 @@ import android.view.WindowManager;
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.models.SubsectionModel;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
-import com.morozov.quiz.utility.AppConstants;
 
 import java.util.List;
 
@@ -53,9 +53,6 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
             actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSectionName());
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-        getViewModel().setIsToTest(getIntent().getBooleanExtra(AppConstants.BUNDLE_KEY_IS_TO_TEST, true));
-        getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
 
         adapter = new SubsectionAdapter(getApplicationContext(), getController());
         rvSubsections.setAdapter(adapter);
@@ -122,10 +119,10 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
                 ActivityTitles.getInstance(getApplicationContext())
                         .setSubsectionName(getViewModel().subsections().getValue().get(integer).getSubsectionName());
 
-                ActivityUtility.invokeTopicActivity(SubsectionActivity.this, true,
-                        getViewModel().subsections().getValue().get(integer).getSubsectionId(),
-                        getViewModel().sectionId().getValue(),
-                        getViewModel().isToTest());
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setSubsectionId(viewModel.subsections().getValue().get(integer).getSubsectionId());
+
+                ActivityUtility.invokeNewActivity(SubsectionActivity.this, TopicActivity.class, true);
             }
         });
     }
@@ -164,6 +161,9 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
             return;
         }
 
-        ActivityUtility.invokeNewActivity(SubsectionActivity.this, SectionActivity.class, true);
+        if (ActivityNavigation.getInstance(getApplicationContext()).getToTest())
+            ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.section.SectionActivity.class, true);
+        else
+            ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.section_to_answer.SectionActivity.class, true);
     }
 }

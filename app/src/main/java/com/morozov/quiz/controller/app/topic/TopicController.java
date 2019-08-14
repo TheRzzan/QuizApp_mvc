@@ -2,9 +2,9 @@ package com.morozov.quiz.controller.app.topic;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.Toast;
 
 import com.morozov.quiz.controller.Controller;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.DataLoader;
 
 public class TopicController extends Controller<TopicViewModel> implements View.OnClickListener{
@@ -26,7 +26,10 @@ public class TopicController extends Controller<TopicViewModel> implements View.
 
     private void initialSections() {
         viewModel().topics()
-                .setValue(DataLoader.getTopics(context.getAssets(), viewModel().subsectionId().getValue()));
+                .setValue(DataLoader.getTopics(
+                        context.getAssets(),
+                        ActivityNavigation.getInstance(context).getSubsectionId()
+                ));
     }
 
     private void openQuiz(Integer position) {

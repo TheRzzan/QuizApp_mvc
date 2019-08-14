@@ -8,9 +8,14 @@ public class AppConstants {
     public static final String JSON_KEY_QUESTION_IMAGE = "question_image";
     public static final String JSON_KEY_ANSWER_IMAGES = "answer_images";
 
+    // airplane file
+    public static final String AIRPLANE_FILE = "json/airplanes/quiz_airplanes.json";
+    public static final String JSON_KEY_ITEMS = "items";
+    public static final String JSON_KEY_AIRPLANE_ID = "airplane";
+    public static final String JSON_KEY_AIRPLANE_NAME = "airplane_name";
+
     // section file
     public static final String SECTION_FILE = "json/sections/quiz_sections.json";
-    public static final String JSON_KEY_ITEMS = "items";
     public static final String JSON_KEY_SECTION_ID = "question_section";
     public static final String JSON_KEY_SECTION_NAME = "section_name";
 

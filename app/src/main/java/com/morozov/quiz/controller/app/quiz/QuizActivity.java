@@ -17,13 +17,13 @@ import android.widget.TextView;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
-import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.DataLoader;
 
 import butterknife.BindView;
@@ -64,10 +64,6 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        getViewModel().topicId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_TOPIC_ID));
-        getViewModel().subsectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SUBSECTION_ID));
-        getViewModel().sectionId().setValue(getIntent().getStringExtra(AppConstants.JSON_KEY_SECTION_ID));
-
         adapter = new QuizAdapter(getApplicationContext(), getController());
         rvAnswers.setAdapter(adapter);
         rvAnswers.setLayoutManager(new LinearLayoutManager(this));
@@ -107,9 +103,6 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
                         showQuestion(integer);
                     } else {
                         ActivityUtility.invokeScoreActivity(QuizActivity.this, true,
-                                getViewModel().topicId().getValue(),
-                                getViewModel().subsectionId().getValue(),
-                                getViewModel().sectionId().getValue(),
                                 new ScoreModel(getViewModel().correctAnswers().getValue(),
                                         getViewModel().wrongAnswers().getValue(),
                                         getViewModel().skippedAnswers().getValue()));
@@ -182,9 +175,6 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
     @Override
     public void onOkClicked() {
-        ActivityUtility.invokeTopicActivity(QuizActivity.this, true,
-                getViewModel().subsectionId().getValue(),
-                getViewModel().sectionId().getValue(),
-                true);
+        ActivityUtility.invokeNewActivity(QuizActivity.this, TopicActivity.class, true);
     }
 }

@@ -18,10 +18,6 @@ public class QuizViewModel extends UiViewModel {
     private MutableLiveData<Integer> wrongAnswers;
     private MutableLiveData<Integer> skippedAnswers;
 
-    private MutableLiveData<String> topicId;
-    private MutableLiveData<String> subsectionId;
-    private MutableLiveData<String> sectionId;
-
     public QuizViewModel() {
         questions = new DoubleClickLiveData<>();
 
@@ -34,10 +30,6 @@ public class QuizViewModel extends UiViewModel {
         wrongAnswers.setValue(0);
         skippedAnswers = new MutableLiveData<>();
         skippedAnswers.setValue(0);
-
-        topicId = new MutableLiveData<>();
-        subsectionId = new MutableLiveData<>();
-        sectionId = new MutableLiveData<>();
     }
 
     DoubleClickLiveData<List<QuestionModel>> questions() {
@@ -59,15 +51,5 @@ public class QuizViewModel extends UiViewModel {
     }
     MutableLiveData<Integer> skippedAnswers() {
         return skippedAnswers;
-    }
-
-    MutableLiveData<String> topicId() {
-        return topicId;
-    }
-    MutableLiveData<String> subsectionId() {
-        return subsectionId;
-    }
-    MutableLiveData<String> sectionId() {
-        return sectionId;
     }
 }

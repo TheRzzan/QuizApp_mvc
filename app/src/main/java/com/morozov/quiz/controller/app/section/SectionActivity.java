@@ -12,7 +12,9 @@ import android.widget.Toast;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.subsection.SubsectionActivity;
 import com.morozov.quiz.controller.models.SectionModel;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 
@@ -61,9 +63,13 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
                 ActivityTitles.getInstance(getApplicationContext())
                         .setSectionName(getViewModel().sections().getValue().get(integer).getSectionName());
 
-                ActivityUtility.invokeSubsectionActivity(SectionActivity.this, true,
-                        getViewModel().sections().getValue().get(integer).getSectionId(),
-                        true);
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setSectionId(getViewModel().sections().getValue().get(integer).getSectionId());
+
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setToTest(true);
+
+                ActivityUtility.invokeNewActivity(SectionActivity.this, SubsectionActivity.class, true);
             }
         });
     }
