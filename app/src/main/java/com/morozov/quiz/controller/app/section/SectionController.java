@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 
 import com.morozov.quiz.controller.Controller;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.DataLoader;
 
 public class SectionController extends Controller<SectionViewModel> implements View.OnClickListener {
@@ -24,7 +25,11 @@ public class SectionController extends Controller<SectionViewModel> implements V
     }
 
     private void initialSections() {
-        viewModel().sections().setValue(DataLoader.getSections(context.getAssets()));
+        viewModel().sections()
+                .setValue(DataLoader.getSections(
+                        context.getAssets(),
+                        ActivityNavigation.getInstance(context).getAirplaneId()
+                ));
     }
 
 //    private void openAnswers() {

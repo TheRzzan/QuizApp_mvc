@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Quiz</string>
 
+    <!-- Airplane activity -->
+    <string name="airplane">Airplane</string>
+
     <!-- Login activity -->
     <string name="main_url">https://ppls-edu.aeroflot.ru/login/index.php</string>
     <string name="intercept_url">https://ppls-edu.aeroflot.ru/my/</string>

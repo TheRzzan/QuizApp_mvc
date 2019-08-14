@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 
+import com.morozov.quiz.controller.models.AirplaneModel;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.SectionModel;
 import com.morozov.quiz.controller.models.SubsectionModel;
@@ -22,7 +23,29 @@ import java.util.Collections;
 
 public class DataLoader {
 
-    public static ArrayList<SectionModel> getSections(AssetManager manager) {
+    public static ArrayList<AirplaneModel> getAirplanes(AssetManager manager) {
+        ArrayList<AirplaneModel> airplaneList = new ArrayList<>();
+
+        try {
+            JSONObject jsonObject = new JSONObject(loadJson(manager, AppConstants.AIRPLANE_FILE));
+            JSONArray jsonArray = jsonObject.getJSONArray(AppConstants.JSON_KEY_ITEMS);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject object = jsonArray.getJSONObject(i);
+
+                String airplaneId = object.getString(AppConstants.JSON_KEY_AIRPLANE_ID);
+                String airplaneName = object.getString(AppConstants.JSON_KEY_AIRPLANE_NAME);
+
+                airplaneList.add(new AirplaneModel(airplaneId, airplaneName));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return airplaneList;
+    }
+
+    public static ArrayList<SectionModel> getSections(AssetManager manager, String mAirplaneId) {
         ArrayList<SectionModel> sectionList = new ArrayList<>();
 
         try {
@@ -32,10 +55,12 @@ public class DataLoader {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
 
+                String airplaneId = object.getString(AppConstants.JSON_KEY_AIRPLANE_ID);
                 String sectionId = object.getString(AppConstants.JSON_KEY_SECTION_ID);
                 String sectionName = object.getString(AppConstants.JSON_KEY_SECTION_NAME);
 
-                sectionList.add(new SectionModel(sectionId, sectionName));
+                if (mAirplaneId.equals(airplaneId))
+                    sectionList.add(new SectionModel(sectionId, sectionName));
             }
         } catch (JSONException e) {
             e.printStackTrace();

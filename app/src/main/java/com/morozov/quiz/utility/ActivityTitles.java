@@ -9,6 +9,7 @@ public class ActivityTitles {
     private static ActivityTitles instance;
     private Context context;
 
+    private String airplaneName;
     private String sectionName;
     private String subsectionName;
     private String topicName;
@@ -54,5 +55,16 @@ public class ActivityTitles {
 
     public void setTopicName(String topicName) {
         this.topicName = topicName;
+    }
+
+    public String getAirplaneName() {
+        if (airplaneName == null)
+            airplaneName = context.getString(R.string.airplane);
+        
+        return airplaneName;
+    }
+
+    public void setAirplaneName(String airplaneName) {
+        this.airplaneName = airplaneName;
     }
 }

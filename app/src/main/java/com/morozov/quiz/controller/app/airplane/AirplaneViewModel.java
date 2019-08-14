@@ -2,11 +2,12 @@ package com.morozov.quiz.controller.app.airplane;
 
 import android.arch.lifecycle.MutableLiveData;
 
+import com.morozov.quiz.controller.UiViewModel;
 import com.morozov.quiz.controller.models.AirplaneModel;
 
 import java.util.List;
 
-public class AirplaneViewModel {
+public class AirplaneViewModel extends UiViewModel {
     private MutableLiveData<List<AirplaneModel>> airplanes;
     private MutableLiveData<Integer> selectedAirplane;
 

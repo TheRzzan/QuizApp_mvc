@@ -2,16 +2,15 @@ package com.morozov.quiz.controller.app.section;
 
 import android.arch.lifecycle.Observer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.airplane.AirplaneActivity;
 import com.morozov.quiz.controller.app.subsection.SubsectionActivity;
 import com.morozov.quiz.controller.models.SectionModel;
 import com.morozov.quiz.utility.ActivityNavigation;
@@ -31,8 +30,6 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
     RecyclerView rvSections;
 
     private SectionAdapter adapter;
-
-    private Boolean exit = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,17 +97,6 @@ public class SectionActivity extends ControllerActivity<SectionViewModel, Sectio
 
     @Override
     public void onBackPressed() {
-        if (exit) {
-            finish();
-        } else {
-            Toast.makeText(this, getString(R.string.press_back_again), Toast.LENGTH_SHORT).show();
-            exit = true;
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    exit = false;
-                }
-            }, 3 * 1000);
-        }
+        ActivityUtility.invokeNewActivity(SectionActivity.this, AirplaneActivity.class, true);
     }
 }
