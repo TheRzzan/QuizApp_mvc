@@ -104,6 +104,13 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
 
     @Override
     public void onBackPressed() {
-        ActivityUtility.invokeNewActivity(SubsectionActivity.this, AirplaneActivity.class, true);
+        if (ActivityNavigation.getInstance(getApplicationContext()).getToTest())
+            ActivityUtility.invokeNewActivity(SubsectionActivity.this, AirplaneActivity.class, true);
+        else {
+            ActivityNavigation.getInstance(getApplicationContext())
+                    .setToTest(true);
+
+            ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.subsectionNEW.SubsectionActivity.class, true);
+        }
     }
 }
