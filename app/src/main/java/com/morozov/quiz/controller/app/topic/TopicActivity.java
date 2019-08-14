@@ -19,7 +19,6 @@ import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.answer.AnswerActivity;
 import com.morozov.quiz.controller.app.quiz.QuizActivity;
-import com.morozov.quiz.controller.app.subsection.SubsectionActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.TopicModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
@@ -176,7 +175,7 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
             return;
         }
 
-        ActivityUtility.invokeNewActivity(TopicActivity.this, SubsectionActivity.class, true);
+        ActivityUtility.invokeNewActivity(TopicActivity.this, com.morozov.quiz.controller.app.subsectionNEW.SubsectionActivity.class, true);
     }
 
     @Override

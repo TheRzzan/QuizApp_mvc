@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.section.SectionActivity;
 import com.morozov.quiz.controller.models.AirplaneModel;
 import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
@@ -69,7 +68,10 @@ public class AirplaneActivity extends ControllerActivity<AirplaneViewModel, Airp
                 ActivityNavigation.getInstance(getApplicationContext())
                         .setAirplaneId(getViewModel().airplanes().getValue().get(integer).getAirplaneId());
 
-                ActivityUtility.invokeNewActivity(AirplaneActivity.this, SectionActivity.class, true);
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setToTest(true);
+
+                ActivityUtility.invokeNewActivity(AirplaneActivity.this, com.morozov.quiz.controller.app.subsectionNEW.SubsectionActivity.class, true);
             }
         });
     }

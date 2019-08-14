@@ -54,6 +54,7 @@
         <activity android:name=".controller.app.answer.AnswerActivity" />
         <activity android:name=".controller.app.login.LoginActivity" />
         <activity android:name=".controller.app.airplane.AirplaneActivity" />
+        <activity android:name=".controller.app.subsectionNEW.SubsectionActivity" />
     </application>
 
 </manifest>

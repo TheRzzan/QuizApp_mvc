@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/toolbar_container"
+        layout="@layout/toolbar_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_container">
+
+    <RelativeLayout
+        android:id="@+id/rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/tv_text1"
+            style="@style/PromptText"
+            android:layout_alignParentTop="true"
+            android:text="@string/select_subsection" />
+
+        <View
+            android:id="@+id/view_1"
+            style="@style/LineSeparator"
+            android:layout_below="@id/tv_text1" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvSubsections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_1" />
+
+        <TextView
+            android:id="@+id/tvRecycler"
+            style="@style/SelectionText"
+            android:text="@string/answers"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@+id/rvSubsections"/>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
