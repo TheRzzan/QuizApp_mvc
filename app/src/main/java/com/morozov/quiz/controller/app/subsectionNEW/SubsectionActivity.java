@@ -3,8 +3,11 @@ package com.morozov.quiz.controller.app.subsectionNEW;
 import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,6 +27,9 @@ import butterknife.ButterKnife;
 
 public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, SubsectionController> {
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
     @BindView(R.id.rvSubsections)
     RecyclerView rvSubsections;
 
@@ -38,12 +44,27 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         setContentView(R.layout.activity_subsection_new);
         ButterKnife.bind(this);
 
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getAirplaneName());
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         if (!ActivityNavigation.getInstance(getApplicationContext()).getToTest())
             answer.setVisibility(View.GONE);
 
         adapter = new SectionAdapter(getApplicationContext(), getController());
         rvSubsections.setAdapter(adapter);
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
