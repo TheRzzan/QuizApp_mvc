@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.controller.app.airplane.AirplaneActivity;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.DetectConnection;
@@ -69,7 +69,7 @@ public class LoginActivity extends ControllerActivity<LoginViewModel, LoginContr
             public void onChanged(@Nullable Boolean aBoolean) {
                 if (aBoolean) {
                     MySharedPreferences.setPreference(LoginActivity.this, AppConstants.IS_LOGINED_ONCE, true);
-                    ActivityUtility.invokeNewActivity(LoginActivity.this, SectionActivity.class, true);
+                    ActivityUtility.invokeNewActivity(LoginActivity.this, AirplaneActivity.class, true);
                 }
             }
         });
