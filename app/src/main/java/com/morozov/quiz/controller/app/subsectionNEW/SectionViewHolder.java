@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Filter;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
@@ -27,7 +28,7 @@ class SectionViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    void populate(SubsectionClickListener listener, SectionModel sectionModel) {
+    public Filter populate(SubsectionClickListener listener, SectionModel sectionModel) {
         if (sectionModel.getSectionName().equals(""))
             section.setVisibility(View.INVISIBLE);
         else
@@ -42,5 +43,7 @@ class SectionViewHolder extends RecyclerView.ViewHolder {
                 itemView.getContext().getAssets(),
                 sectionModel.getSectionId()
         ));
+
+        return subsectionAdapter.getFilter();
     }
 }
