@@ -16,6 +16,7 @@ import com.morozov.quiz.controller.models.AirplaneModel;
 import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
+import com.morozov.quiz.utility.DataLoader;
 
 import java.util.List;
 
@@ -62,6 +63,9 @@ public class AirplaneActivity extends ControllerActivity<AirplaneViewModel, Airp
         viewModel.selectedAirplane().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                if (DataLoader.getSections(getAssets(), getViewModel().airplanes().getValue().get(integer).getAirplaneId()).isEmpty())
+                    return;
+
                 ActivityTitles.getInstance(getApplicationContext())
                         .setAirplaneName(getViewModel().airplanes().getValue().get(integer).getAirplaneName());
 

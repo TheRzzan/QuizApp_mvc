@@ -28,7 +28,10 @@ class SectionViewHolder extends RecyclerView.ViewHolder {
     }
 
     void populate(SubsectionClickListener listener, SectionModel sectionModel) {
-        section.setText(sectionModel.getSectionName());
+        if (sectionModel.getSectionName().equals(""))
+            section.setVisibility(View.INVISIBLE);
+        else
+            section.setText(sectionModel.getSectionName());
 
         SubsectionAdapter subsectionAdapter = new SubsectionAdapter(itemView.getContext(), listener, sectionModel.getSectionId());
 
