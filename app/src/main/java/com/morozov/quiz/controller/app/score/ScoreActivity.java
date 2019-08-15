@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.quiz.QuizActivity;
-import com.morozov.quiz.controller.app.section.SectionActivity;
+import com.morozov.quiz.controller.app.subsection.SubsectionActivity;
 import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.ScoreModel;
@@ -99,7 +99,7 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
             @Override
             public void onChanged(@Nullable Boolean aBoolean) {
                 if (aBoolean) {
-                    ActivityUtility.invokeNewActivity(ScoreActivity.this, SectionActivity.class, true);
+                    ActivityUtility.invokeNewActivity(ScoreActivity.this, SubsectionActivity.class, true);
                 }
             }
         });

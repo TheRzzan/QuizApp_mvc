@@ -3,12 +3,12 @@ package com.morozov.quiz.controller.app.subsection;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 
 import com.morozov.quiz.R;
+import com.morozov.quiz.controller.interaction.SubsectionClickListener;
 import com.morozov.quiz.controller.models.SubsectionModel;
 import com.morozov.quiz.controller.ui.ListAdapter;
 
@@ -16,14 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 class SubsectionAdapter extends ListAdapter<SubsectionModel, SubsectionViewHolder> implements Filterable {
+
     private final LayoutInflater inflater;
-    private final View.OnClickListener listener;
+    private final SubsectionClickListener listener;
+
+    private final int sectionId;
 
     private List<SubsectionModel> dataFull;
 
-    SubsectionAdapter(Context context, View.OnClickListener listener) {
+    SubsectionAdapter(Context context, SubsectionClickListener listener, String sectionIdStr) {
         inflater = LayoutInflater.from(context);
         this.listener = listener;
+        this.sectionId = Integer.parseInt(sectionIdStr);
     }
 
     @NonNull
@@ -35,7 +39,7 @@ class SubsectionAdapter extends ListAdapter<SubsectionModel, SubsectionViewHolde
     @Override
     public void onBindViewHolder(@NonNull SubsectionViewHolder holder, int i) {
         holder.populate(data().get(i));
-        holder.setOnClick(listener, i);
+        holder.setOnClick(listener, sectionId, Integer.parseInt(data().get(i).getSubsectionId()), data().get(i).getSubsectionName());
     }
 
     @Override

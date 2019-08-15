@@ -12,13 +12,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
+import android.widget.Filter;
+import android.widget.TextView;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.airplane.AirplaneActivity;
 import com.morozov.quiz.controller.app.topic.TopicActivity;
-import com.morozov.quiz.controller.models.SubsectionModel;
+import com.morozov.quiz.controller.models.SectionModel;
 import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
@@ -39,34 +41,30 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     @BindView(R.id.rvSubsections)
     RecyclerView rvSubsections;
 
-    private SubsectionAdapter adapter;
+    @BindView(R.id.tvRecycler)
+    TextView answer;
+
+    private SectionAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subsection);
+        setContentView(R.layout.activity_subsection_new);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSectionName());
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getAirplaneName());
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        adapter = new SubsectionAdapter(getApplicationContext(), getController());
+        if (!ActivityNavigation.getInstance(getApplicationContext()).getToTest())
+            answer.setVisibility(View.GONE);
+
+        adapter = new SectionAdapter(getApplicationContext(), getController());
         rvSubsections.setAdapter(adapter);
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
-
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home)
-            this.onBackPressed();
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -87,7 +85,9 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                for (Filter filter : adapter.getFilters()) {
+                    filter.filter(newText);
+                }
                 return false;
             }
 
@@ -102,13 +102,21 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            this.onBackPressed();
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void observe(SubsectionViewModel viewModel) {
         super.observe(viewModel);
 
-        viewModel.subsections().observe(this, new Observer<List<SubsectionModel>>() {
+        viewModel.sections().observe(this, new Observer<List<SectionModel>>() {
             @Override
-            public void onChanged(@Nullable List<SubsectionModel> subsectionModels) {
-                adapter.setData(subsectionModels);
+            public void onChanged(@Nullable List<SectionModel> sectionModels) {
+                adapter.setData(sectionModels);
                 rvSubsections.setVisibility(View.VISIBLE);
             }
         });
@@ -117,10 +125,13 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
             @Override
             public void onChanged(@Nullable Integer integer) {
                 ActivityTitles.getInstance(getApplicationContext())
-                        .setSubsectionName(getViewModel().subsections().getValue().get(integer).getSubsectionName());
+                        .setSubsectionName(viewModel.subsectionName().getValue());
 
                 ActivityNavigation.getInstance(getApplicationContext())
-                        .setSubsectionId(viewModel.subsections().getValue().get(integer).getSubsectionId());
+                        .setSubsectionId(viewModel.selectedSubsection().getValue().toString());
+
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setSectionId(viewModel.selectedSection().getValue().toString());
 
                 ActivityUtility.invokeNewActivity(SubsectionActivity.this, TopicActivity.class, true);
             }
@@ -131,7 +142,15 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     protected void observeClicks(SubsectionController controller) {
         super.observeClicks(controller);
 
+        answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setToTest(false);
 
+                ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.subsection.SubsectionActivity.class, true);
+            }
+        });
     }
 
     @Override
@@ -162,8 +181,12 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         }
 
         if (ActivityNavigation.getInstance(getApplicationContext()).getToTest())
-            ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.section.SectionActivity.class, true);
-        else
-            ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.section_to_answer.SectionActivity.class, true);
+            ActivityUtility.invokeNewActivity(SubsectionActivity.this, AirplaneActivity.class, true);
+        else {
+            ActivityNavigation.getInstance(getApplicationContext())
+                    .setToTest(true);
+
+            ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.subsection.SubsectionActivity.class, true);
+        }
     }
 }

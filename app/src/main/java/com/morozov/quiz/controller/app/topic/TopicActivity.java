@@ -175,7 +175,7 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
             return;
         }
 
-        ActivityUtility.invokeNewActivity(TopicActivity.this, com.morozov.quiz.controller.app.subsectionNEW.SubsectionActivity.class, true);
+        ActivityUtility.invokeNewActivity(TopicActivity.this, com.morozov.quiz.controller.app.subsection.SubsectionActivity.class, true);
     }
 
     @Override

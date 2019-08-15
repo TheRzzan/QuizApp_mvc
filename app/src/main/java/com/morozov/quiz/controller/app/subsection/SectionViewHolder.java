@@ -1,4 +1,4 @@
-package com.morozov.quiz.controller.app.subsectionNEW;
+package com.morozov.quiz.controller.app.subsection;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
