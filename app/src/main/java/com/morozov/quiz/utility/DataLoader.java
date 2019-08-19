@@ -82,9 +82,10 @@ public class DataLoader {
                 String sectionId = object.getString(AppConstants.JSON_KEY_SECTION_ID);
                 String subsectionId = object.getString(AppConstants.JSON_KEY_SUBSECTION_ID);
                 String subsectionName = object.getString(AppConstants.JSON_KEY_SUBSECTION_NAME);
+                String pdfName = object.getString(AppConstants.PDF_ANSWERS);
 
                 if (sectionId.equals(mSectionId))
-                    subsectionList.add(new SubsectionModel(subsectionId, subsectionName));
+                    subsectionList.add(new SubsectionModel(subsectionId, subsectionName, pdfName));
             }
         } catch (JSONException e) {
             e.printStackTrace();

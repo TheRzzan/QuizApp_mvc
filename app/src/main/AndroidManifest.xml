@@ -47,6 +47,7 @@
         </activity>
         <activity android:name=".controller.app.subsection.SubsectionActivity" />
         <activity android:name=".controller.app.subsection_to_answer.SubsectionActivity" />
+        <activity android:name=".controller.app.answer_pdf.AnswerActivity" />
     </application>
 
 </manifest>

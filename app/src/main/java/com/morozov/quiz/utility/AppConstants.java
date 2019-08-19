@@ -24,6 +24,10 @@ public class AppConstants {
     public static final String JSON_KEY_SUBSECTION_ID = "question_subsection";
     public static final String JSON_KEY_SUBSECTION_NAME = "subsection_name";
 
+    //PDF directory
+    public static final String PDF_DIR = "pdf/answers/";
+    public static final String PDF_ANSWERS = "pdf_answers";
+
     // topic file
     public static final String TOPIC_FILE = "json/topics/quiz_topics.json";
     public static final String JSON_KEY_TOPIC_ID = "question_topic";

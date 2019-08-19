@@ -1,51 +1,61 @@
 {
   "items": [
     {
+      "pdf_answers": "answers_1.pdf",
       "question_section": "1",
       "question_subsection": "1",
       "subsection_name": "Законы и нормативные документы ГА РФ и ПАО «Аэрофлот»"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_section": "1",
       "question_subsection": "2",
       "subsection_name": "Воздушная навигация, документы АНИ и ИКАО"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_section": "1",
       "question_subsection": "3",
       "subsection_name": "Метеорология"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "4",
       "subsection_name": "Практическая аэродинамика и РЛЭ (A320)",
       "question_section": "2"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "5",
       "subsection_name": "РЛЭ – описание систем и летная эксплуатация оборудования (A320)",
       "question_section": "2"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "6",
       "subsection_name": "Аварийно-спасательная подготовка (A320)",
       "question_section": "2"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "7",
       "subsection_name": "ОЗП",
       "question_section": "3"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "8",
       "subsection_name": "ВЛП",
       "question_section": "3"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "9",
       "subsection_name": "Обеспечение авиационной безопасности",
       "question_section": "3"
     },
     {
+      "pdf_answers": "answers_1.pdf",
       "question_subsection": "10",
       "subsection_name": "Правила перевозки опасных грузов",
       "question_section": "3"

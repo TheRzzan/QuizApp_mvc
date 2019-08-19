@@ -12,13 +12,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
+import com.morozov.quiz.controller.app.answer_pdf.AnswerActivity;
 import com.morozov.quiz.controller.app.subsection.SubsectionAdapter;
 import com.morozov.quiz.controller.models.SubsectionModel;
+import com.morozov.quiz.utility.ActivityNavigation;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 
@@ -113,7 +114,9 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         viewModel.selectedSubsection().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
-                Toast.makeText(SubsectionActivity.this, integer.toString(), Toast.LENGTH_SHORT).show();
+                ActivityNavigation.getInstance(getApplicationContext())
+                        .setAnswersPdf(viewModel.subsections().getValue().get(integer - 1).getAnswersPdf());
+                ActivityUtility.invokeNewActivity(SubsectionActivity.this, AnswerActivity.class, true);
             }
         });
     }
