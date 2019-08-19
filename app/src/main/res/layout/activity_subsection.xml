@@ -11,11 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_container">
+
     <RelativeLayout
+        android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusableInTouchMode="true"
-        android:layout_below="@id/toolbar_container">
+        android:focusableInTouchMode="true">
 
         <TextView
             android:id="@+id/tv_text1"
@@ -28,25 +33,23 @@
             style="@style/LineSeparator"
             android:layout_below="@id/tv_text1" />
 
-        <TextView
-            android:id="@+id/tv_text2"
-            style="@style/MainText"
-            android:layout_below="@+id/view_1"
-            android:text="@string/subsection" />
-
-        <View
-            android:id="@+id/view_2"
-            style="@style/LineSeparator"
-            android:layout_below="@id/tv_text2" />
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvSubsections"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_1" />
+
+        <TextView
+            android:id="@+id/tvRecycler"
+            android:layout_width="match_parent"
+            style="@style/SelectionText"
+            android:text="@string/answers"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:visibility="gone"
-            android:layout_below="@id/view_2" />
+            android:layout_below="@+id/rvSubsections"/>
+
     </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

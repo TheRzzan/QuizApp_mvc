@@ -17,7 +17,6 @@ import android.view.WindowManager;
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.answer.AnswerActivity;
 import com.morozov.quiz.controller.app.quiz.QuizActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.TopicModel;
@@ -125,18 +124,14 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
                 ActivityNavigation.getInstance(getApplicationContext())
                         .setTopicId(viewModel.topics().getValue().get(integer).getTopicId());
 
-                if (ActivityNavigation.getInstance(getApplicationContext()).getToTest()) {
-                    CustomDialog customDialog = new CustomDialog();
-                    customDialog.setHeadline(getString(R.string.topic_selected) +
-                            " \"" +
-                            getViewModel().topics().getValue().get(integer).getTopicName() +
-                            "\". " +
-                            getString(R.string.ready_to_start));
-                    customDialog.setListener(TopicActivity.this);
-                    customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
-                } else {
-                    ActivityUtility.invokeNewActivity(TopicActivity.this, AnswerActivity.class, true);
-                }
+                CustomDialog customDialog = new CustomDialog();
+                customDialog.setHeadline(getString(R.string.topic_selected) +
+                        " \"" +
+                        getViewModel().topics().getValue().get(integer).getTopicName() +
+                        "\". " +
+                        getString(R.string.ready_to_start));
+                customDialog.setListener(TopicActivity.this);
+                customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
             }
         });
     }

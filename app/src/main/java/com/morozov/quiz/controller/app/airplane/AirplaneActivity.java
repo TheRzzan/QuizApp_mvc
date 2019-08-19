@@ -72,9 +72,6 @@ public class AirplaneActivity extends ControllerActivity<AirplaneViewModel, Airp
                 ActivityNavigation.getInstance(getApplicationContext())
                         .setAirplaneId(getViewModel().airplanes().getValue().get(integer).getAirplaneId());
 
-                ActivityNavigation.getInstance(getApplicationContext())
-                        .setToTest(true);
-
                 ActivityUtility.invokeNewActivity(AirplaneActivity.this, com.morozov.quiz.controller.app.subsection.SubsectionActivity.class, true);
             }
         });

@@ -15,7 +15,7 @@ import com.morozov.quiz.controller.ui.ListAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-class SubsectionAdapter extends ListAdapter<SubsectionModel, SubsectionViewHolder> implements Filterable {
+public class SubsectionAdapter extends ListAdapter<SubsectionModel, SubsectionViewHolder> implements Filterable {
 
     private final LayoutInflater inflater;
     private final SubsectionClickListener listener;
@@ -24,7 +24,7 @@ class SubsectionAdapter extends ListAdapter<SubsectionModel, SubsectionViewHolde
 
     private List<SubsectionModel> dataFull;
 
-    SubsectionAdapter(Context context, SubsectionClickListener listener, String sectionIdStr) {
+    public SubsectionAdapter(Context context, SubsectionClickListener listener, String sectionIdStr) {
         inflater = LayoutInflater.from(context);
         this.listener = listener;
         this.sectionId = Integer.parseInt(sectionIdStr);

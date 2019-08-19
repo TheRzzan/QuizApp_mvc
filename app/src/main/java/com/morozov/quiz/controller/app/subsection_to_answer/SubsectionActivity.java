@@ -1,4 +1,4 @@
-package com.morozov.quiz.controller.app.subsection;
+package com.morozov.quiz.controller.app.subsection_to_answer;
 
 import android.arch.lifecycle.Observer;
 import android.content.Intent;
@@ -12,16 +12,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Filter;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.airplane.AirplaneActivity;
-import com.morozov.quiz.controller.app.topic.TopicActivity;
-import com.morozov.quiz.controller.models.SectionModel;
-import com.morozov.quiz.utility.ActivityNavigation;
+import com.morozov.quiz.controller.app.subsection.SubsectionAdapter;
+import com.morozov.quiz.controller.models.SubsectionModel;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 
@@ -41,25 +38,22 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     @BindView(R.id.rvSubsections)
     RecyclerView rvSubsections;
 
-    @BindView(R.id.tvRecycler)
-    TextView answer;
-
-    private SectionAdapter adapter;
+    private SubsectionAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subsection);
+        setContentView(R.layout.activity_subsection_to_answer);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getAirplaneName());
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getAirplaneName() + " " + getString(R.string.answers));
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        adapter = new SectionAdapter(getApplicationContext(), getController());
+        adapter = new SubsectionAdapter(getApplicationContext(), getController(), "0");
         rvSubsections.setAdapter(adapter);
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -82,9 +76,7 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                for (Filter filter : adapter.getFilters()) {
-                    filter.filter(newText);
-                }
+                adapter.getFilter().filter(newText);
                 return false;
             }
 
@@ -110,10 +102,10 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     protected void observe(SubsectionViewModel viewModel) {
         super.observe(viewModel);
 
-        viewModel.sections().observe(this, new Observer<List<SectionModel>>() {
+        viewModel.subsections().observe(this, new Observer<List<SubsectionModel>>() {
             @Override
-            public void onChanged(@Nullable List<SectionModel> sectionModels) {
-                adapter.setData(sectionModels);
+            public void onChanged(@Nullable List<SubsectionModel> subsectionModels) {
+                adapter.setData(subsectionModels);
                 rvSubsections.setVisibility(View.VISIBLE);
             }
         });
@@ -121,16 +113,7 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         viewModel.selectedSubsection().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
-                ActivityTitles.getInstance(getApplicationContext())
-                        .setSubsectionName(viewModel.subsectionName().getValue());
-
-                ActivityNavigation.getInstance(getApplicationContext())
-                        .setSubsectionId(viewModel.selectedSubsection().getValue().toString());
-
-                ActivityNavigation.getInstance(getApplicationContext())
-                        .setSectionId(viewModel.selectedSection().getValue().toString());
-
-                ActivityUtility.invokeNewActivity(SubsectionActivity.this, TopicActivity.class, true);
+                Toast.makeText(SubsectionActivity.this, integer.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -138,20 +121,13 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     @Override
     protected void observeClicks(SubsectionController controller) {
         super.observeClicks(controller);
-
-        answer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ActivityUtility.invokeNewActivity(SubsectionActivity.this, com.morozov.quiz.controller.app.subsection_to_answer.SubsectionActivity.class, true);
-            }
-        });
     }
 
     @Override
     protected SubsectionController createController(SubsectionViewModel viewModel) {
-        SubsectionController subsectionController = new SubsectionController(viewModel);
-        subsectionController.setContext(getApplicationContext());
-        return subsectionController;
+        SubsectionController SubsectionController = new SubsectionController(viewModel);
+        SubsectionController.setContext(getApplicationContext());
+        return SubsectionController;
     }
 
     @Override
@@ -174,6 +150,10 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
             return;
         }
 
-        ActivityUtility.invokeNewActivity(SubsectionActivity.this, AirplaneActivity.class, true);
+        ActivityUtility.invokeNewActivity(
+                SubsectionActivity.this,
+                com.morozov.quiz.controller.app.subsection.SubsectionActivity.class,
+                true
+        );
     }
 }

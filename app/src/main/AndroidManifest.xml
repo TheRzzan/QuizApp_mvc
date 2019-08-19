@@ -46,6 +46,7 @@
                 android:resource="@xml/searchable"/>
         </activity>
         <activity android:name=".controller.app.subsection.SubsectionActivity" />
+        <activity android:name=".controller.app.subsection_to_answer.SubsectionActivity" />
     </application>
 
 </manifest>

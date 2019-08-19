@@ -7,8 +7,6 @@ public class ActivityNavigation {
     private static ActivityNavigation instance;
     private Context context;
 
-    private Boolean isToTest;
-
     private String airplaneId;
     private String sectionId;
     private String subsectionId;
@@ -66,16 +64,5 @@ public class ActivityNavigation {
             topicId = "0";
 
         return topicId;
-    }
-
-    public Boolean getToTest() {
-        if (isToTest == null)
-            isToTest = false;
-
-        return isToTest;
-    }
-
-    public void setToTest(Boolean toTest) {
-        isToTest = toTest;
     }
 }
