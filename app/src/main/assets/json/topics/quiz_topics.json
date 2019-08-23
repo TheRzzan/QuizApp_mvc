@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "question_topic": "1",
+      "question_topic": "13",
       "topic_name": "DSC-33 Lights",
       "question_subsection": "5"
     },
@@ -61,7 +61,7 @@
       "question_subsection": "5"
     },
     {
-      "question_topic": "13",
+      "question_topic": "1",
       "topic_name": "DSC-22_20 Auto Flight - Flight Management",
       "question_subsection": "5"
     },

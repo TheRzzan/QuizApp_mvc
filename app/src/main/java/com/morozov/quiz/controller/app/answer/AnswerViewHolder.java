@@ -1,16 +1,21 @@
 package com.morozov.quiz.controller.app.answer;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
+import com.morozov.quiz.controller.app.quiz.QuizActivity;
 import com.morozov.quiz.controller.models.QuestionModel;
+import com.morozov.quiz.controller.ui.ImageDialog;
 import com.morozov.quiz.utility.AppConstants;
+import com.morozov.quiz.utility.DataLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,9 +49,21 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
     }
 
     @SuppressLint("StringFormatMatches")
-    void populate(QuestionModel question, int position) {
+    void populate(FragmentManager fragmentManager, QuestionModel question, int position) {
         if (question.isImageQuestion()) {
             ivQuestion.setVisibility(View.VISIBLE);
+
+            ivQuestion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ImageDialog imageDialog = new ImageDialog();
+                    imageDialog.setImage(DataLoader.loadImage(
+                            itemView.getContext(),
+                            question.getQuestionImage()
+                    ));
+                    imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
+                }
+            });
 
             InputStream inputStream = null;
             try{
@@ -75,7 +92,17 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
             tvAnswer.setVisibility(View.GONE);
             ivAnswer.setVisibility(View.VISIBLE);
 
-            ivAnswer.setVisibility(View.VISIBLE);
+            ivAnswer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ImageDialog imageDialog = new ImageDialog();
+                    imageDialog.setImage(DataLoader.loadImage(
+                            itemView.getContext(),
+                            question.getCorrectAnswer()
+                    ));
+                    imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
+                }
+            });
 
             InputStream inputStream = null;
             try{

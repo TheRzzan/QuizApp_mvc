@@ -22,6 +22,7 @@ import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.ScoreModel;
 import com.morozov.quiz.controller.ui.CustomDialog;
+import com.morozov.quiz.controller.ui.ImageDialog;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.DataLoader;
@@ -142,6 +143,17 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
             ivQuestion.setVisibility(View.VISIBLE);
             ivQuestion.setImageDrawable(DataLoader.loadImage(getApplicationContext(), questionModel.getQuestionImage()));
             ivQuestion.setScaleType(ImageView.ScaleType.FIT_XY);
+            ivQuestion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ImageDialog imageDialog = new ImageDialog();
+                    imageDialog.setImage(DataLoader.loadImage(
+                            getApplicationContext(),
+                            questionModel.getQuestionImage()
+                    ));
+                    imageDialog.show(getSupportFragmentManager(), QuizActivity.class.getSimpleName());
+                }
+            });
         } else {
             ivQuestion.setVisibility(View.GONE);
         }

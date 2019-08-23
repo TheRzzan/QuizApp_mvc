@@ -13,8 +13,8 @@ import android.view.WindowManager;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.topic.TopicActivity;
-import com.morozov.quiz.controller.models.QuestionModel;
+import com.morozov.quiz.controller.app.subsection_to_answer.SubsectionActivity;
+import com.morozov.quiz.controller.models.TopicModel;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 
@@ -28,10 +28,10 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @BindView(R.id.rvAnswers)
-    RecyclerView rvAnswers;
+    @BindView(R.id.rvTopics)
+    RecyclerView rvTopics;
 
-    private AnswerAdapter adapter;
+    private TopicAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,13 +42,13 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getTopicName());
+            actionBar.setTitle(ActivityTitles.getInstance(getApplicationContext()).getSubsectionName());
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        adapter = new AnswerAdapter(getApplicationContext());
-        rvAnswers.setAdapter(adapter);
-        rvAnswers.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        adapter = new TopicAdapter(AnswerActivity.this, getSupportFragmentManager());
+        rvTopics.setAdapter(adapter);
+        rvTopics.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
@@ -65,11 +65,11 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
     protected void observe(AnswerViewModel viewModel) {
         super.observe(viewModel);
 
-        viewModel.questions().observe(this, new Observer<List<QuestionModel>>() {
+        viewModel.topics().observe(this, new Observer<List<TopicModel>>() {
             @Override
-            public void onChanged(@Nullable List<QuestionModel> questionModels) {
-                adapter.setData(questionModels);
-                rvAnswers.setVisibility(View.VISIBLE);
+            public void onChanged(@Nullable List<TopicModel> topicModels) {
+                adapter.setData(topicModels);
+                rvTopics.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -95,6 +95,6 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
 
     @Override
     public void onBackPressed() {
-        ActivityUtility.invokeNewActivity(AnswerActivity.this, TopicActivity.class, true);
+        ActivityUtility.invokeNewActivity(AnswerActivity.this, SubsectionActivity.class, true);
     }
 }

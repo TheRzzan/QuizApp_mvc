@@ -25,10 +25,10 @@ public class AnswerController extends Controller<AnswerViewModel> implements Vie
     }
 
     private void initialQuestions() {
-        viewModel().questions()
-                .setValue(DataLoader.getQuestions(
+        viewModel().topics()
+                .setValue(DataLoader.getTopics(
                         context.getAssets(),
-                        ActivityNavigation.getInstance(context).getTopicId()
+                        ActivityNavigation.getInstance(context).getSubsectionId()
                 ));
     }
 

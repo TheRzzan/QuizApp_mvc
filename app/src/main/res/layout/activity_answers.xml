@@ -9,7 +9,7 @@
         layout="@layout/toolbar_search" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvAnswers"
+        android:id="@+id/rvTopics"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

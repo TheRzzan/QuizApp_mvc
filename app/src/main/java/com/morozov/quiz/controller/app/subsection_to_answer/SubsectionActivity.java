@@ -16,7 +16,7 @@ import android.view.View;
 import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
-import com.morozov.quiz.controller.app.answer_pdf.AnswerActivity;
+import com.morozov.quiz.controller.app.answer.AnswerActivity;
 import com.morozov.quiz.controller.app.subsection.SubsectionAdapter;
 import com.morozov.quiz.controller.models.SubsectionModel;
 import com.morozov.quiz.utility.ActivityNavigation;
@@ -111,11 +111,20 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
             }
         });
 
+        viewModel.subsectionName().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                ActivityTitles.getInstance(getApplicationContext())
+                        .setSubsectionName(s);
+            }
+        });
+
         viewModel.selectedSubsection().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
                 ActivityNavigation.getInstance(getApplicationContext())
-                        .setAnswersPdf(viewModel.subsections().getValue().get(integer - 1).getAnswersPdf());
+                        .setSubsectionId(viewModel.subsections().getValue().get(integer - 1).getSubsectionId());
+
                 ActivityUtility.invokeNewActivity(SubsectionActivity.this, AnswerActivity.class, true);
             }
         });
