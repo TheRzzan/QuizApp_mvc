@@ -12,8 +12,6 @@ public class ActivityNavigation {
     private String subsectionId;
     private String topicId;
 
-    private String answersPdf;
-
     private ActivityNavigation(Context context) {
         this.context = context;
     }
@@ -66,16 +64,5 @@ public class ActivityNavigation {
             topicId = "0";
 
         return topicId;
-    }
-
-    public String getAnswersPdf() {
-        if (answersPdf == null)
-            answersPdf = "none.pdf";
-
-        return answersPdf;
-    }
-
-    public void setAnswersPdf(String answersPdf) {
-        this.answersPdf = answersPdf;
     }
 }
