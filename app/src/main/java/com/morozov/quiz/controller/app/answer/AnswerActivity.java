@@ -7,10 +7,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Filter;
 
+import com.ferfalk.simplesearchview.SimpleSearchView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.ControllerActivity;
 import com.morozov.quiz.controller.app.subsection_to_answer.SubsectionActivity;
@@ -27,6 +31,9 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    @BindView(R.id.searchView)
+    SimpleSearchView searchView;
 
     @BindView(R.id.rvTopics)
     RecyclerView rvTopics;
@@ -51,6 +58,40 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
         rvTopics.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);
+
+        searchView.enableVoiceSearch(true);
+        searchView.setOnQueryTextListener(new SimpleSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                for (Filter filter : adapter.getFilters()) {
+                    filter.filter(newText);
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextCleared() {
+
+                return false;
+            }
+        });
+
+        return true;
     }
 
     @Override
@@ -95,6 +136,10 @@ public class AnswerActivity extends ControllerActivity<AnswerViewModel, AnswerCo
 
     @Override
     public void onBackPressed() {
+        if (searchView.onBackPressed()) {
+            return;
+        }
+
         ActivityUtility.invokeNewActivity(AnswerActivity.this, SubsectionActivity.class, true);
     }
 }

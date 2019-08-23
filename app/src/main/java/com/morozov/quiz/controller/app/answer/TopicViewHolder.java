@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Filter;
 import android.widget.TextView;
 
 import com.morozov.quiz.R;
@@ -24,7 +25,7 @@ class TopicViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    void populate(FragmentManager fragmentManager, TopicModel topic, int position) {
+    Filter populate(FragmentManager fragmentManager, TopicModel topic, int position) {
         AnswerAdapter answerAdapter = new AnswerAdapter(itemView.getContext(), fragmentManager);
 
         rv_topics.setAdapter(answerAdapter);
@@ -34,5 +35,7 @@ class TopicViewHolder extends RecyclerView.ViewHolder {
                 itemView.getContext().getAssets(),
                 topic.getTopicId()
         ));
+
+        return answerAdapter.getFilter();
     }
 }

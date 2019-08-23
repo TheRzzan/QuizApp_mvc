@@ -5,23 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tv_question_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/headline_margin"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="@string/question_number"
-        android:textSize="@dimen/headline_font_size"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <TextView
         android:id="@+id/tv_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_question_num"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"

@@ -25,9 +25,6 @@ import butterknife.ButterKnife;
 
 class AnswerViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.tv_question_num)
-    TextView tvQuestionNumber;
-
     @BindView(R.id.tv_question)
     TextView tvQuestion;
 
@@ -126,7 +123,6 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
             tvAnswer.setText(question.getCorrectAnswer());
         }
 
-        tvQuestionNumber.setText(String.format(itemView.getContext().getString(R.string.question_number), position));
         tvQuestion.setText(question.getQuestion());
     }
 }

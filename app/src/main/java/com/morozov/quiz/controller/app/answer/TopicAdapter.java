@@ -5,18 +5,25 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.Filter;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.models.TopicModel;
 import com.morozov.quiz.controller.ui.ListAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TopicAdapter extends ListAdapter<TopicModel, TopicViewHolder> {
     private final LayoutInflater inflater;
     private final FragmentManager fragmentManager;
 
+    private List<Filter> filters;
+
     TopicAdapter(Context activity, FragmentManager fragmentManager) {
         this.inflater = LayoutInflater.from(activity);
         this.fragmentManager = fragmentManager;
+        filters = new ArrayList<>();
     }
 
     @NonNull
@@ -27,6 +34,10 @@ public class TopicAdapter extends ListAdapter<TopicModel, TopicViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TopicViewHolder holder, int i) {
-        holder.populate(fragmentManager, data().get(i), i + 1);
+        filters.add(holder.populate(fragmentManager, data().get(i), i + 1));
+    }
+
+    public List<Filter> getFilters() {
+        return filters;
     }
 }
