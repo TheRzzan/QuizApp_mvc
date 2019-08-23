@@ -65,7 +65,7 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        adapter = new QuizAdapter(getApplicationContext(), getController());
+        adapter = new QuizAdapter(getApplicationContext(), getController(), getSupportFragmentManager());
         rvAnswers.setAdapter(adapter);
         rvAnswers.setLayoutManager(new LinearLayoutManager(this));
 

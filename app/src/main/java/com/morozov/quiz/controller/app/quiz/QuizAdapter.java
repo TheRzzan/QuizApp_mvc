@@ -3,6 +3,7 @@ package com.morozov.quiz.controller.app.quiz;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -26,9 +27,12 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
 
     private boolean isImageAnswer = false;
 
-    QuizAdapter(Context context, AnswerClickListener listener) {
+    private final FragmentManager fragmentManager;
+
+    QuizAdapter(Context context, AnswerClickListener listener, FragmentManager fragmentManager) {
         inflater = LayoutInflater.from(context);
         this.listener = listener;
+        this.fragmentManager = fragmentManager;
     }
 
     @NonNull
@@ -49,7 +53,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     }
 
     private void showWithoutClick(QuizViewHolder holder, int i) {
-        holder.populate(data().get(i), isImageAnswer);
+        holder.populate(fragmentManager, data().get(i), isImageAnswer);
         holder.setOnClick(this, i);
 
         holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
@@ -64,7 +68,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     }
 
     private void showSecondClick(QuizViewHolder holder, int i) {
-        holder.populate(data().get(i), isImageAnswer);
+        holder.populate(fragmentManager, data().get(i), isImageAnswer);
         holder.setOnClick(null, i);
 
         if (row_index == i) {

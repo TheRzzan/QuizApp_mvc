@@ -10,6 +10,7 @@ public class ActivityUtility {
     public static void invokeNewActivity(Activity activity, Class<?> tClass, boolean shouldFinish) {
         Intent intent = new Intent(activity, tClass);
         activity.startActivity(intent);
+        activity.overridePendingTransition(0, 0);
         if (shouldFinish) {
             activity.finish();
         }
@@ -23,6 +24,7 @@ public class ActivityUtility {
         intent.putExtra(AppConstants.BUNDLE_KEY_SKIPPED_ANS, score.getSkippedAnswers());
 
         activity.startActivity(intent);
+        activity.overridePendingTransition(0, 0);
         if (shouldFinish) {
             activity.finish();
         }

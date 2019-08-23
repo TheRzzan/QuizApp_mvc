@@ -40,9 +40,6 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.ivAnswer)
     ImageView ivAnswer;
 
-    @BindView(R.id.tv_explanation)
-    TextView tvExplanation;
-
     AnswerViewHolder(@NonNull View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
@@ -131,6 +128,5 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
 
         tvQuestionNumber.setText(String.format(itemView.getContext().getString(R.string.question_number), position));
         tvQuestion.setText(question.getQuestion());
-        tvExplanation.setText(question.getAnswerClarification());
     }
 }

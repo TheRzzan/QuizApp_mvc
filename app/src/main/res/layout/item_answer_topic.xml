@@ -6,24 +6,11 @@
     <View
         android:id="@+id/view_1"
         style="@style/LineSeparator"
-        android:layout_below="@id/tv_text1" />
-
-    <TextView
-        android:id="@+id/tv_topic"
-        style="@style/MainText"
-        android:layout_below="@+id/view_1"
-        android:text="@string/topic" />
-
-    <View
-        android:id="@+id/view_2"
-        style="@style/LineSeparator"
-        android:layout_below="@id/tv_topic" />
+        android:layout_above="@id/rvTopics" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvTopics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view_2"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_below="@id/view_2" />
 </RelativeLayout>

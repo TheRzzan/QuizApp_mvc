@@ -1,6 +1,7 @@
 package com.morozov.quiz.controller.app.quiz;
 
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.interaction.HighlightClickListener;
+import com.morozov.quiz.controller.ui.ImageDialog;
 import com.morozov.quiz.utility.DataLoader;
 
 import butterknife.BindView;
@@ -33,12 +35,24 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    void populate(String text, boolean isImage) {
+    void populate(FragmentManager fragmentManager, String text, boolean isImage) {
         this.isImage = isImage;
 
         if (isImage) {
             tvAnswer.setVisibility(View.GONE);
             ivAnswer.setVisibility(View.VISIBLE);
+
+            ivAnswer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ImageDialog imageDialog = new ImageDialog();
+                    imageDialog.setImage(DataLoader.loadImage(
+                            itemView.getContext(),
+                            text
+                    ));
+                    imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
+                }
+            });
 
             ivAnswer.setImageDrawable(DataLoader.loadImage(itemView.getContext(), text));
             ivAnswer.setScaleType(ImageView.ScaleType.FIT_XY);
