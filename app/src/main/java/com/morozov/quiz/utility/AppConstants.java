@@ -40,6 +40,7 @@ public class AppConstants {
     // Bundle
     public static final String BUNDLE_KEY_INDEX = "index";
     public static final String BUNDLE_KEY_NAME = "name";
+    public static final String BUNDLE_KEY_CURRENT_QUESTION = "current_question";
     public static final String BUNDLE_KEY_CORRECT_ANS = "correct_ans";
     public static final String BUNDLE_KEY_WRONG_ANS = "wrong_ans";
     public static final String BUNDLE_KEY_SKIPPED_ANS = "skipped_ans";

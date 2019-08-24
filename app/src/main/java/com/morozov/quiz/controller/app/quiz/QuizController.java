@@ -38,7 +38,8 @@ public class QuizController extends Controller<QuizViewModel> implements View.On
         ArrayList<QuestionModel> questions = DataLoader.getQuestions(context.getAssets(), ActivityNavigation.getInstance(context).getTopicId());
         Collections.shuffle(questions);
         viewModel().questions().setValue(questions);
-        viewModel().currentQuestion().setValue(0);
+        if (viewModel().currentQuestion().getValue() == null)
+            viewModel().currentQuestion().setValue(0);
         viewModel().showNext().setValue(true);
     }
 

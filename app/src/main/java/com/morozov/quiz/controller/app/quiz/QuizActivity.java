@@ -3,6 +3,7 @@ package com.morozov.quiz.controller.app.quiz;
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.Observer;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +26,7 @@ import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.controller.ui.ImageDialog;
 import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
+import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.DataLoader;
 
 import butterknife.BindView;
@@ -188,5 +190,27 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
     @Override
     public void onOkClicked() {
         ActivityUtility.invokeNewActivity(QuizActivity.this, TopicActivity.class, true);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        QuizViewModel viewModel = getViewModel();
+
+        outState.putInt(AppConstants.BUNDLE_KEY_CURRENT_QUESTION, viewModel.currentQuestion().getValue());
+        outState.putInt(AppConstants.BUNDLE_KEY_CORRECT_ANS, viewModel.correctAnswers().getValue());
+        outState.putInt(AppConstants.BUNDLE_KEY_WRONG_ANS, viewModel.wrongAnswers().getValue());
+        outState.putInt(AppConstants.BUNDLE_KEY_SKIPPED_ANS, viewModel.skippedAnswers().getValue());
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onRestoreInstanceState(savedInstanceState, persistentState);
+        QuizViewModel viewModel = getViewModel();
+
+        viewModel.currentQuestion().setValue(savedInstanceState.getInt(AppConstants.BUNDLE_KEY_CURRENT_QUESTION));
+        viewModel.correctAnswers().setValue(savedInstanceState.getInt(AppConstants.BUNDLE_KEY_CORRECT_ANS));
+        viewModel.wrongAnswers().setValue(savedInstanceState.getInt(AppConstants.BUNDLE_KEY_WRONG_ANS));
+        viewModel.skippedAnswers().setValue(savedInstanceState.getInt(AppConstants.BUNDLE_KEY_SKIPPED_ANS));
     }
 }
