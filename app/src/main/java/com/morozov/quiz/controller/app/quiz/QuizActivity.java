@@ -2,6 +2,7 @@ package com.morozov.quiz.controller.app.quiz;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.Observer;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.Pair;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -29,6 +31,8 @@ import com.morozov.quiz.utility.ActivityTitles;
 import com.morozov.quiz.utility.ActivityUtility;
 import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.DataLoader;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -133,10 +137,26 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
 
         if (questionModel.isImageAnswer()) {
             adapter.setImageAnswer(true);
-            adapter.setData(questionModel.getAnswerImages());
+            ArrayList<Pair<String, String>> imagesData = new ArrayList<>();
+            for (String item : questionModel.getAnswerImages()) {
+                imagesData.add(Pair.create(null, item));
+            }
+            adapter.setData(imagesData);
         } else {
             adapter.setImageAnswer(false);
-            adapter.setData(questionModel.getAnswers());
+            ArrayList<Pair<String, String>> textData = new ArrayList<>();
+            ArrayList<String> answers = questionModel.getAnswers();
+            for (int i = 0; i < answers.size(); i++) {
+                String imageAdd;
+                if (questionModel.getAnswerImages().size() > i) {
+                    imageAdd = questionModel.getAnswerImages().get(i);
+                } else {
+                    imageAdd = null;
+                }
+                String item = answers.get(i);
+                textData.add(Pair.create(item, imageAdd));
+            }
+            adapter.setData(textData);
         }
 
         questionTitle.setText(String.format(getString(R.string.question_number), (getViewModel().currentQuestion().getValue() + 1)));

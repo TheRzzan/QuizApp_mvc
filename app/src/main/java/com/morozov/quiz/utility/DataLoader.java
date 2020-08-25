@@ -3,6 +3,7 @@ package com.morozov.quiz.utility;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 import com.morozov.quiz.controller.models.AirplaneModel;
 import com.morozov.quiz.controller.models.QuestionModel;
@@ -175,9 +176,18 @@ public class DataLoader {
                     contents.add(item_title);
                 }
 
-                if (isImageAnswer == 0)
+                if (isImageAnswer == 0) {
                     questionModel.setAnswers(contents);
-                else
+                    if (jsonObj.has(AppConstants.JSON_KEY_ANSWERS_IMAGE_ADDITION)) {
+                        JSONArray jsonArrayAdditions = jsonObj.getJSONArray(AppConstants.JSON_KEY_ANSWERS_IMAGE_ADDITION);
+                        ArrayList<String> imgAdditions = new ArrayList<>();
+                        for (int j = 0; j < jsonArrayAdditions.length(); j++) {
+                            String item_title = jsonArrayAdditions.get(j).toString();
+                            imgAdditions.add(item_title);
+                        }
+                        questionModel.setAnswerImages(imgAdditions);
+                    }
+                } else
                     questionModel.setAnswerImages(contents);
 
                 int correctAnswerInt = Integer.parseInt(jsonObj.getString(AppConstants.JSON_KEY_CORRECT_ANS));

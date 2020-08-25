@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,18 +30,17 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.viewBack)
     View viewBack;
 
-    private boolean isImage;
+    private boolean containsImage;
 
     QuizViewHolder(@NonNull View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
 
-    void populate(FragmentManager fragmentManager, String text, boolean isImage) {
-        this.isImage = isImage;
+    void populate(FragmentManager fragmentManager, String imagePath, String text) {
+        containsImage = imagePath != null && !imagePath.isEmpty();
 
-        if (isImage) {
-            tvAnswer.setVisibility(View.GONE);
+        if (containsImage) {
             ivAnswer.setVisibility(View.VISIBLE);
 
             ivAnswer.setOnClickListener(new View.OnClickListener() {
@@ -49,19 +49,22 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
                     ImageDialog imageDialog = new ImageDialog();
                     imageDialog.setImage(DataLoader.loadImage(
                             itemView.getContext(),
-                            text
+                            imagePath
                     ));
                     imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
                 }
             });
 
-            ivAnswer.setImageDrawable(DataLoader.loadImage(itemView.getContext(), text));
+            ivAnswer.setImageDrawable(DataLoader.loadImage(itemView.getContext(), imagePath));
             ivAnswer.setScaleType(ImageView.ScaleType.FIT_XY);
         } else {
             ivAnswer.setVisibility(View.GONE);
+        }
+        if (text != null && !text.isEmpty()) {
             tvAnswer.setVisibility(View.VISIBLE);
-
             tvAnswer.setText(Html.fromHtml(text));
+        } else {
+            tvAnswer.setVisibility(View.GONE);
         }
 
         viewBack.setVisibility(View.GONE);
@@ -87,7 +90,7 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
 //            imCheck.setImageResource(R.drawable.cancel);
 //        }
 
-        if (isImage) {
+        if (containsImage) {
             viewBack.setVisibility(View.VISIBLE);
 
             if (bool)

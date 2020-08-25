@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -15,7 +17,7 @@ import com.morozov.quiz.controller.ui.ListAdapter;
 
 import java.util.List;
 
-public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements HighlightClickListener {
+public class QuizAdapter extends ListAdapter<Pair<String, String>, QuizViewHolder> implements HighlightClickListener {
 
     private static String UNSELECTED_COL = "#FFFFFF";
 
@@ -53,7 +55,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     }
 
     private void showWithoutClick(QuizViewHolder holder, int i) {
-        holder.populate(fragmentManager, data().get(i), isImageAnswer);
+        holder.populate(fragmentManager, data().get(i).second, data().get(i).first);
         holder.setOnClick(this, i);
 
         holder.itemView.setBackgroundColor(Color.parseColor(UNSELECTED_COL));
@@ -68,7 +70,7 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     }
 
     private void showSecondClick(QuizViewHolder holder, int i) {
-        holder.populate(fragmentManager, data().get(i), isImageAnswer);
+        holder.populate(fragmentManager, data().get(i).second, data().get(i).first);
         holder.setOnClick(null, i);
 
         if (row_index == i) {
@@ -90,12 +92,17 @@ public class QuizAdapter extends ListAdapter<String, QuizViewHolder> implements 
     @Override
     public void onItemClicked(int position) {
         row_index = position;
-        message = listener.onAnswerClicked(position, data().get(position));
+        String answerUser;
+        if (isImageAnswer)
+            answerUser = data().get(position).second;
+        else
+            answerUser = data().get(position).first;
+        message = listener.onAnswerClicked(position, answerUser);
         notifyDataSetChanged();
     }
 
     @Override
-    public void setData(List<String> data) {
+    public void setData(List<Pair<String, String>> data) {
         super.setData(data);
 
         row_index = -1;

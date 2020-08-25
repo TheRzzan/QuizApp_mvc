@@ -67,7 +67,10 @@ public class QuestionModel {
     }
 
     public ArrayList<String> getAnswerImages() {
-        return answerImages;
+        if (answerImages == null)
+            return new ArrayList<>();
+        else
+            return answerImages;
     }
 
     public Integer getCorrectImage() {
