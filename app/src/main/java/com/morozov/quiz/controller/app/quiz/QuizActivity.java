@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -139,7 +140,7 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
         }
 
         questionTitle.setText(String.format(getString(R.string.question_number), (getViewModel().currentQuestion().getValue() + 1)));
-        questionText.setText(questionModel.getQuestion());
+        questionText.setText(Html.fromHtml(questionModel.getQuestion()));
 
         if (questionModel.isImageQuestion()) {
             ivQuestion.setVisibility(View.VISIBLE);

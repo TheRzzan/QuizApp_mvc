@@ -3,6 +3,7 @@ package com.morozov.quiz.controller.app.quiz;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,7 +61,7 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
             ivAnswer.setVisibility(View.GONE);
             tvAnswer.setVisibility(View.VISIBLE);
 
-            tvAnswer.setText(text);
+            tvAnswer.setText(Html.fromHtml(text));
         }
 
         viewBack.setVisibility(View.GONE);
@@ -79,12 +80,12 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
     }
 
     void setCheck(boolean bool) {
-        imCheck.setVisibility(View.VISIBLE);
-        if (bool) {
-            imCheck.setImageResource(R.drawable.check);
-        } else {
-            imCheck.setImageResource(R.drawable.cancel);
-        }
+//        imCheck.setVisibility(View.VISIBLE);
+//        if (bool) {
+//            imCheck.setImageResource(R.drawable.check);
+//        } else {
+//            imCheck.setImageResource(R.drawable.cancel);
+//        }
 
         if (isImage) {
             viewBack.setVisibility(View.VISIBLE);

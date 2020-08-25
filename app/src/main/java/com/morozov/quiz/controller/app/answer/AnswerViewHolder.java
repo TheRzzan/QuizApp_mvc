@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -120,9 +121,9 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
         } else {
             ivAnswer.setVisibility(View.GONE);
             tvAnswer.setVisibility(View.VISIBLE);
-            tvAnswer.setText(question.getCorrectAnswer());
+            tvAnswer.setText(Html.fromHtml(question.getCorrectAnswer()));
         }
 
-        tvQuestion.setText(question.getQuestion());
+        tvQuestion.setText(Html.fromHtml(question.getQuestion()));
     }
 }
