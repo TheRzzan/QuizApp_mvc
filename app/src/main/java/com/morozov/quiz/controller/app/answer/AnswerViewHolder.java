@@ -52,10 +52,7 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onClick(View v) {
                     ImageDialog imageDialog = new ImageDialog();
-                    imageDialog.setImage(DataLoader.loadImage(
-                            itemView.getContext(),
-                            question.getQuestionImage()
-                    ));
+                    imageDialog.setImage(AppConstants.IMAGE_DIR + question.getQuestionImage());
                     imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
                 }
             });
@@ -91,10 +88,7 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onClick(View v) {
                     ImageDialog imageDialog = new ImageDialog();
-                    imageDialog.setImage(DataLoader.loadImage(
-                            itemView.getContext(),
-                            question.getCorrectAnswer()
-                    ));
+                    imageDialog.setImage(AppConstants.IMAGE_DIR + question.getQuestionImage());
                     imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
                 }
             });

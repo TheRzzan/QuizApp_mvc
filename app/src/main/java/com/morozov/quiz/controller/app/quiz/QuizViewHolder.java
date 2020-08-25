@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.interaction.HighlightClickListener;
 import com.morozov.quiz.controller.ui.ImageDialog;
+import com.morozov.quiz.utility.AppConstants;
 import com.morozov.quiz.utility.DataLoader;
 
 import butterknife.BindView;
@@ -47,10 +48,7 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onClick(View v) {
                     ImageDialog imageDialog = new ImageDialog();
-                    imageDialog.setImage(DataLoader.loadImage(
-                            itemView.getContext(),
-                            imagePath
-                    ));
+                    imageDialog.setImage(AppConstants.IMAGE_DIR + imagePath);
                     imageDialog.show(fragmentManager, QuizActivity.class.getSimpleName());
                 }
             });

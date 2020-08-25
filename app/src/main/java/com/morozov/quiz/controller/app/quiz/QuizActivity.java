@@ -170,10 +170,7 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
                 @Override
                 public void onClick(View v) {
                     ImageDialog imageDialog = new ImageDialog();
-                    imageDialog.setImage(DataLoader.loadImage(
-                            getApplicationContext(),
-                            questionModel.getQuestionImage()
-                    ));
+                    imageDialog.setImage(AppConstants.IMAGE_DIR + questionModel.getQuestionImage());
                     imageDialog.show(getSupportFragmentManager(), QuizActivity.class.getSimpleName());
                 }
             });
