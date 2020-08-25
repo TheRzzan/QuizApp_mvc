@@ -35,8 +35,8 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @BindView(R.id.searchView)
-    SimpleSearchView searchView;
+//    @BindView(R.id.searchView)
+//    SimpleSearchView searchView;
 
     @BindView(R.id.rvSubsections)
     RecyclerView rvSubsections;
@@ -64,39 +64,39 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         rvSubsections.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_menu, menu);
-
-        MenuItem item = menu.findItem(R.id.action_search);
-        searchView.setMenuItem(item);
-
-        searchView.enableVoiceSearch(true);
-        searchView.setOnQueryTextListener(new SimpleSearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                for (Filter filter : adapter.getFilters()) {
-                    filter.filter(newText);
-                }
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextCleared() {
-
-                return false;
-            }
-        });
-
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.search_menu, menu);
+//
+//        MenuItem item = menu.findItem(R.id.action_search);
+//        searchView.setMenuItem(item);
+//
+//        searchView.enableVoiceSearch(true);
+//        searchView.setOnQueryTextListener(new SimpleSearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                for (Filter filter : adapter.getFilters()) {
+//                    filter.filter(newText);
+//                }
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextCleared() {
+//
+//                return false;
+//            }
+//        });
+//
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -159,20 +159,20 @@ public class SubsectionActivity extends ControllerActivity<SubsectionViewModel, 
         return SubsectionViewModel.class;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (searchView.onActivityResult(requestCode, resultCode, data)) {
-            return;
-        }
-
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (searchView.onActivityResult(requestCode, resultCode, data)) {
+//            return;
+//        }
+//
+//        super.onActivityResult(requestCode, resultCode, data);
+//    }
 
     @Override
     public void onBackPressed() {
-        if (searchView.onBackPressed()) {
-            return;
-        }
+//        if (searchView.onBackPressed()) {
+//            return;
+//        }
 
         ActivityUtility.invokeNewActivity(SubsectionActivity.this, AirplaneActivity.class, true);
     }
