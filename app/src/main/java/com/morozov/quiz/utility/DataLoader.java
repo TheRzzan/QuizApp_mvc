@@ -10,6 +10,7 @@ import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.SectionModel;
 import com.morozov.quiz.controller.models.SubsectionModel;
 import com.morozov.quiz.controller.models.TopicModel;
+import com.morozov.quiz.controller.models.TopicModelRealm;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +22,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import io.realm.Realm;
 
 public class DataLoader {
 
@@ -105,11 +108,22 @@ public class DataLoader {
                 JSONObject object = jsonArray.getJSONObject(i);
 
                 String subsectionId = object.getString(AppConstants.JSON_KEY_SUBSECTION_ID);
-                String topicId = object.getString(AppConstants.JSON_KEY_TOPIC_ID);
-                String topicName = object.getString(AppConstants.JSON_KEY_TOPIC_NAME);
 
-                if (subsectionId.equals(mSubsectionId))
-                    topicList.add(new TopicModel(topicId, topicName));
+                if (subsectionId.equals(mSubsectionId)) {
+                    String topicId = object.getString(AppConstants.JSON_KEY_TOPIC_ID);
+                    String topicName = object.getString(AppConstants.JSON_KEY_TOPIC_NAME);
+
+                    final Integer[] percentage = new Integer[1];
+
+                    Realm.getDefaultInstance().executeTransaction( realm -> {
+                        TopicModelRealm topicModelRealm = realm.where(TopicModelRealm.class).equalTo("topicName", topicName).findFirst();
+                        if (topicModelRealm != null) {
+                            percentage[0] = topicModelRealm.percentage;
+                        }
+                    });
+
+                    topicList.add(new TopicModel(topicId, topicName, percentage[0]));
+                }
             }
         } catch (JSONException e) {
             e.printStackTrace();

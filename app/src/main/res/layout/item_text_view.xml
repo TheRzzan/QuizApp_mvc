@@ -2,10 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/tvRecycler"
+        android:layout_weight="1"
+        android:layout_width="0dp"
         style="@style/SelectionText"
         android:text="Пример текста 2" />
+
+    <TextView
+        android:id="@+id/text_percentage"
+        android:visibility="gone"
+        android:textColor="@color/dark_green"
+        android:text="20%"
+        style="@style/SelectionText"/>
 </LinearLayout>
