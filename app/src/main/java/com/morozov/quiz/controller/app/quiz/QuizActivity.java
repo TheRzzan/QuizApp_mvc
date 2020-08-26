@@ -25,6 +25,7 @@ import com.morozov.quiz.controller.app.topic.TopicActivity;
 import com.morozov.quiz.controller.interaction.DialogClickListener;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.models.ScoreModel;
+import com.morozov.quiz.controller.models.TopicModelRealm;
 import com.morozov.quiz.controller.ui.CustomDialog;
 import com.morozov.quiz.controller.ui.ImageDialog;
 import com.morozov.quiz.utility.ActivityTitles;
@@ -36,6 +37,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
 
 public class QuizActivity extends ControllerActivity<QuizViewModel, QuizController> implements DialogClickListener {
 
@@ -110,9 +112,18 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
                     if (integer < viewModel.questions().getValue().size()) {
                         showQuestion(integer);
                     } else {
+                        Integer correctAns = getViewModel().correctAnswers().getValue();
+                        Integer wrongAns = getViewModel().wrongAnswers().getValue();
+                        Realm.getDefaultInstance().executeTransaction( realm -> {
+                            String topicName = ActivityTitles.getInstance(getApplicationContext()).getTopicName();
+                            realm.where(TopicModelRealm.class).equalTo("topicName", topicName).findAll().deleteAllFromRealm();
+                            TopicModelRealm topicModelRealm = realm.createObject(TopicModelRealm.class);
+                            topicModelRealm.topicName = topicName;
+                            topicModelRealm.percentage = (correctAns * 100)/(correctAns + wrongAns);
+                        });
                         ActivityUtility.invokeScoreActivity(QuizActivity.this, true,
-                                new ScoreModel(getViewModel().correctAnswers().getValue(),
-                                        getViewModel().wrongAnswers().getValue(),
+                                new ScoreModel(correctAns,
+                                        wrongAns,
                                         getViewModel().skippedAnswers().getValue()));
                     }
                 }
