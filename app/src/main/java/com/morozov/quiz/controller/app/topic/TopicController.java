@@ -34,6 +34,7 @@ public class TopicController extends Controller<TopicViewModel> implements View.
 
     private void openQuiz(Integer position) {
         viewModel().selectedTopic().setValue(position);
+        viewModel().selectedTopic().setValue(-123);
     }
 
     @Override

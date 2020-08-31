@@ -118,6 +118,8 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
         viewModel.selectedTopic().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer integer) {
+                if (integer == -123)
+                    return;
                 ActivityTitles.getInstance(getApplicationContext())
                         .setTopicName(getViewModel().topics().getValue().get(getViewModel().selectedTopic().getValue()).getTopicName());
 
