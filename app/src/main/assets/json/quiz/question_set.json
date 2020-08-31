@@ -3614,7 +3614,7 @@
     },{
       "is_image_question": 0,
       "is_image_answers": 0,
-      "question": "Что представляет класс <font color='red'>DateFormat</font>? ",
+      "question": "Что\nпредставляет класс <font color='red'>DateFormat</font>?",
       "answers": [
         "Интерфейс для настройки строк с отформатированной датой/временем. X<sup>2</sup>",
         "Класс для определения формата даты/времени. ",

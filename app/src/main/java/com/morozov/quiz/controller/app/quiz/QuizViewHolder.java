@@ -60,6 +60,7 @@ class QuizViewHolder extends RecyclerView.ViewHolder {
         }
         if (text != null && !text.isEmpty()) {
             tvAnswer.setVisibility(View.VISIBLE);
+            text = text.replace("\n", "<br>");
             tvAnswer.setText(Html.fromHtml(text));
         } else {
             tvAnswer.setVisibility(View.GONE);

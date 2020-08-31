@@ -115,9 +115,10 @@ class AnswerViewHolder extends RecyclerView.ViewHolder {
         } else {
             ivAnswer.setVisibility(View.GONE);
             tvAnswer.setVisibility(View.VISIBLE);
-            tvAnswer.setText(Html.fromHtml(question.getCorrectAnswer()));
+            String text = question.getCorrectAnswer().replace("\n", "<br>");
+            tvAnswer.setText(Html.fromHtml(text));
         }
-
-        tvQuestion.setText(Html.fromHtml(question.getQuestion()));
+        String text2 = question.getQuestion().replace("\n", "<br>");
+        tvQuestion.setText(Html.fromHtml(text2));
     }
 }

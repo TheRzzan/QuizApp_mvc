@@ -171,7 +171,8 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
         }
 
         questionTitle.setText(String.format(getString(R.string.question_number), (getViewModel().currentQuestion().getValue() + 1)));
-        questionText.setText(Html.fromHtml(questionModel.getQuestion()));
+        String text = questionModel.getQuestion().replace("\n", "<br>");
+        questionText.setText(Html.fromHtml(text));
 
         if (questionModel.isImageQuestion()) {
             ivQuestion.setVisibility(View.VISIBLE);
