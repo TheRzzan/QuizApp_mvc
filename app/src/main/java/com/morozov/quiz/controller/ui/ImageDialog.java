@@ -12,6 +12,8 @@ import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.morozov.quiz.R;
 
+import java.util.Objects;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -20,7 +22,7 @@ public class ImageDialog extends DialogFragment {
     @BindView(R.id.imageView)
     SubsamplingScaleImageView imageView;
 
-    private String imageName;
+    private static String imageName;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class ImageDialog extends DialogFragment {
 //                getDialog().dismiss();
 //            }
 //        });
+
+        view.findViewById(R.id.dialog_image_back).setOnClickListener(v -> Objects.requireNonNull(getActivity()).onBackPressed());
 
         return view;
     }
