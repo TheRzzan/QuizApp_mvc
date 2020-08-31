@@ -40,7 +40,7 @@ public class QuizAdapter extends ListAdapter<Pair<String, String>, QuizViewHolde
     @NonNull
     @Override
     public QuizViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new QuizViewHolder(inflater.inflate(R.layout.item_text_view_check, null));
+        return new QuizViewHolder(inflater.inflate(R.layout.item_text_view_check, viewGroup, false));
     }
 
     @Override
