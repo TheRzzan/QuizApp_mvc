@@ -130,7 +130,7 @@ public class TopicActivity extends ControllerActivity<TopicViewModel, TopicContr
                         getViewModel().topics().getValue().get(integer).getTopicName() +
                         "\". " +
                         getString(R.string.ready_to_start));
-                customDialog.setListener(TopicActivity.this);
+//                customDialog.setListener(TopicActivity.this);
                 customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
             }
         });

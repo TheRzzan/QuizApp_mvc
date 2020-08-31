@@ -206,7 +206,7 @@ public class QuizActivity extends ControllerActivity<QuizViewModel, QuizControll
     public void onBackPressed() {
         CustomDialog customDialog = new CustomDialog();
         customDialog.setHeadline(getString(R.string.leave_testing));
-        customDialog.setListener(QuizActivity.this);
+//        customDialog.setListener(QuizActivity.this);
         customDialog.setOkText(getString(R.string.leave));
         customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
     }

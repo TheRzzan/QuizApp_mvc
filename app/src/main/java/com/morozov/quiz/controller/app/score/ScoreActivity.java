@@ -1,6 +1,7 @@
 package com.morozov.quiz.controller.app.score;
 
 import android.arch.lifecycle.Observer;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -89,7 +90,7 @@ public class ScoreActivity extends ControllerActivity<ScoreViewModel, ScoreContr
                 if (aBoolean) {
                     CustomDialog customDialog = new CustomDialog();
                     customDialog.setHeadline(getString(R.string.start_test_again));
-                    customDialog.setListener(ScoreActivity.this);
+//                    customDialog.setListener(ScoreActivity.this);
                     customDialog.show(getSupportFragmentManager(), CustomDialog.class.getSimpleName());
                 }
             }

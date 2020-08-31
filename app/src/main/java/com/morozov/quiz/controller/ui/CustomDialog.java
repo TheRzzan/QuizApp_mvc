@@ -28,9 +28,7 @@ public class CustomDialog extends DialogFragment {
     TextView ok;
     private String okStr;
 
-    private String headlineStr;
-
-    private DialogClickListener listener;
+    private static String headlineStr;
 
     @Nullable
     @Override
@@ -45,6 +43,8 @@ public class CustomDialog extends DialogFragment {
 
         if (okStr != null)
             ok.setText(okStr);
+
+        DialogClickListener listener = ((DialogClickListener)getActivity());
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +69,6 @@ public class CustomDialog extends DialogFragment {
 
     public void setHeadline(String headlineStr) {
         this.headlineStr = headlineStr;
-    }
-
-    public void setListener(DialogClickListener listener) {
-        this.listener = listener;
     }
 
     public void setOkText(String text) {

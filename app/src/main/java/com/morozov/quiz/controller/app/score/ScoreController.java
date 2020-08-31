@@ -25,6 +25,7 @@ public class ScoreController extends Controller<ScoreViewModel> implements View.
 
     private void startTestAgain() {
         viewModel().startTestAgain().setValue(true);
+        viewModel().startTestAgain().setValue(false);
     }
 
     private void startMainMenu() {
