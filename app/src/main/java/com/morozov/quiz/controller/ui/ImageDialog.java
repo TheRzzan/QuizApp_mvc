@@ -36,6 +36,8 @@ public class ImageDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.dialog_image, container, false);
         ButterKnife.bind(this, view);
 
+        imageView.setMaxScale(15);
+
         if (imageName != null)
             imageView.setImage(ImageSource.asset(imageName));
 
