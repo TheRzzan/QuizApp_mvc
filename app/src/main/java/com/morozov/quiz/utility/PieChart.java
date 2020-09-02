@@ -130,7 +130,7 @@ public class PieChart extends View {
             Paint paint2 = new Paint();
             paint2.setTextSize(paint.getTextSize()/2);
             paint2.setTextAlign(Paint.Align.CENTER);
-            String percentage = new DecimalFormat("##.#").format((total * 100)/(item[0] + item[1])) + "%";
+            String percentage = new DecimalFormat("###.#").format((total * 100)/(item[0] + item[1])) + "%";
             canvas.drawText(percentage, centerXY, newY + paint2.getTextSize(), paint2);
         }
     }

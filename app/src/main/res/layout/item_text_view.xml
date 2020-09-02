@@ -14,7 +14,6 @@
     <TextView
         android:id="@+id/text_percentage"
         android:visibility="gone"
-        android:textColor="@color/dark_green"
         android:text="20%"
         style="@style/SelectionText"/>
 </LinearLayout>

@@ -41,6 +41,8 @@ public class ImageDialog extends DialogFragment {
         if (imageName != null)
             imageView.setImage(ImageSource.asset(imageName));
 
+        imageView.setOnClickListener(v -> dismiss());
+
 //        imageView.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
