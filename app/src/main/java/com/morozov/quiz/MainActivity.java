@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         boolean isLogined = MySharedPreferences.getPreference(MainActivity.this, AppConstants.IS_LOGINED_ONCE);
 
-        if (isLogined)
+        if (!isLogined)
             ActivityUtility.invokeNewActivity(MainActivity.this, AirplaneActivity.class, true);
         else
             ActivityUtility.invokeNewActivity(MainActivity.this, LoginActivity.class, true);
