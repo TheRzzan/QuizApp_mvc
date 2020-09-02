@@ -41,6 +41,11 @@ public class QuestionModel {
     }
 
     public void setAnswerImages(ArrayList<String> answerImages) {
+        indexArray = new ArrayList<>();
+        for (int i = 0; i < answerImages.size(); i++) {
+            indexArray.add(i);
+        }
+        Collections.shuffle(indexArray);
         this.answerImages = answerImages;
     }
 
