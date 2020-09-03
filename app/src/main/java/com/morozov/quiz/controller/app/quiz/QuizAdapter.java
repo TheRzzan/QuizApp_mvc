@@ -73,6 +73,12 @@ public class QuizAdapter extends ListAdapter<Pair<String, String>, QuizViewHolde
         holder.populate(fragmentManager, data().get(i).second, data().get(i).first);
         holder.setOnClick(null, i);
 
+        String answerI;
+        if (isImageAnswer)
+            answerI = data().get(i).second;
+        else
+            answerI = data().get(i).first;
+
         if (row_index == i) {
             if (message.isCorrectAnswer()) {
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
@@ -81,7 +87,7 @@ public class QuizAdapter extends ListAdapter<Pair<String, String>, QuizViewHolde
                 holder.itemView.setBackgroundResource(R.drawable.rectangle_red_sharp);
                 holder.setCheck(false);
             }
-        } else if (message.getCorrectAnswer().equals(data().get(i))) {
+        } else if (message.getCorrectAnswer().equals(answerI)) {
             holder.itemView.setBackgroundResource(R.drawable.rectangle_green_sharp);
             holder.setCheck(true);
         } else {
