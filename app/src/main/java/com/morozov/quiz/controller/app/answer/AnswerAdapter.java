@@ -1,8 +1,8 @@
 package com.morozov.quiz.controller.app.answer;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Filter;
@@ -10,7 +10,6 @@ import android.widget.Filterable;
 
 import com.morozov.quiz.R;
 import com.morozov.quiz.controller.models.QuestionModel;
-import com.morozov.quiz.controller.models.SubsectionModel;
 import com.morozov.quiz.controller.ui.ListAdapter;
 
 import java.util.ArrayList;

@@ -1,20 +1,17 @@
 package com.morozov.quiz.controller;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleOwner;
-import android.arch.lifecycle.LifecycleRegistry;
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LifecycleRegistry;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class ControllerActivity<V extends ViewModel, C extends Controller>
-        extends AppCompatActivity implements LifecycleOwner {
-
-    private LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
+        extends AppCompatActivity {
 
     private V viewModel;
     private C controller;
@@ -54,11 +51,5 @@ public abstract class ControllerActivity<V extends ViewModel, C extends Controll
 
     protected V getViewModel() {
         return viewModel;
-    }
-
-    @NonNull
-    @Override
-    public Lifecycle getLifecycle() {
-        return lifecycleRegistry;
     }
 }

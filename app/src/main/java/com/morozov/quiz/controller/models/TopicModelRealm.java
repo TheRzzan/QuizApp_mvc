@@ -1,6 +1,6 @@
 package com.morozov.quiz.controller.models;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import io.realm.RealmObject;
 

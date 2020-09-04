@@ -1,6 +1,6 @@
 package com.morozov.quiz.controller.models;
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 public class DoubleClickLiveData<T> extends MutableLiveData<T> {
     private boolean isSingleClicked = false;

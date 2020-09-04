@@ -1,11 +1,10 @@
 package com.morozov.quiz.controller.app.answer;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +15,6 @@ import com.morozov.quiz.controller.app.quiz.QuizActivity;
 import com.morozov.quiz.controller.models.QuestionModel;
 import com.morozov.quiz.controller.ui.ImageDialog;
 import com.morozov.quiz.utility.AppConstants;
-import com.morozov.quiz.utility.DataLoader;
 
 import java.io.IOException;
 import java.io.InputStream;

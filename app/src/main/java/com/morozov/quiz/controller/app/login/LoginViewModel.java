@@ -1,6 +1,6 @@
 package com.morozov.quiz.controller.app.login;
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.morozov.quiz.controller.UiViewModel;
 

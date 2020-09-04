@@ -2,9 +2,9 @@ package com.morozov.quiz.controller.app.quiz;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

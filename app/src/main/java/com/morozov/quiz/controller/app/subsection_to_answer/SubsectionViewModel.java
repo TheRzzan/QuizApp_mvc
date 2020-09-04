@@ -1,6 +1,6 @@
 package com.morozov.quiz.controller.app.subsection_to_answer;
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.morozov.quiz.controller.UiViewModel;
 import com.morozov.quiz.controller.models.SubsectionModel;

@@ -1,8 +1,8 @@
 package com.morozov.quiz.controller.app.login;
 
-import android.arch.lifecycle.Observer;
+import androidx.lifecycle.Observer;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;

@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView1"
         android:fillViewport="true"
         android:layout_width="match_parent"
@@ -59,14 +59,14 @@
                 style="@style/LineSeparator"
                 android:layout_below="@id/ivQuestion" />
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAnswers"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/view_2"
                 android:layout_margin="20dp"/>
         </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <Button
         android:id="@+id/btn_next"
